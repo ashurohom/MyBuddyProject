@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/petgallery.css' %}">
+{% endblock css %}
+
+{% block main %}
+<header class="page-header">
+    <h1 class="title">Welcome to My Buddy</h1>
+    <p class="description">Find your perfect companion among our adoptable pets. Browse through their details and make a difference today!</p>
+    <p class="description">Adoption Text Message</p>
+</header>
+
+<div class="card-container">
+    <!-- Example Card -->
+    <div class="card">
+        <img src="{% static 'image/dog-adopt-5.jpg' %}" alt="Pet Image">
+        <div class="info">
+            <h2>Pet Name</h2>
+            <p><strong>Breed:</strong> Breed Name</p>
+            <p><strong>Age:</strong> 2 Years</p>
+            <p><strong>Gender:</strong> Male</p>
+            <a href="/pet-details/1" class="btn">View Details</a>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <img src="{% static 'image/dog-adopt-5.jpg' %}" alt="Pet Image">
+        <div class="info">
+            <h2>Pet Name</h2>
+            <p><strong>Breed:</strong> Breed Name</p>
+            <p><strong>Age:</strong> 2 Years</p>
+            <p><strong>Gender:</strong> Male</p>
+            <a href="/pet-details/1" class="btn">View Details</a>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <img src="{% static 'image/dog-adopt-5.jpg' %}" alt="Pet Image">
+        <div class="info">
+            <h2>Pet Name</h2>
+            <p><strong>Breed:</strong> Breed Name</p>
+            <p><strong>Age:</strong> 2 Years</p>
+            <p><strong>Gender:</strong> Male</p>
+            <a href="/pet-details/1" class="btn">View Details</a>
+        </div>
+    </div>
+
+
+    <div class="card">
+        <img src="{% static 'image/dog-adopt-5.jpg' %}" alt="Pet Image">
+        <div class="info">
+            <h2>Pet Name</h2>
+            <p><strong>Breed:</strong> Breed Name</p>
+            <p><strong>Age:</strong> 2 Years</p>
+            <p><strong>Gender:</strong> Male</p>
+            <a href="/pet-details/1" class="btn">View Details</a>
+        </div>
+    </div>
+
+
+
+    <div class="card">
+        <img src="{% static 'image/dog-adopt-5.jpg' %}" alt="Pet Image">
+        <div class="info">
+            <h2>Pet Name</h2>
+            <p><strong>Breed:</strong> Breed Name</p>
+            <p><strong>Age:</strong> 2 Years</p>
+            <p><strong>Gender:</strong> Male</p>
+            <a href="/pet-details/1" class="btn">View Details</a>
+        </div>
+    </div>
+
+
+
+    <div class="card">
+        <img src="{% static 'image/dog-adopt-5.jpg' %}" alt="Pet Image">
+        <div class="info">
+            <h2>Pet Name</h2>
+            <p><strong>Breed:</strong> Breed Name</p>
+            <p><strong>Age:</strong> 2 Years</p>
+            <p><strong>Gender:</strong> Male</p>
+            <a href="/pet-details/1" class="btn">View Details</a>
+        </div>
+    </div>
+
+
+
+    <!-- Duplicate this card for more items -->
+</div>
+
+<div class="footer-note">
+    <p>Note: Adoption is subject to availability and verification. Terms & conditions apply.</p>
+</div>
+{% endblock main %}

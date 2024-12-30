@@ -9,5 +9,8 @@ def index(request):
 def signin(request):
     return render(request,'signin.html')
 
-def index(request):
-    return render(request,'index.html')
+def signup(request):
+    return render(request,'signup.html')
+
+def petgallery(request):
+    return render(request,'petgallery.html')

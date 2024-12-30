@@ -1,6 +1,6 @@
 /* General Body Styling */
 body {
-  background: url('image/dog_head.jpg') no-repeat center center/cover; /* Replace with the desired background image */
+  background-color: #f4f4f4; /* Light background color */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -15,10 +15,10 @@ body {
   max-width: 400px;
   padding: 10px 20px;
   border-radius: 10px;
-  background: rgba(255, 255, 255, 0.0); /* Transparent with blur */
+  background: rgba(255, 255, 255, 0.8); /* Slight white background */
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Slight shadow for contrast */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Slight shadow for contrast */
   text-align: center;
 }
 
@@ -39,14 +39,14 @@ body {
 
 /* Login Heading Styling */
 .login-container h2 {
-  color: white;
+  color: #333;
   margin-bottom: 20px;
   margin-top: 20px;
 }
 
 /* Form Label and Input Styling */
 .login-container label {
-  color: white;
+  color: #555;
   display: block;
   text-align: left;
   margin-bottom: 5px;
@@ -89,7 +89,7 @@ body {
 
 /* Forgot Password Link Styling */
 .login-container a {
-  color: white;
+  color: #3498DB;
   text-decoration: none;
   font-size: 14px;
 }
