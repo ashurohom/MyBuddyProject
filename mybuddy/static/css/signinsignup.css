@@ -1,0 +1,98 @@
+/* General Body Styling */
+body {
+  background: url('image/dog_head.jpg') no-repeat center center/cover; /* Replace with the desired background image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+/* Login Container Styling */
+.login-container {
+  width: 100%;
+  max-width: 400px;
+  padding: 10px 20px;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.0); /* Transparent with blur */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Slight shadow for contrast */
+  text-align: center;
+}
+
+/* Logo Styling */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+.logo a {
+  font-size: 20px;
+  color: #3498DB; /* Color for the logo icon */
+  text-decoration: none;
+}
+.logo i {
+  margin-right: 5px;
+}
+
+/* Login Heading Styling */
+.login-container h2 {
+  color: white;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+
+/* Form Label and Input Styling */
+.login-container label {
+  color: white;
+  display: block;
+  text-align: left;
+  margin-bottom: 5px;
+}
+.login-container input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Buttons Styling */
+.login-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+.login-buttons button {
+  width: 48%; /* Buttons take equal space with a gap */
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+.btn-login {
+  background-color: #3498DB; /* Login button color */
+  color: white;
+}
+.btn-login:hover {
+  background-color: #2980B9;
+}
+.btn-signup {
+  background-color: #2ecc71; /* Sign-Up button color */
+  color: white;
+}
+.btn-signup:hover {
+  background-color: #27ae60;
+}
+
+/* Forgot Password Link Styling */
+.login-container a {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+.login-container a:hover {
+  text-decoration: underline;
+}
