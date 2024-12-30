@@ -17,3 +17,6 @@ def petgallery(request):
 
 def viewpetdetails(request):
     return render(request,'viewpetdetails.html')
+
+def about(request):
+    return render(request,'about.html')
