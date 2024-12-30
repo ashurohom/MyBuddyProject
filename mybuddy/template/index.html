@@ -1,6 +1,11 @@
 {% extends 'base.html' %}
 {%load static%} 
  
+
+{% block css %}
+    <link rel="stylesheet" href="{%static 'css/index.css'%}">
+{% endblock css %}
+
  <!-- SECTION 2 -->
 
  
@@ -10,7 +15,7 @@
     
       <!-- Dog Image Section -->
   <section class="hero-section">
-    <img src="/image/dog_head.jpg" alt="Adopt a pet" class="hero-img">
+    <img src="{% static 'image/dog_head.jpg'%}" alt="Adopt a pet" class="hero-img">
     <div class="hero-content">
       <h2>Re-Home and Adopt a Pet in India</h2>
       <p>Every Pet Deserves a Good Home</p>
@@ -29,7 +34,7 @@
     <i class="fas fa-paw" style="font-size: 32px;"></i>
     <div class="adoption-content">
       <div class="adoption-image">
-        <img src="/image/dog-adopt-1.jpg" alt="Adoptable Dog" class="adopt-image">
+        <img src="{% static 'image/dog-adopt-1.jpg'%}" alt="Adoptable Dog" class="adopt-image">
       </div>
       <div class="adoption-text">
         <p><strong>&ldquo;Adopting a pet is a rewarding experience that offers countless benefits, both for the animal and the adopter. Millions of 
@@ -66,7 +71,7 @@
         </strong></p>
       </div>
       <div class="adoption-image">
-        <img src="/image/dog-adopt-2.jpg" alt="Happy Dog" class="adopt-image">
+        <img src="{% static 'image/dog-adopt-2.jpg'%}" alt="Happy Dog" class="adopt-image">
       </div>
     </div>
   </section>
@@ -80,23 +85,23 @@
   <h2>&ldquo; Discover Love <b style="color: rgb(253, 2, 2);">My Buddy</b> Looking for Their Forever Family &rdquo;</h2>
   <div class="gallery-container">
       <div class="gallery-item">
-          <img src="/image/dog-adopt-1.jpg" alt="Taffy">
+          <img src="{% static 'image/dog-adopt-1.jpg'%}" alt="Taffy">
           <h3>Taffy</h3>
       </div>
       <div class="gallery-item">
-          <img src="/image/dog-adopt-2.jpg" alt="Bitto">
+          <img src="{% static 'image/dog-adopt-2.jpg'%}" alt="Bitto">
           <h3>Bitto</h3>
       </div>
       <div class="gallery-item">
-          <img src="/image/dog-adopt-5.jpg" alt="Milo">
+          <img src="{% static 'image/dog-adopt-5.jpg'%}" alt="Milo">
           <h3>Milo</h3>
       </div>
       <div class="gallery-item">
-          <img src="/image/dog-adopt-4.jpg" alt="Jack">
+          <img src="{% static 'image/dog-adopt-4.jpg'%}" alt="Jack">
           <h3>Jack</h3>
       </div>
       <div class="gallery-item">
-          <img src="/image/dog-adopt-3.jpg" alt="Enzo">
+          <img src="{% static 'image/dog-adopt-3.jpg'%}" alt="Enzo">
           <h3>Enzo</h3>
       </div>
   </div>
