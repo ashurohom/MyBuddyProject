@@ -24,4 +24,5 @@ urlpatterns = [
     path('signin/',views.signin),
     path('signup/',views.signup),
     path('petgallery/',views.petgallery),
+    path('details/',views.viewpetdetails),
 ]

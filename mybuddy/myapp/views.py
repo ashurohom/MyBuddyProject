@@ -14,3 +14,6 @@ def signup(request):
 
 def petgallery(request):
     return render(request,'petgallery.html')
+
+def viewpetdetails(request):
+    return render(request,'viewpetdetails.html')

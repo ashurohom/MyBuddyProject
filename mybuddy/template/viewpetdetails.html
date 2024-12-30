@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="{% static 'css/viewpetdetails.css' %}">
+{% endblock css %}
+
+{% block main %}
+<!-- Header -->
+<header>
+    <h1>My Buddy Pet Adoption</h1>
+</header>
+
+<!-- Pet Details Section -->
+<section class="pet-details-container">
+    <div class="pet-image">
+        <img src="{% static 'image/dog-adopt-5.jpg' %}" alt="Pet Image">
+    </div>
+    <div class="pet-info">
+        <h2 class="pet-name">Pet Name: Bella</h2>
+        <p class="pet-breed">Breed: Labrador Retriever</p>
+        <p class="pet-age">Age: 2 Years</p>
+        <p class="pet-gender">Gender: Female</p>
+        <p class="pet-description">
+            Bella is a friendly, energetic dog looking for a loving home. She enjoys playing fetch, going for walks, and being around people. She is well-trained and loves attention.
+        </p>
+
+        <!-- Adoption Status and Adoption Button -->
+        <p class="adoption-status">Adoption Status: Available</p>
+        <a href="adopt_form.html" class="adopt-button">Adopt Bella</a>
+    </div>
+</section>
+
+
+
+{% endblock main %}
