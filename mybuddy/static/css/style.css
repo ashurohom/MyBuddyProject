@@ -1,0 +1,125 @@
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  /* Navbar Styling */
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    padding: 10px 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+    flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  }
+  
+  /* Logo Styling */
+  .logo {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  
+  .logo a {
+    font-size: 24px;
+    font-weight: bold;
+    color: #2C3E50;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+  }
+  
+  .logo a i {
+    font-size: 28px;
+    color: #337e7a; /* Keeping the dog icon in the same color scheme */
+  }
+  
+  /* Center Website Name */
+  .website-name {
+    flex: 1; /* Pushes the website name to the center */
+    text-align: center;
+  }
+  
+  .website-name h1 {
+    font-family: 'Arial Black', sans-serif;
+    font-size: 24px;
+    color: #3498DB;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin: 0;
+  }
+  
+  /* Navbar buttons */
+  .nav-buttons {
+    display: flex;
+    gap: 10px; /* Adds space between buttons */
+  }
+  
+  .nav-btn {
+    display: inline-block;
+    background-color: #3498DB; /* Main button color */
+    color: white;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+  }
+  
+  .nav-btn:hover {
+    background-color: #2980B9;
+    transform: scale(1.1);
+  }
+  
+  /* Responsive Adjustments */
+  @media (max-width: 768px) {
+    .website-name h1 {
+      font-size: 20px; /* Adjust font size for medium screens */
+    }
+  
+    .nav-btn {
+      padding: 8px 12px;
+      font-size: 0.9rem;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .website-name h1 {
+      font-size: 18px; /* Smaller text on small screens */
+    }
+  
+    .nav-btn {
+      padding: 6px 10px;
+      font-size: 0.8rem;
+    }
+  
+    .nav-buttons {
+      flex-wrap: wrap; /* Wrap buttons for smaller screens */
+      justify-content: center;
+      gap: 5px;
+    }
+  }
+  
+  /* Smallest Screen Adjustments */
+  @media (max-width: 400px) {
+    .logo a {
+      font-size: 20px; /* Reduce logo text size */
+    }
+  
+    .logo a i {
+      font-size: 24px; /* Reduce icon size */
+    }
+  
+    .website-name h1 {
+      font-size: 16px; /* Reduce website name size */
+    }
+  }
+  

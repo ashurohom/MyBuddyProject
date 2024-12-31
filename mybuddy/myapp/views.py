@@ -19,4 +19,4 @@ def viewpetdetails(request):
     return render(request,'viewpetdetails.html')
 
 def about(request):
-    return render(request,'base.html')
+    return render(request,'header.html')

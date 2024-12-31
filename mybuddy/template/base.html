@@ -1,17 +1,27 @@
-{% load static %}
-{% include 'header.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}MyBuddy{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body>
+
+    {% block header %}
+        {% include 'header.html' %}
+    {% endblock header %}
 
 
-{% block css %}
-  <link rel="stylesheet" href="{% static 'css/index.css' %}">
-{% endblock css %}
+    {% block main %}
+        <!-- Main content goes here -->
+    {% endblock main %}
 
-
-
-
-{% block main %}
-    <h1>Base File</h1>
-{% endblock main %}
     
+    {% block footer %}
+        {% include 'footer.html' %}
+    {% endblock footer %}
 
-{% include 'footer.html' %}
+</body>
+</html>
