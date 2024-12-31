@@ -62,9 +62,8 @@ body {
     color: #555f69;
     margin-bottom: 20px;
   }
-  
   /* Button Styling */
-  .btn-adopt {
+.btn-adopt {
     padding: 15px 30px;
     background-color: #3498DB; /* Button color matching navbar */
     color: white;
@@ -74,28 +73,36 @@ body {
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
-  }
-  
-  .btn-adopt:hover {
+}
+
+.btn-adopt:hover {
     background-color: #2980B9; /* Slightly darker on hover */
     transform: scale(1.05);
-  }
-  
-  /* Responsive Design */
-  @media (max-width: 768px) {
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
     .hero-content h2 {
-      font-size: 28px;
+        font-size: 28px;
     }
-  
+
     .hero-content p {
-      font-size: 16px;
+        font-size: 16px;
     }
-  
+
     .btn-adopt {
-      font-size: 18px;
+        padding: 12px 25px; /* Adjust padding for smaller screens */
+        font-size: 18px;    /* Adjust font size for smaller screens */
     }
-  }
-  
+}
+
+@media (max-width: 480px) {
+    .btn-adopt {
+        padding: 8px 15px; /* Further reduce padding for extra small screens */
+        font-size: 12px;    /* Further reduce font size for extra small screens */
+    }
+}
+
 
 
 
