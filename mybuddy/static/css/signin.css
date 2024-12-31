@@ -1,11 +1,11 @@
-/* General Body Styling */
-.mybody {
-    background: url('{% static "images/dog_head.jpg" %}') no-repeat center center/cover;
+/* Parent Container Styling */
+.parent-container {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    margin: 0;
+    height: 100vh; /* Full viewport height */
+    margin: 0; /* Remove default margin */
+    background-color: #ffffff; /* White background */
     font-family: Arial, sans-serif;
 }
 
@@ -15,10 +15,8 @@
     max-width: 400px;
     padding: 20px;
     border-radius: 10px;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent with blur */
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px); /* Safari compatibility */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8); /* Slight shadow for contrast */
+    background: #F8F9FA; /* Light grey */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Subtle shadow for depth */
     text-align: center;
 }
 
@@ -29,7 +27,7 @@
     align-items: center;
     margin-bottom: 20px;
     font-size: 24px;
-    color: #3498DB;
+    color: #FF5722; /* Bold orange-red */
 }
 
 .logo i {
@@ -37,14 +35,14 @@
 }
 
 /* Headings */
-.login-container h2 {
-    color: white;
+.login-container h1 {
+    color: #f20404; /* Dark grey */
     margin-bottom: 20px;
 }
 
 /* Labels */
 .login-container label {
-    color: white;
+    color: #495057; /* Subtle grey for readability */
     display: block;
     text-align: left;
     margin-bottom: 5px;
@@ -55,8 +53,10 @@
     width: 100%;
     padding: 10px;
     margin-bottom: 15px;
-    border: 1px solid #ccc;
+    border: 1px solid #CED4DA; /* Light border for inputs */
     border-radius: 5px;
+    background-color: #F1F3F4; /* Very light grey */
+    color: #495057; /* Input text color */
 }
 
 /* Buttons Styling */
@@ -72,29 +72,29 @@
     border-radius: 5px;
     font-size: 16px;
     cursor: pointer;
+    color: white; /* Button text color */
 }
 
 .btn-login {
-    background-color: #3498DB; /* Login button color */
-    color: white;
+    background-color: #007BFF; /* Blue */
 }
 
 .btn-login:hover {
-    background-color: #2980B9;
+    background-color: #0056B3; /* Darker blue on hover */
 }
 
 .btn-signup {
-    background-color: #2ecc71; /* Sign-Up button color */
-    color: white;
+    background-color: #28A745; /* Green */
 }
 
 .btn-signup:hover {
-    background-color: #27ae60;
+    background-color: #218838; /* Darker green on hover */
 }
 
-/* Links */
+
+/* Links SignUP Page*/
 .login-container a {
-    color: white;
+    color: #6610F2; /* Modern purple */
     text-decoration: none;
     font-size: 14px;
 }
