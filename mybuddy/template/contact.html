@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+   
+<div class="contact-page">
+    <h1 class="contact-heading">Contact Us</h1> <!-- Heading Centered at Top -->
+    <div class="contact-container">
+        <div class="contact-details">
+            <h2>Contact Information</h2>
+            <p><strong>Email:</strong> info@mybuddy.com</p>
+            <p><strong>Phone:</strong> +91 9527230560</p>
+            <p><strong>Address:</strong> 123 Pet Adoption St.
+                My Buddy House
+                Kopargaon, Maharashtra, 423 601</p>
+            <p><strong>Follow Us:</strong></p>
+            <ul>
+                <li><button onclick="window.open('https://twitter.com/mybuddy', '_blank')">Twitter</button></li>
+                <li><button onclick="window.open('https://facebook.com/mybuddy', '_blank')">Facebook</button></li>
+                <li><button onclick="window.open('https://instagram.com/mybuddy', '_blank')">Instagram</button></li>
+            </ul>
+        </div>
+        <div class="contact-form">
+            <h2>Send Us a Message</h2>
+            <form>
+                <input type="text" name="name" placeholder="Your Name" required>
+                <input type="email" name="email" placeholder="Your Email" required>
+                <input type="tel" name="phone" placeholder="Your Contact Number" required>
+                <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock main %}
+

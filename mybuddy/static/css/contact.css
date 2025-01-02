@@ -1,0 +1,151 @@
+/* Overall Page Style */
+.contact-page {
+    padding: 40px 20px;
+    background-color: #ffffff;
+}
+
+/* Contact Heading */
+.contact-heading {
+    text-align: center;
+    font-size: 2.5em;
+    color: #ff0000;
+    margin-bottom: 30px;
+    margin-top: 70px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* Contact Container: Holds Both Sections */
+.contact-container {
+    display: flex;
+    flex-direction: column; /* Default: Stack on small screens */
+    align-items: center;
+    gap: 20px;
+    max-width: 1200px; /* Limit max-width for larger screens */
+    margin: 0 auto;
+}
+
+@media (min-width: 768px) {
+    .contact-container {
+        flex-direction: row; /* Side-by-side layout for larger screens */
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+}
+
+/* Contact Details Section */
+.contact-details {
+    flex: 1;
+    /*background: #f8f9fa;  Light grey */
+    background: #eef0f2; /* Light grey */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.contact-details h2 {
+    font-size: 1.8em;
+    color: #007bff; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.contact-details p {
+    font-size: 1em;
+    color: #555;
+    margin: 10px 0;
+    line-height: 1.6;
+}
+
+/* Social Media Buttons */
+.contact-details ul {
+    list-style: none;
+    padding: 0;
+    margin-top: 20px;
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.contact-details ul li button {
+    padding: 12px;
+    font-size: 0.9em;
+    color: white;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px; /* Slightly rounded corners for a soft square shape */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    width: 80px;  /* Width for square shape */
+    height: 40px; /* Height for square shape */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-details ul li button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+/* Contact Form Section */
+.contact-form {
+    flex: 1;
+    background: #eef0f2; /* Light grey */
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+}
+
+.contact-form h2 {
+    font-size: 1.8em;
+    color: #007bff; 
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Input Fields and Textarea */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 1em;
+    color: #333;
+    background: #fff;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: #007bff;
+    outline: none;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+/* Submit Button */
+.contact-form button[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.contact-form button[type="submit"]:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.contact-form button[type="submit"]:active {
+    transform: scale(1);
+    background-color: #004085;
+}

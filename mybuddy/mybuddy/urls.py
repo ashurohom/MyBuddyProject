@@ -26,4 +26,6 @@ urlpatterns = [
     path('petgallery/',views.petgallery),
     path('details/',views.viewpetdetails),
     path('about/',views.about),
+    path('contact/',views.contact),
+    path('donate/',views.donate),
 ]
