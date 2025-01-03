@@ -37,7 +37,7 @@ def signup(request):
             u = User.objects.create(username=n, email=e)
             u.set_password(rp)
             u.save()
-            return HttpResponse("Data fetch")
+            return redirect('/signin')
 
     else:    
         return render(request,'signup.html')
