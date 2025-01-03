@@ -28,6 +28,10 @@ def signup(request):
         elif p != rp:
             context['error_msg']="Password Doesnot Match"
             return render(request,'signup.html',context)
+        
+        elif len(p) <=6 or len(rp) <= 6:
+                context['error_msg']="Pasword Contain Atleast 6 Character"
+                return render(request,'signup.html',context)
 
     else:    
         return render(request,'signup.html')
