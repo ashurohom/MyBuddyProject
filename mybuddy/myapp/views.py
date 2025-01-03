@@ -6,11 +6,19 @@ from django.http import HttpResponse
 def index(request):
     return render(request,'index.html')
 
-def signin(request):
-    return render(request,'signin.html')
 
 def signup(request):
+    if request.method == 'POST':
+        n = request.POST['name']
+        e = request.POST['email']
+        p = request.POST['password']
+        rp = request.POST['rpassword']
+        
     return render(request,'signup.html')
+
+
+def signin(request):
+    return render(request,'signin.html')
 
 def petgallery(request):
     return render(request,'petgallery.html')
