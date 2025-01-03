@@ -18,6 +18,7 @@ def signup(request):
         rp = request.POST['rpassword']
 
         print(n,e,p,rp)
+        return HttpResponse("Data Fetched")
     else:    
         return render(request,'signup.html')
 
