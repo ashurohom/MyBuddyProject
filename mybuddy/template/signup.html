@@ -23,6 +23,12 @@
     <h1>SignUP</h1>
     <form method="POST" action="">
       {% csrf_token %}
+      {% if error_msg %}
+        <div class="alert alert-danger">
+          {{error_msg}}
+        </div>  
+      {% endif %}
+
       <label for="text">Name</label>
       <input type="text" id="name" name="name" placeholder="Enter your Name">
       
