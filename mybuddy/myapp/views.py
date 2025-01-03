@@ -23,7 +23,12 @@ def signup(request):
 
         if n=="" or e=="" or p=="" or rp=="":
             context['error_msg']="All Fields Are Required"
-            return render(request,'register.html',context)
+            return render(request,'signup.html',context)
+        
+        elif p != rp:
+            context['error_msg']="Password Doesnot Match"
+            return render(request,'signup.html',context)
+
     else:    
         return render(request,'signup.html')
 
