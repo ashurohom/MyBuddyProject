@@ -29,9 +29,15 @@ def signup(request):
             context['error_msg']="Password Doesnot Match"
             return render(request,'signup.html',context)
         
-        elif len(p) <=6 or len(rp) <= 6:
-                context['error_msg']="Pasword Contain Atleast 6 Character"
+        elif len(p) <6 or len(rp) <6:
+                context['error_msg']="Password Contain Atleast 6 Character"
                 return render(request,'signup.html',context)
+        
+        else:
+            u = User.objects.create(username=n, email=e)
+            u.set_password(rp)
+            u.save()
+            return HttpResponse("Data fetch")
 
     else:    
         return render(request,'signup.html')
