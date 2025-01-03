@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.contrib.auth.models import User
 
 # Create your views here.
 
@@ -13,8 +14,10 @@ def signup(request):
         e = request.POST['email']
         p = request.POST['password']
         rp = request.POST['rpassword']
-        
-    return render(request,'signup.html')
+
+        print(n,e,p,rp)
+    else:    
+        return render(request,'signup.html')
 
 
 def signin(request):
