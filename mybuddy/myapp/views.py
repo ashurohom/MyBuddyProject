@@ -11,14 +11,19 @@ def index(request):
 
 
 def signup(request):
+    context={}
     if request.method == 'POST':
         n = request.POST['name']
         e = request.POST['email']
         p = request.POST['password']
         rp = request.POST['rpassword']
 
-        print(n,e,p,rp)
-        return HttpResponse("Data Fetched")
+        # print(n,e,p,rp)
+        # return HttpResponse("Data Fetched")
+
+        if n=="" or e=="" or p=="" or rp=="":
+            context['error_msg']="All Fields Are Required"
+            return render(request,'register.html',context)
     else:    
         return render(request,'signup.html')
 
