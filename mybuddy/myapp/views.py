@@ -44,9 +44,17 @@ def signup(request):
 
 
 def signin(request):
+    context={}
     if request.method == "POST":
-        
-    return render(request,'signin.html')
+        un = request.POST['uemail']
+        up = request.POST['upass']
+    
+        if un == "" or up == "":
+            context['error_msg']="All Fields Are Required"
+            return render(request,'signin.html',context)
+
+    else:    
+        return render(request,'signin.html')
 
 
 
