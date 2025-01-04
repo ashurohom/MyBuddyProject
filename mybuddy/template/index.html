@@ -28,7 +28,13 @@
     <div class="hero-content">
       <h2>Re-Home and Adopt a Pet in India</h2>
       <p>Every Pet Deserves a Good Home</p>
-      <a href="#" class="btn-adopt">Adopt a pet</a>
+
+      {% if request.user.is_authenticated %}
+      <a onclick="location.href='/petgallery'" class="btn-adopt">Adopt a Pet</a>
+      {% else %}
+      <a onclick="location.href='/signin'" class="btn-adopt">Adopt a Pet</a>
+      {% endif %}
+
     </div>
   </section>
 
