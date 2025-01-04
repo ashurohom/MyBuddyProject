@@ -44,7 +44,11 @@ def signup(request):
 
 
 def signin(request):
+    if request.method == "POST":
+        
     return render(request,'signin.html')
+
+
 
 def petgallery(request):
     return render(request,'petgallery.html')
