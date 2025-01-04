@@ -55,11 +55,11 @@ def signin(request):
 
         else:
             user = authenticate(username=un, password=up)
-            # print(u)
+            print(user)
             if user != None:
                 login(request,user)
                 return redirect('/') 
-            else :
+            else:
                 context['error_msg']="Invalid Username And Password"
                 return render(request,'signin.html',context)
             
@@ -68,6 +68,9 @@ def signin(request):
         return render(request,'signin.html')
 
 
+def ulogout(request):
+    logout(request)
+    return redirect('/signin')
 
 def petgallery(request):
     return render(request,'petgallery.html')
