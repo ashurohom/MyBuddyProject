@@ -46,7 +46,7 @@ def signup(request):
 def signin(request):
     context={}
     if request.method == "POST":
-        un = request.POST['uemail']
+        un = request.POST['uname']
         up = request.POST['upass']
     
         if un == "" or up == "":
@@ -55,13 +55,13 @@ def signin(request):
 
         else:
             u = authenticate(username = un, password = up)
-
+            # print(u)
             if u != None:
                 login(request,u)
                 return redirect('/') 
             else :
-                    context['error_msg']="Invalid Username And Password"
-                    return render(request,'signin.html',context)
+                context['error_msg']="Invalid Username And Password"
+                return render(request,'signin.html',context)
             
 
     else:    
