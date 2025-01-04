@@ -54,10 +54,10 @@ def signin(request):
             return render(request,'signin.html',context)
 
         else:
-            u = authenticate(username = un, password = up)
+            user = authenticate(username=un, password=up)
             # print(u)
-            if u != None:
-                login(request,u)
+            if user != None:
+                login(request,user)
                 return redirect('/') 
             else :
                 context['error_msg']="Invalid Username And Password"
