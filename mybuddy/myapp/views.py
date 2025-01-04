@@ -53,6 +53,16 @@ def signin(request):
             context['error_msg']="All Fields Are Required"
             return render(request,'signin.html',context)
 
+        else:
+            u = authenticate(username = un, password = up)
+
+            if u != None:
+                return 
+            else :
+                    context['error_msg']="Invalid Username And Password"
+                    return render(request,'signin.html',context)
+            
+
     else:    
         return render(request,'signin.html')
 
