@@ -51,7 +51,7 @@ body {
     font-size: 32px; /* Icon size */
     color: green; /* Change color to green */
     margin: 0 10px; /* Add spacing between icons */
-    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+    /* text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.9);  */
 }
 
 
@@ -61,9 +61,10 @@ body {
 /* MyButton Row */
 .mybutton-row {
     display: flex;
-    justify-content:center; /* Distribute buttons evenly */
+    justify-content: center; /* Center buttons horizontally */
     align-items: center; /* Align buttons vertically */
-    gap: 1px; /* Spacing between buttons */
+    gap: 10px; /* Spacing between buttons */
+    flex-wrap: wrap; /* Allow wrapping for smaller screens */
     margin: 20px 0; /* Add spacing above and below the row */
 }
 
@@ -80,6 +81,29 @@ body {
 .mybutton-row button:hover {
     text-decoration: underline; /* Underline text on hover */
     color: #0056b3; /* Darker blue on hover */
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .mybutton-row {
+        gap: 5px; /* Reduce gap between buttons on smaller screens */
+    }
+    .mybutton-row button {
+        font-size: 14px; /* Smaller font size for narrow screens */
+        padding: 5px 8px; /* Adjust padding for better fit */
+    }
+}
+
+@media (max-width: 480px) {
+    .mybutton-row {
+        flex-direction: column; /* Stack buttons vertically on very small screens */
+        align-items: center; /* Keep buttons centered */
+        gap: 5px; /* Reduce gap further */
+    }
+    .mybutton-row button {
+        width: 80%; /* Make buttons take up more space horizontally */
+        text-align: center; /* Center button text */
+    }
 }
 
 /* ----------------------------------------------------------------------- */
