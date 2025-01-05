@@ -8,7 +8,7 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f5f5f5;
+    background-color: rgb(245, 245, 245, );
     padding: 20px;
     
 } */
@@ -19,12 +19,14 @@ body {
 .page-header {
     text-align: center;
     margin: 20px 0 40px; /* Space above and below the header */
+
 }
 
 .title {
     font-size: 2.5rem;
     text-align: center;
-    color: #007bff; /*Blue color for the title */
+    /* color: #007bff; Blue color for the title */
+    color: #ff0000; 
     margin-bottom: 10px; /* Space between title and description */
     margin-top: 80px;
 }
@@ -36,6 +38,23 @@ body {
     line-height: 1.6; /* Improve readability */
  
 }
+
+
+.centered-icons {
+    display: flex;
+    justify-content: center; /* Centers the icons horizontally */
+    align-items: center; /* Centers the icons vertically */
+    margin: 20px 0; /* Add spacing above and below */
+}
+
+.centered-icons i {
+    font-size: 32px; /* Icon size */
+    color: green; /* Change color to green */
+    margin: 0 10px; /* Add spacing between icons */
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5); /* Add shadow effect */
+}
+
+
 
 /* ----------------------------------------------------------------------- */
 
