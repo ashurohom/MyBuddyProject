@@ -35,7 +35,26 @@
             <img src="{{i.image.url}}" alt="Pet Image">
             <div class="info">
                 <h2>{{i.pname}}</h2>
-                <p><strong>Breed:</strong> Breed Name</p>
+
+                {% if i.category == 1 %}
+                <p><strong>Breed:</strong> Indies</p>
+
+                {% elif i.category == 2 %}
+                <p><strong>Breed:</strong> Pugs</p>
+
+                {% elif i.category == 3 %}
+                <p><strong>Breed:</strong> German</p>
+
+                {% elif i.category == 4 %}
+                <p><strong>Breed:</strong> Bulldog</p>
+
+                {% elif i.category == 5 %}
+                <p><strong>Breed:</strong> Labrado</p>
+                
+                {% elif i.category == 6 %}
+                <p><strong>Breed:</strong> Combai</p>
+
+
                 <p><strong>Age:</strong> 2 Year</p>
                 <p><strong>Gender:</strong> Male</p>
                 <a href="/pet-details/1" class="btn">View Buddy Details</a>
