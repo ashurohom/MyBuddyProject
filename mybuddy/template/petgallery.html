@@ -54,11 +54,12 @@
                 {% elif i.category == 6 %}
                 <p><strong>Breed:</strong> Combai</p>
 
+                {% endif %}
 
                 <p><strong>Age:</strong> {{i.age}} </p>
 
                 <p><strong>Gender:</strong> {{i.gender}} </p>
-                <a href="/pet-details/1" class="btn">View Buddy Details</a>
+                <a href="/pet-details/1" class="btn">{{i.pname}} Details</a>
             </div>
         </div>
 
@@ -66,8 +67,6 @@
         <!-- Duplicate this card for more items -->
 
     
-       
-        <!-- Duplicate this card for more items -->
     </div>
 
     <div class="footer-note">
