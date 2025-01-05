@@ -69,12 +69,23 @@ def signin(request):
         return render(request,'signin.html')
 
 
+
+
 def ulogout(request):
     logout(request)
     return redirect('/signin')
 
+
+
+
 def petgallery(request):
-    return render(request,'petgallery.html')
+    context={}
+    pet=Pet.objects.all()
+    print(pet)
+    context['pets']=pet
+    return render(request,'petgallery.html',context)
+
+
 
 def viewpetdetails(request):
     return render(request,'viewpetdetails.html')
