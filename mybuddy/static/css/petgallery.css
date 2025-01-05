@@ -40,6 +40,27 @@ body {
 
 
 
+.button-rows {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between buttons */
+    align-items: center;
+    gap: 10px; /* Adds spacing between buttons */
+}
+
+.button-rows button {
+    background: none;
+    border: none;
+    font-size: 16px; /* Adjust font size as needed */
+    cursor: pointer; /* Changes cursor to pointer on hover */
+    padding: 5px 10px; /* Optional padding for better spacing */
+}
+
+.button-rows button:hover {
+    text-decoration: underline; /* Optional: adds an underline on hover */
+}
+
+
+
 /* ----------------------------------------------------------------------- */
 
 
