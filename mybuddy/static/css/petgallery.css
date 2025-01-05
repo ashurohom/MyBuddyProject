@@ -1,5 +1,5 @@
- /* General Reset */
- /* * {
+/* General Reset */
+/* * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -15,7 +15,6 @@ body {
 
 /* ----------------------------------------------------------------------- */
 
-
 /* Header Section */
 .page-header {
     text-align: center;
@@ -25,7 +24,7 @@ body {
 .title {
     font-size: 2.5rem;
     text-align: center;
-    color: #007bff; /* Blue color for the title */
+    color: #007bff; /*Blue color for the title */
     margin-bottom: 10px; /* Space between title and description */
     margin-top: 80px;
 }
@@ -38,32 +37,33 @@ body {
  
 }
 
-
-
-.button-rows {
-    display: flex;
-    justify-content: space-between; /* Adjust spacing between buttons */
-    align-items: center;
-    gap: 10px; /* Adds spacing between buttons */
-}
-
-.button-rows button {
-    background: none;
-    border: none;
-    font-size: 16px; /* Adjust font size as needed */
-    cursor: pointer; /* Changes cursor to pointer on hover */
-    padding: 5px 10px; /* Optional padding for better spacing */
-}
-
-.button-rows button:hover {
-    text-decoration: underline; /* Optional: adds an underline on hover */
-}
-
-
-
 /* ----------------------------------------------------------------------- */
 
+/* MyButton Row */
+.mybutton-row {
+    display: flex;
+    justify-content:center; /* Distribute buttons evenly */
+    align-items: center; /* Align buttons vertically */
+    gap: 1px; /* Spacing between buttons */
+    margin: 20px 0; /* Add spacing above and below the row */
+}
 
+.mybutton-row button {
+    background: none;
+    border: none;
+    font-size: 16px; /* Adjust font size for better visibility */
+    cursor: pointer; /* Change cursor to pointer */
+    padding: 5px 10px; /* Optional padding for a better click area */
+    color: #007bff; /* Matches the title color */
+    transition: color 0.3s ease; /* Smooth color change on hover */
+}
+
+.mybutton-row button:hover {
+    text-decoration: underline; /* Underline text on hover */
+    color: #0056b3; /* Darker blue on hover */
+}
+
+/* ----------------------------------------------------------------------- */
 
 /* Card Container */
 .card-container {
@@ -140,10 +140,7 @@ body {
     }
 }
 
-
 /* ----------------------------------------------------------------------- */
-
-
 
 /* Footer Note */
 .footer-note {

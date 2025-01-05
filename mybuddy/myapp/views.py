@@ -81,7 +81,7 @@ def ulogout(request):
 def petgallery(request):
     context={}
     pet=Pet.objects.all()
-    print(pet)
+    # print(pet)
     context['pets']=pet
     return render(request,'petgallery.html',context)
 
