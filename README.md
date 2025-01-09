@@ -23,7 +23,18 @@
 - **Backend**: Python, Django
 - **Database**: MySql
 - **Version Control**: Git
-#- **Hosting**: [Optional Hosting Platform, e.g., Heroku, AWS, etc.]
+
+
+## Future Improvements
+
+- Implement user authentication using OAuth.
+- Optimize database performance.
+- Integrate a pet doctor feature for consultations and health check-ups.
+- Organize vaccination camps for pets to ensure their health and safety.
+- Provide a section for available pet food, where users can view and order pet supplies directly from the website.
+- Expand donation features to include recurring donations and payment gateways.
+
+
 
 
 
