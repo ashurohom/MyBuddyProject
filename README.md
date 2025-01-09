@@ -11,9 +11,16 @@
 - Admin panel for managing pet information.
 - User interface for adopting pets and making donations.
 
-## Installation
+## Usage
 
-1. Clone the repository:
-   ```bash
-   git clone [repository URL]
+- Admin can upload pet images and relevant information.
+- Users can browse available pets, view details, and adopt them by filling out a form.
+- Users can donate money through a dedicated donation button to support pet welfare.
 
+
+## Contact
+For any inquiries or support, feel free to reach out:
+
+Email: ashitosh.rohom@gmail.com
+LinkedIn: linkedin.com/in/ashitoshrohom |
+GitHub: [](https://github.com/ashurohom/)
