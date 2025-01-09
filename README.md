@@ -2,7 +2,14 @@
 
 ## Overview
 
-**MyBuddy** is a website dedicated to pet adoption. It provides a platform where pet owners can upload information about pets available for adoption, and users can adopt pets by filling out credentials. Additionally, users can contribute through donations to support pet welfare.
+**MyBuddy** is a comprehensive platform dedicated to pet adoption and welfare. It provides a seamless experience for pet owners to upload detailed information about pets available for adoption, allowing users to browse and adopt pets by filling out relevant credentials. The platform goes beyond adoption by offering features such as:
+
+- **Pet Doctor**: A section where pet owners and users can consult with veterinarians for health check-ups and medical advice.
+- **Vaccination Camps**: Organizing regular vaccination drives to ensure the health and safety of pets.
+- **Pet Food & Supplies**: Providing a variety of pet food and supplies directly available on the site for easy ordering and delivery.
+
+Additionally, users can contribute through donations, helping to support pet welfare programs such as pet care, shelter support, and welfare campaigns. The site aims to create a holistic ecosystem where pet lovers can come together to support the well-being of pets in need.
+
 
 ## Features
 
