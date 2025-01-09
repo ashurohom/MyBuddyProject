@@ -17,6 +17,16 @@
 - Users can browse available pets, view details, and adopt them by filling out a form.
 - Users can donate money through a dedicated donation button to support pet welfare.
 
+## Technologies Used
+
+- **Frontend**: HTML, Bootstrap, CSS
+- **Backend**: Python, Django
+- **Database**: MySql
+- **Version Control**: Git
+#- **Hosting**: [Optional Hosting Platform, e.g., Heroku, AWS, etc.]
+
+
+
 
 ## Contact
 For any inquiries or support, feel free to reach out:
