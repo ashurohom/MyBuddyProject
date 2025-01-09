@@ -21,6 +21,6 @@
 ## Contact
 For any inquiries or support, feel free to reach out:
 
-Email: ashitosh.rohom@gmail.com
-LinkedIn: linkedin.com/in/ashitoshrohom |
-GitHub: [](https://github.com/ashurohom/)
+ - Email: ashitosh.rohom@gmail.com
+ - LinkedIn: linkedin.com/in/ashitoshrohom |
+ - GitHub: [https://github.com/ashurohom/](https://github.com/ashurohom/)
