@@ -1,4 +1,4 @@
-# MyBuddy - Pet Adoption Hub
+# MyBuddy - Pet Adoption Platform 
 
 ## Overview
 
