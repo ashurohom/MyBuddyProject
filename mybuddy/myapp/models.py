@@ -14,3 +14,6 @@ class Pet(models.Model):
     is_active = models.BooleanField(default=True, verbose_name="Is_Available")
     image = models.ImageField(upload_to='image')
     
+
+    def __str__(self):
+        return self.pname

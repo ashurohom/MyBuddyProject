@@ -19,9 +19,10 @@
 
     <!-- Pet Details Section -->
 
-    {% for i in pet %}
+    
 
     <div class="container">
+        {% for i in pet %}
         <!-- Left Column: Pet Image -->
         <div class="left-column">
             <img src="{{i.image.url}}" alt="Pet Image">
@@ -45,8 +46,9 @@
                 <a href="#" class="btn">Adopt  {{i.pname}} </a>
             </div>
         </div>
+        {% endfor %}
     </div>
-    {% endfor %}
+   
 
     <!-- Footer -->
     <footer>

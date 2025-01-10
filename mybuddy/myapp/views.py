@@ -89,9 +89,12 @@ def petgallery(request):
 
 def petdetails(request,pid):
     context={}
-    pet=Pet.objects.filter(id=pid)
-    context['product']=pet
+    pets=Pet.objects.filter(id=pid)
+    print(pets)
+    context['pet']=pets
     return render(request,'petdetails.html',context)
+
+
 
 def about(request):
     return render(request,'about.html')
