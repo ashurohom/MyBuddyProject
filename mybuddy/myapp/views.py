@@ -87,8 +87,8 @@ def petgallery(request):
 
 
 
-def viewpetdetails(request):
-    return render(request,'viewpetdetails.html')
+def petdetails(request,pid):
+    return render(request,'petdetails.html')
 
 def about(request):
     return render(request,'about.html')

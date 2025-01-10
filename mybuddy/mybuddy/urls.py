@@ -27,7 +27,7 @@ urlpatterns = [
     path('logout/',views.ulogout),
     path('signup/',views.signup),
     path('petgallery/',views.petgallery),
-    path('details/',views.viewpetdetails),
+    path('details/<pid>/',views.petdetails),
     path('about/',views.about),
     path('contact/',views.contact),
     path('donate/',views.donate),

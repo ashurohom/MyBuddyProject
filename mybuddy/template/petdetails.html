@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+<!DOCTYPE html>
+
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pet Details - My Buddy</title>
+    <link rel="stylesheet" href="{%static 'css/petdetails.css'%}">
+    
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <h1>My Buddy Pet Adoption</h1>
+    </header>
+
+    <!-- Pet Details Section -->
+    <div class="container">
+        <!-- Left Column: Pet Image -->
+        <div class="left-column">
+            <img src="/My Buddy/image/dog-adopt-5.jpg" alt="Pet Image">
+        </div>
+
+        <!-- Right Column: Pet Information -->
+        <div class="right-column">
+            <h2>Meet {{}}</h2>
+            <p><span>Breed:</span> Golden Retriever</p>
+            <p><span>Age:</span> 3 years</p>
+            <p><span>Gender:</span> Female</p>
+            <p><span>Weight:</span> 25 kg</p>
+            <p><span>Vaccination Status:</span> Fully Vaccinated</p>
+            <p><span>Medical Surgery:</span> Spayed</p>
+            <p><span>Description:</span> Bella is a friendly and playful dog who loves outdoor activities and cuddles. She is well-trained and great with kids.</p>
+            <div class="btn-container">
+                <a href="#" class="btn">Adopt Bella</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>All Rights Reserved &copy; 2024 My Buddy Pet Adoption</p>
+    </footer>
+</body>
+</html>
