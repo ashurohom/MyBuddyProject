@@ -4,6 +4,12 @@
 
 {% load static %}
 
+
+{% block maincss %}
+    <link rel="stylesheet" href="{%static 'css/petdetails.css'%}">
+{% endblock maincss %}
+
+
 {% block main %}
 <html lang="en">
 <head>
@@ -56,7 +62,7 @@
    
 
 
-    <footer>
+    <footer class="footers">
         <p>All Rights Reserved &copy; 2024 My Buddy Pet Adoption</p>
     </footer>
 </body>
