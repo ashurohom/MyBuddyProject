@@ -28,6 +28,7 @@ urlpatterns = [
     path('signup/',views.signup),
     path('petgallery/',views.petgallery),
     path('details/<pid>/',views.petdetails),
+    path('filterbycategory/<cid>/',views.filterbycategory),
     path('about/',views.about),
     path('contact/',views.contact),
     path('donate/',views.donate),

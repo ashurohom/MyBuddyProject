@@ -96,6 +96,14 @@ def petdetails(request,pid):
 
 
 
+def filterbycategory(request,cid):
+    context={}
+    cat = Pet.objects.filter(category=cid)
+    context['categorys'] = cat
+    return render(request,'petdetails.html',context)
+
+
+
 def about(request):
     return render(request,'about.html')
 
