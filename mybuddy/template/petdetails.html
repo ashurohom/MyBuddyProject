@@ -27,7 +27,12 @@
         <!-- Right Column: Pet Information -->
         <div class="right-column">
             <h2>Meet {{i.pname}}</h2>
+
+            {% if i.category == 1 %}
             <p><span>Breed:</span> {{i.category}} </p>
+            {% elif i.category == 2 %} 
+            {% endif %}
+            
             <p><span>Age:</span> {{i.age}} </p>
             <p><span>Gender:</span> {{i.gender}} </p>
             <p><span>Weight:</span> {{i.weight}} </p>
