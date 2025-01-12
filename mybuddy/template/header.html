@@ -5,9 +5,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Buddy</title>
-  {% comment %} <link rel="stylesheet" href="{%static 'css/style.css'%}"> {% endcomment %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-  
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
 </head>
 <body>
 
@@ -36,38 +35,24 @@
       <a href="/about" class="nav-btn">About</a>
       <a href="/contact" class="nav-btn">Contact</a>
 
+      <!-- User Dropdown -->
       {% if request.user.is_authenticated %}
-
-      <a href="/logout" class="nav-btn">Logout</a>
-      
-      {% else %}
-      
-      <a href="/signin" class="nav-btn">Login</a>
-      <a href="/signup" class="nav-btn">Signup</a>
-    
-      {% endif %}
-
-
-
-
-      <div class="account-container">
-        <div class="account-dropdown">
-            <button class="account-btn">
-                <img src="{% static 'image/profile.png' %}" alt="Account" class="account-icon">
-            </button>
-            <div class="dropdown-menu">
-                <a href="" class="dropdown-item">Login</a>
-                <a href="" class="dropdown-item">Register</a>
-                <a href="" class="dropdown-item">Logout</a>
-            </div>
-        </div>
-    </div>
-     
-
+                  
+      <div class="dropdown">
+          <a href="" class="dropbtn"><i class="fa fa-fw fa-user"></i>Welcome {{request.user.username}}</a>
+          <div class="dropdown-content">
+              <a href="/logout"><i class="fa fa-fw fa-sign-out"></i>Logout</a>
+          </div>
+      </div>
+  {% else %}
+  <li><a href="/signin" class="dropbtn"><i class="fa fa-fw fa-user"></i>Login</a></li>
+  <li><a href="/signup">Register</a></li>
+  {% endif %}
 
 
 
     </div>
   </nav>
+
 </body>
 </html>
