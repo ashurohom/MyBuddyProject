@@ -3,13 +3,6 @@
 <!DOCTYPE html>
 
 {% load static %}
-
-
-{% block maincss %}
-    <link rel="stylesheet" href="{%static 'css/petdetails.css'%}">
-{% endblock maincss %}
-
-
 {% block main %}
 <html lang="en">
 <head>
@@ -17,21 +10,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Details - My Buddy</title>
     <link rel="stylesheet" href="{%static 'css/petdetails.css'%}">
-    
 </head>
 <body>
-    
-    
-    
-    
-    <header>
+    <div class="top-bar">
         <h1>My Buddy Pet Adoption</h1>
-    </header>
+    </div>
 
     <!-- Pet Details Section -->
-
-    
-
     <div class="container">
         {% for i in pet %}
         <!-- Left Column: Pet Image -->
@@ -40,10 +25,6 @@
         </div>
 
         <!-- Right Column: Pet Information -->
-
-        
-       
-            
         <div class="right-column">
             <h2>Meet {{i.pname}}</h2>
             <p><span>Breed:</span> {{i.category}} </p>
@@ -59,12 +40,10 @@
         </div>
         {% endfor %}
     </div>
-   
 
-
-    <footer>
+    <div class="bottom-bar">
         <p>All Rights Reserved &copy; 2024 My Buddy Pet Adoption</p>
-    </footer>
+    </div>
 </body>
 </html>
 {% endblock main %}
