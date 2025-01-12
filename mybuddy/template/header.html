@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>My Buddy</title>
-  <link rel="stylesheet" href="{%static 'css/style.css'%}">
+  {% comment %} <link rel="stylesheet" href="{%static 'css/style.css'%}"> {% endcomment %}
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   
 </head>
@@ -47,7 +47,25 @@
     
       {% endif %}
 
+
+
+
+      <div class="account-container">
+        <div class="account-dropdown">
+            <button class="account-btn">
+                <img src="{% static 'image/profile.png' %}" alt="Account" class="account-icon">
+            </button>
+            <div class="dropdown-menu">
+                <a href="" class="dropdown-item">Login</a>
+                <a href="" class="dropdown-item">Register</a>
+                <a href="" class="dropdown-item">Logout</a>
+            </div>
+        </div>
+    </div>
      
+
+
+
 
     </div>
   </nav>

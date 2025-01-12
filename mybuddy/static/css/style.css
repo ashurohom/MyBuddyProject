@@ -124,6 +124,68 @@
   }
   
 
+
+
+
+
+
+  .account-container {
+    position: relative;
+}
+
+.account-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    outline: none;
+    padding: 10px;
+}
+
+.account-icon {
+    width: 30px;
+    height: 30px;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 50px;
+    right: 0;
+    background-color: white;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.dropdown-item {
+    display: block;
+    width: 100%;
+    padding: 10px 20px;
+    background: none;
+    border: none;
+    text-align: left;
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    cursor: pointer;
+    outline: none;
+}
+
+.dropdown-item:hover {
+    background-color: #f0f0f0;
+}
+
+.account-container:hover .dropdown-menu {
+    display: block;
+}
+
+
+
+
+
+
+
 /* -------------------------------------------------------------------------------------- */
   /* CSS For Footer.html */
 
