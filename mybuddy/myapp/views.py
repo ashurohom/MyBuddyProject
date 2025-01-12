@@ -99,7 +99,7 @@ def petdetails(request,pid):
 def filterbycategory(request,cid):
     context={}
     cat = Pet.objects.filter(category=cid)
-    context['categorys'] = cat
+    context['pets'] = cat
     return render(request,'petgallery.html',context)
 
 
