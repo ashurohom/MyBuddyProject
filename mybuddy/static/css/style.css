@@ -79,6 +79,11 @@
   transform: scale(1.1);
 }
 
+
+
+
+
+
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .website-name h1 {
@@ -232,3 +237,15 @@ footer {
       font-size: 10px;
   }
 }
+
+
+
+
+
+
+
+
+
+
+
+
