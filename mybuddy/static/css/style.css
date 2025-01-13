@@ -79,95 +79,156 @@
   transform: scale(1.1);
 }
 
-
-
-/* User Dropdown Styling */
-/* Shop hover dropdown */
-.dropdown {
-  position: relative;
-  display: inline-block;
-}
-
-.dropbtn {
-  color: black;
-  padding: 16px;
-  font-size: 20px;
-  border: none;
-  text-decoration: none;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 160px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 12px 16px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover { background-color: #ddd; }
-
-.dropdown:hover .dropdown-content { display: block; }
-.dropdown:hover .dropbtn { background-color: none; }
-
-
-
-
 /* Responsive Adjustments */
 @media (max-width: 768px) {
   .website-name h1 {
-      font-size: 20px; /* Adjust font size for medium screens */
+    font-size: 20px; /* Adjust font size for medium screens */
   }
 
   .nav-btn {
-      padding: 8px 12px;
-      font-size: 0.9rem;
-  }
-
-  .dropdown-content {
-      min-width: 120px;
-  }
-
-  .dropdown-content a {
-      font-size: 12px;
-      padding: 8px 12px;
+    padding: 8px 12px;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 576px) {
   .website-name h1 {
-      font-size: 18px; /* Smaller text on small screens */
+    font-size: 18px; /* Smaller text on small screens */
   }
 
   .nav-btn {
-      padding: 6px 10px;
-      font-size: 0.8rem;
+    padding: 6px 10px;
+    font-size: 0.8rem;
   }
 
   .nav-buttons {
-      flex-wrap: wrap; /* Wrap buttons for smaller screens */
-      justify-content: center;
-      gap: 5px;
+    flex-wrap: wrap; /* Wrap buttons for smaller screens */
+    justify-content: center;
+    gap: 5px;
   }
 }
 
+/* Smallest Screen Adjustments */
 @media (max-width: 400px) {
   .logo a {
-      font-size: 20px; /* Reduce logo text size */
+    font-size: 20px; /* Reduce logo text size */
   }
 
   .logo a i {
-      font-size: 24px; /* Reduce icon size */
+    font-size: 24px; /* Reduce icon size */
   }
 
   .website-name h1 {
-      font-size: 16px; /* Reduce website name size */
+    font-size: 16px; /* Reduce website name size */
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+/* -------------------------------------------------------------------------------------- */
+/* CSS For Footer.html */
+
+
+/* Resetting default margin and padding */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Footer Container */
+footer {
+  background-color: #2C3E50;
+  color: #fff;
+  padding: 20px 15px;
+  font-family: Arial, sans-serif;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; /* Ensures sections stack on smaller screens */
+  gap: 15px;
+}
+
+.footer-section {
+  flex: 1; /* Ensures equal spacing */
+  min-width: 200px; /* Prevents sections from shrinking too small */
+}
+
+.footer-section h4 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  text-transform: uppercase;
+  color: #f1c40f;
+}
+
+.footer-section p, .footer-section ul {
+  margin: 0;
+  font-size: 14px;
+}
+
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin: 5px 0;
+}
+
+.footer-section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+  color: #f1c40f;
+}
+
+/* Social and Contact Links */
+.contact-link, .social-link {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+}
+
+.contact-link i, .social-link i {
+  margin-right: 8px;
+  font-size: 16px;
+  color: #f1c40f;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background-color: #1A242F;
+  color: #ccc;
+  text-align: center;
+  padding: 10px 15px;
+  font-size: 12px;
+}
+
+/* Media Query for Smaller Screens */
+@media (max-width: 768px) {
+  .footer-container {
+      flex-direction: column; /* Stack sections vertically */
+      align-items: center;
+      text-align: center;
+  }
+
+  .footer-section {
+      min-width: auto; /* Allows sections to shrink appropriately */
+  }
+
+  .footer-bottom {
+      font-size: 10px;
   }
 }
