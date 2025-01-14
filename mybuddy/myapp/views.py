@@ -102,7 +102,8 @@ def filterbycategory(request,cid):
     context['pets'] = cat
     return render(request,'petgallery.html',context)
 
-
+def request_form(request):
+    return render(request,'request.html')
 
 def about(request):
     return render(request,'about.html')

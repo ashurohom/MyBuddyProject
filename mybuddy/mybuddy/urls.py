@@ -32,5 +32,6 @@ urlpatterns = [
     path('about/',views.about),
     path('contact/',views.contact),
     path('donate/',views.donate),
+    path('request_form/',views.request_form),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
