@@ -59,13 +59,31 @@ button {
     border-radius: 5px;
     cursor: pointer;
     font-size: 16px;
-    width: 100%;
+    width: 30%;
     margin: 5px auto;
 }
 
 button:hover {
     background-color: #0056b3;
 }
+
+
+.requestbtn {
+    background-color: #ff0000;
+    color: #ffffff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    width: 60%;
+    margin: 5px auto;
+}
+
+.requestbtn:hover {
+    background-color: #bb0e0e;
+}
+
 
 @media (max-width: 768px) {
     .form-container {
