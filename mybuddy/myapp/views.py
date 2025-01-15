@@ -108,23 +108,20 @@ def filterbycategory(request,cid):
 def request_form(request,pid):
 
     context={}
-    # pet=Pet.objects.all()
-    # context['pets']=pet
-    # print(pet)
-
     pet = Pet.objects.get(id=pid)  
     context['pet'] = pet 
+
     print("Current Pet Name: ",pet.pname) 
     print("Current Pet Category: ",pet.category) 
     print("Current Pet Age: ",pet.age) 
     print("Current Pet Gender: ",pet.gender) 
 
-    context['data'] = {
-            'pet_name': pet.pname,
-            'pet_breed': pet.category, 
-            'pet_age': pet.age,
-            'pet_gender': pet.gender,
-            }
+    # context['data'] = {
+    #         'pet_name': pet.pname,
+    #         'pet_breed': pet.category, 
+    #         'pet_age': pet.age,
+    #         'pet_gender': pet.gender,
+    #         }
             
 
 
