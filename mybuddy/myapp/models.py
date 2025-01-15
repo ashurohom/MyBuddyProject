@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User  # Default User model
 
 
 # Create your models here.
@@ -24,6 +25,11 @@ class Pet(models.Model):
     
 
 class Adoptionrequest(models.Model):
+
+    # ForeignKey relationships
+    # user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user')
+    # pet = models.ForeignKey('Pet', on_delete=models.CASCADE, related_name='adoption_requests')
+
     # Pet Details
     pet_name = models.CharField(max_length=100)  # Displayed, fetched from the database
     pet_breed = models.CharField(max_length=100)  # Displayed, fetched from the database
@@ -31,6 +37,7 @@ class Adoptionrequest(models.Model):
     pet_gender = models.CharField(max_length=10)  # Displayed, fetched from the database
 
     # User Details
+    userid = models.ForeignKey("auth.User",on_delete=models.CASCADE, db_column="userid") 
     full_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)
     street_address = models.CharField(max_length=255)

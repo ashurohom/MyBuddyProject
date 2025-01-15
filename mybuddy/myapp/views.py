@@ -105,6 +105,11 @@ def filterbycategory(request,cid):
 def request_form(request):
     return render(request,'request.html')
 
+
+def thanku(request):
+    return render(request,'thanku.html')
+
+
 def about(request):
     return render(request,'about.html')
 
