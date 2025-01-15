@@ -14,7 +14,7 @@
         {% csrf_token %}
         <div class="form-group">
             <label for="full-name">Full Name</label>
-            <input type="text" id="full-name" name="full-name" required>
+            <input type="text" id="full-name" name="full_name" required>
         </div>
         <div class="form-group">
             <label for="phone">Phone Number</label>
@@ -38,19 +38,19 @@
         </div>
         <div class="form-group">
             <label>Pet Name</label>
-            <input type="text" value="{{ pet_name }}" readonly>
+            <input type="text" value="{{ pet_name }}" name="pname" readonly>
         </div>
         <div class="form-group">
             <label>Breed</label>
-            <input type="text" value="{{ pet_breed }}" readonly>
+            <input type="text" value="{{ pet_breed }}" name="breed" readonly>
         </div>
         <div class="form-group">
             <label>Pet Age</label>
-            <input type="text" value="{{ pet_age }}" readonly>
+            <input type="text" value="{{ pet_age }}" name="age" readonly>
         </div>
         <div class="form-group">
             <label>Pet Gender</label>
-            <input type="text" value="{{ pet_gender }}" readonly>
+            <input type="text" value="{{ pet_gender }}" name="gender" readonly>
         </div>
         <div class="form-group">
             <label for="experience">Do you have experience with pets?</label>
@@ -62,7 +62,7 @@
         </div>
         <div class="form-group">
             <label for="other-pets">Do you have other pets?</label>
-            <select id="other-pets" name="other-pets" required>
+            <select id="other-pets" name="other_pets" required>
                 <option value="">Select an option</option>
                 <option value="yes">Yes</option>
                 <option value="no">No</option>
@@ -90,7 +90,7 @@
                 I confirm that all the information provided is true and accurate. I agree to abide by the terms and conditions of the adoption process.
             </label>
         </div>
-        <button type="submit">Submit Request</button><br>
+        <a href="/thanku"><button type="submit">Submit Request</button></a><br>
         <button class="requestbtn" type="">Status Pending</button>
     </form>
 </div>

@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-from .models import Pet
+from .models import Pet, Adoptionrequest
 
 
 # Create your views here.
@@ -102,8 +102,64 @@ def filterbycategory(request,cid):
     context['pets'] = cat
     return render(request,'petgallery.html',context)
 
+
+
 def request_form(request):
-    return render(request,'request.html')
+    if request.method == 'POST':
+        # Extract pet details (assumes these come from a form)
+        pet_name = request.POST.get('pname')
+        pet_breed = request.POST.get('breed')
+        pet_age = request.POST.get('age')
+        pet_gender = request.POST.get('gender')
+
+        # Extract user details
+        full_name = request.POST.get('full_name')
+        phone_number = request.POST.get('phone')
+        street_address = request.POST.get('street')
+        city = request.POST.get('city')
+        state = request.POST.get('state')
+        zip_code = request.POST.get('zip')
+
+        # Extract form-specific information
+        experience_with_pets = request.POST.get('experience') == 'on'
+        other_pets = request.POST.get('other_pets') == 'on'
+        regular_checkups_agreement = request.POST.get('checkups') == 'on'
+        safe_home_agreement = request.POST.get('loving_home') == 'on'
+        adoption_reason = request.POST.get('reason')
+        acknowledgment = request.POST.get('terms') == 'on'
+
+      
+        adoption_request = Adoptionrequest.objects.create(
+                pet_name=pet_name,
+                pet_breed=pet_breed,
+                pet_age=int(pet_age),
+                pet_gender=pet_gender,
+                userid=userid,
+                full_name=full_name,
+                phone_number=phone_number,
+                street_address=street_address,
+                city=city,
+                state=state,
+                zip_code=zip_code,
+                experience_with_pets=experience_with_pets,
+                other_pets=other_pets,
+                regular_checkups_agreement=regular_checkups_agreement,
+                safe_home_agreement=safe_home_agreement,
+                adoption_reason=adoption_reason,
+                acknowledgment=acknowledgment,
+            )
+        adoption_request.save()
+        return render(request, 'thanku.html')  # Redirect to a thank-you page
+    else:
+        return redirect('/request_form')  # Redirect to login if the user is not authenticated
+
+    
+
+    
+
+
+
+
 
 
 def thanku(request):
