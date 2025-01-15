@@ -129,18 +129,13 @@ def request_form(request,pid):
 
         # u = User.objects.filter(id=request.user.id)
         u = User.objects.get(id=request.user.id)
-
-        # uid = Adoptionrequest.objects.filter(userid = u[0])
-    
         
         p_name = request.POST.get('pname')
         p_breed = request.POST.get('breed')
         p_age = request.POST.get('age')
         p_gender = request.POST.get('gender')
-
         
-      
-
+                
         f_name = request.POST.get('full_name')
         p_number = request.POST.get('phone')
         s_address = request.POST.get('street')
