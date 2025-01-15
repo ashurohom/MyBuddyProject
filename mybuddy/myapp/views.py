@@ -105,27 +105,43 @@ def filterbycategory(request,cid):
     
 
 
-def request_form(request):
+def request_form(request,pid):
 
     context={}
-    pett=Pet.objects.all()
-    context['petss']=pett
+    # pet=Pet.objects.all()
+    # context['pets']=pet
     # print(pet)
+
+    pet = Pet.objects.get(id=pid)  
+    context['pet'] = pet 
+    print("Current Pet Name: ",pet.pname) 
+    print("Current Pet Category: ",pet.category) 
+    print("Current Pet Age: ",pet.age) 
+    print("Current Pet Gender: ",pet.gender) 
+
+    context['data'] = {
+            'pet_name': pet.pname,
+            'pet_breed': pet.category, 
+            'pet_age': pet.age,
+            'pet_gender': pet.gender,
+            }
+            
+
 
     if request.method == 'POST':
 
-        u = User.objects.filter(id=request.user.id)
+        # u = User.objects.filter(id=request.user.id)
+        u = User.objects.get(id=request.user.id)
 
         # uid = Adoptionrequest.objects.filter(userid = u[0])
     
-
-        # Extract pet details (assumes these come from a form)
+        
         p_name = request.POST.get('pname')
         p_breed = request.POST.get('breed')
         p_age = request.POST.get('age')
         p_gender = request.POST.get('gender')
 
-        # Extract user details
+        
       
 
         f_name = request.POST.get('full_name')
@@ -135,7 +151,7 @@ def request_form(request):
         states = request.POST.get('state')
         z_code = request.POST.get('zip')
 
-        # Extract form-specific information
+        
         experience = request.POST.get('experience') == 'on'
         otherpets = request.POST.get('other_pets') == 'on'
         regular_checkups = request.POST.get('checkups') == 'on'
@@ -145,11 +161,14 @@ def request_form(request):
 
       
         adoption_request = Adoptionrequest.objects.create(
-                pet_name=p_name,
-                pet_breed=p_breed,
-                pet_age=p_age,
-                pet_gender=p_gender,
-                userid=u[0],
+                pet_name=pet.pname,
+                # pet_breed=pet.p_breed,
+                pet_breed=pet.category,
+                # pet_age=p_age,
+                pet_age=pet.age,
+                # pet_gender=p_gender,
+                pet_gender=pet.gender,
+                userid=u,
                 full_name=f_name,
                 phone_number=p_number,
                 street_address=s_address,
@@ -165,6 +184,9 @@ def request_form(request):
             )
         adoption_request.save()
         return render(request,'request.html')  
+    
+       
+
     else:
         return render(request,'request.html')  
 

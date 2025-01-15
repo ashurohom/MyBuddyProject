@@ -39,32 +39,28 @@
 
         
         
-        
-        {% for i in petss %}
-         
-            
-        
-            
+        {% comment %} {% for i in data %}  {% endcomment %}
+             
         <div class="form-group">
             <label>Pet Name</label>
-            <input type="text" value="{{ i.pname }}" name="pname" readonly>
+            <input type="text" value="{{ pet.pet_name }}" name="pname" readonly>
         </div>
         
 
         <div class="form-group">
             <label>Breed</label>
-            <input type="text" value="{{ i.category }}" name="breed" readonly>
+            <input type="text" value="{{ pet.pet_breed }}" name="breed" readonly>
         </div>
         <div class="form-group">
             <label>Pet Age</label>
-            <input type="text" value="{{ i.age }}" name="age" readonly>
+            <input type="text" value="{{ pet.pet_age }}" name="age" readonly>
         </div>
         <div class="form-group">
             <label>Pet Gender</label>
-            <input type="text" value="{{ i.gender }}" name="gender" readonly>
+            <input type="text" value="{{ pet.pet_gender }}" name="gender" readonly>
         </div>
 
-        {% endfor %}
+        {% comment %} {% endfor %}  {% endcomment %}
 
 
 

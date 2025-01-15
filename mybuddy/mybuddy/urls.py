@@ -32,7 +32,7 @@ urlpatterns = [
     path('about/',views.about),
     path('contact/',views.contact),
     path('donate/',views.donate),
-    path('request_form/',views.request_form),
+    path('request_form/<pid>/',views.request_form),
     path('thanku/',views.thanku),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
