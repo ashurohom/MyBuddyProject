@@ -26,17 +26,17 @@ class Pet(models.Model):
 
 class Adoptionrequest(models.Model):
 
-    # ForeignKey relationships
+    
     # user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user')
     # pet = models.ForeignKey('Pet', on_delete=models.CASCADE, related_name='adoption_requests')
 
-    # Pet Details
+
     pet_name = models.CharField(max_length=100)  # Displayed, fetched from the database
-    pet_breed = models.CharField(max_length=100)  # Displayed, fetched from the database
-    pet_age = models.PositiveIntegerField()  # Displayed, fetched from the database
+    pet_breed = models.IntegerField()  # Displayed, fetched from the database
+    pet_age = models.IntegerField()  # Displayed, fetched from the database
     pet_gender = models.CharField(max_length=10)  # Displayed, fetched from the database
 
-    # User Details
+    
     userid = models.ForeignKey("auth.User",on_delete=models.CASCADE, db_column="userid") 
     full_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)
@@ -45,7 +45,7 @@ class Adoptionrequest(models.Model):
     state = models.CharField(max_length=100)
     zip_code = models.CharField(max_length=20)
 
-    # Form-Specific Information
+    
     experience_with_pets = models.BooleanField()  # Dropdown: Yes/No
     other_pets = models.BooleanField()  # Dropdown: Yes/No
     regular_checkups_agreement = models.BooleanField(default=False)  # Checkbox

@@ -102,56 +102,71 @@ def filterbycategory(request,cid):
     context['pets'] = cat
     return render(request,'petgallery.html',context)
 
+    
 
 
 def request_form(request):
+
+    context={}
+    pett=Pet.objects.all()
+    context['petss']=pett
+    # print(pet)
+
     if request.method == 'POST':
+
+        u = User.objects.filter(id=request.user.id)
+
+        # uid = Adoptionrequest.objects.filter(userid = u[0])
+    
+
         # Extract pet details (assumes these come from a form)
-        pet_name = request.POST.get('pname')
-        pet_breed = request.POST.get('breed')
-        pet_age = request.POST.get('age')
-        pet_gender = request.POST.get('gender')
+        p_name = request.POST.get('pname')
+        p_breed = request.POST.get('breed')
+        p_age = request.POST.get('age')
+        p_gender = request.POST.get('gender')
 
         # Extract user details
-        full_name = request.POST.get('full_name')
-        phone_number = request.POST.get('phone')
-        street_address = request.POST.get('street')
-        city = request.POST.get('city')
-        state = request.POST.get('state')
-        zip_code = request.POST.get('zip')
+      
+
+        f_name = request.POST.get('full_name')
+        p_number = request.POST.get('phone')
+        s_address = request.POST.get('street')
+        citys = request.POST.get('city')
+        states = request.POST.get('state')
+        z_code = request.POST.get('zip')
 
         # Extract form-specific information
-        experience_with_pets = request.POST.get('experience') == 'on'
-        other_pets = request.POST.get('other_pets') == 'on'
-        regular_checkups_agreement = request.POST.get('checkups') == 'on'
-        safe_home_agreement = request.POST.get('loving_home') == 'on'
-        adoption_reason = request.POST.get('reason')
-        acknowledgment = request.POST.get('terms') == 'on'
+        experience = request.POST.get('experience') == 'on'
+        otherpets = request.POST.get('other_pets') == 'on'
+        regular_checkups = request.POST.get('checkups') == 'on'
+        safe_home = request.POST.get('loving_home') == 'on'
+        reason = request.POST.get('reason')
+        acknowledgments = request.POST.get('terms') == 'on'
 
       
         adoption_request = Adoptionrequest.objects.create(
-                pet_name=pet_name,
-                pet_breed=pet_breed,
-                pet_age=int(pet_age),
-                pet_gender=pet_gender,
-                userid=userid,
-                full_name=full_name,
-                phone_number=phone_number,
-                street_address=street_address,
-                city=city,
-                state=state,
-                zip_code=zip_code,
-                experience_with_pets=experience_with_pets,
-                other_pets=other_pets,
-                regular_checkups_agreement=regular_checkups_agreement,
-                safe_home_agreement=safe_home_agreement,
-                adoption_reason=adoption_reason,
-                acknowledgment=acknowledgment,
+                pet_name=p_name,
+                pet_breed=p_breed,
+                pet_age=p_age,
+                pet_gender=p_gender,
+                userid=u[0],
+                full_name=f_name,
+                phone_number=p_number,
+                street_address=s_address,
+                city=citys,
+                state=states,
+                zip_code=z_code,
+                experience_with_pets=experience,
+                other_pets=otherpets,
+                regular_checkups_agreement=regular_checkups,
+                safe_home_agreement=safe_home,
+                adoption_reason=reason,
+                acknowledgment=acknowledgments,
             )
         adoption_request.save()
-        return render(request, 'thanku.html')  # Redirect to a thank-you page
+        return render(request,'request.html')  
     else:
-        return redirect('/request_form')  # Redirect to login if the user is not authenticated
+        return render(request,'request.html')  
 
     
 
