@@ -144,12 +144,12 @@ def request_form(request,pid):
         z_code = request.POST.get('zip')
 
         
-        experience = request.POST.get('experience') #== 'on'
-        otherpets = request.POST.get('other_pets') #== 'on'
-        regular_checkups = request.POST.get('checkups') #== 'on'
-        safe_home = request.POST.get('loving_home') #== 'on'
+        experience = request.POST.get('experience') == 'on'
+        otherpets = request.POST.get('other_pets') == 'on'
+        regular_checkups = request.POST.get('checkups') == 'on'
+        safe_home = request.POST.get('loving_home') == 'on'
         reason = request.POST.get('reason')
-        acknowledgments = request.POST.get('terms') #== 'on'
+        acknowledgments = request.POST.get('terms') == 'on'
 
       
         adoption_request = Adoptionrequest.objects.create(
@@ -180,7 +180,7 @@ def request_form(request,pid):
                 acknowledgment=acknowledgments,
             )
         adoption_request.save()
-        return render(request,'request.html',context)  
+        return render(request,'thanku.html',context)  
     
        
 

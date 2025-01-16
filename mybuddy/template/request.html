@@ -51,22 +51,23 @@
 
         <div class="form-group">
             <label>Breed</label>
+
             {% if pet.category == 1 %}
             <input type="text" value="Indies" name="breed" readonly>
             
-            {% elif i.category == 2 %}
+            {% elif pet.category == 2 %}
             <input type="text" value="Pugs" name="breed" readonly>
 
-            {% elif i.category == 3 %}    
+            {% elif pet.category == 3 %}    
             <input type="text" value="German" name="breed" readonly>
 
-            {% elif i.category == 4 %}
+            {% elif pet.category == 4 %}
             <input type="text" value="Bulldog" name="breed" readonly>
 
-            {% elif i.category == 5 %}
+            {% elif pet.category == 5 %}
             <input type="text" value="Labrador" name="breed" readonly>
 
-            {% elif i.category == 6 %}
+            {% elif pet.category == 6 %}
             <input type="text" value="Combai" name="breed" readonly>
 
             {% endif %}
@@ -75,7 +76,7 @@
         
         <div class="form-group">
             <label>Pet Age</label>
-            <input type="text" value="{{pet.age}}" name="age" readonly>
+            <input type="text" value="{{pet.age}} Year" name="age" readonly>
         </div>
         <div class="form-group">
             <label>Pet Gender</label>
@@ -90,16 +91,16 @@
             <label for="experience">Do you have experience with pets?</label>
             <select id="experience" name="experience" required>
                 <option value="">Select an option</option>
-                <option value="true" name="experience">Yes</option>
-                <option value="false" name="experience">No</option>
+                <option value=True name="experience">Yes</option>
+                <option value=False name="experience">No</option>
             </select>
         </div>
         <div class="form-group">
             <label for="other-pets">Do you have other pets?</label>
             <select id="other-pets" name="other_pets" required>
                 <option value="">Select an option</option>
-                <option value="true" name="other_pets">Yes</option>
-                <option value="false" name="other_pets">No</option>
+                <option value=True name="other_pets">Yes</option>
+                <option value=False name="other_pets">No</option>
             </select>
         </div>
         <div class="form-group">
@@ -125,7 +126,7 @@
             </label>
         </div>
         <a href="/thanku"><button type="submit">Submit Request</button></a><br>
-        <button class="requestbtn" type="">Status Pending</button>
+        {% comment %} <button class="requestbtn" type="">Status Pending</button> {% endcomment %}
     </form>
     
 </div>
