@@ -130,10 +130,10 @@ def request_form(request,pid):
         # u = User.objects.filter(id=request.user.id)
         u = User.objects.get(id=request.user.id)
         
-        p_name = request.POST.get('pname')
-        p_breed = request.POST.get('breed')
-        p_age = request.POST.get('age')
-        p_gender = request.POST.get('gender')
+        # p_name = request.POST.get('pname')
+        # p_breed = request.POST.get('breed')
+        # p_age = request.POST.get('age')
+        # p_gender = request.POST.get('gender')
         
                 
         f_name = request.POST.get('full_name')
@@ -144,22 +144,27 @@ def request_form(request,pid):
         z_code = request.POST.get('zip')
 
         
-        experience = request.POST.get('experience') == 'on'
-        otherpets = request.POST.get('other_pets') == 'on'
-        regular_checkups = request.POST.get('checkups') == 'on'
-        safe_home = request.POST.get('loving_home') == 'on'
+        experience = request.POST.get('experience') #== 'on'
+        otherpets = request.POST.get('other_pets') #== 'on'
+        regular_checkups = request.POST.get('checkups') #== 'on'
+        safe_home = request.POST.get('loving_home') #== 'on'
         reason = request.POST.get('reason')
-        acknowledgments = request.POST.get('terms') == 'on'
+        acknowledgments = request.POST.get('terms') #== 'on'
 
       
         adoption_request = Adoptionrequest.objects.create(
                 pet_name=pet.pname,
-                # pet_breed=pet.p_breed,
+                # pet_name=p_name,
+
                 pet_breed=pet.category,
-                # pet_age=p_age,
+                # pet_breed=p_breed,
+                #                 
                 pet_age=pet.age,
-                # pet_gender=p_gender,
+                # pet_age=p_age,
+
                 pet_gender=pet.gender,
+                # pet_gender=p_gender,
+
                 userid=u,
                 full_name=f_name,
                 phone_number=p_number,
@@ -175,12 +180,12 @@ def request_form(request,pid):
                 acknowledgment=acknowledgments,
             )
         adoption_request.save()
-        return render(request,'request.html')  
+        return render(request,'request.html',context)  
     
        
 
     else:
-        return render(request,'request.html')  
+        return render(request,'request.html',context)  
 
     
 

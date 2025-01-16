@@ -9,7 +9,9 @@
 
 {% block main %}
 <div class="form-container">
-    <h1 class="form-title">Pet Adoption Form</h1>
+    <h1 class="form-title">Pet Adoption Form </h1>
+    
+    
     <form action="#" method="POST">
         {% csrf_token %}
         <div class="form-group">
@@ -39,28 +41,48 @@
 
         
         
-        {% comment %} {% for i in data %}  {% endcomment %}
+        
              
         <div class="form-group">
             <label>Pet Name</label>
-            <input type="text" value="{{ pet.pet_name }}" name="pname" readonly>
+            <input type="text" value="{{pet.pname}}" name="pname" readonly>
         </div>
         
 
         <div class="form-group">
             <label>Breed</label>
-            <input type="text" value="{{ pet.pet_breed }}" name="breed" readonly>
+            {% if pet.category == 1 %}
+            <input type="text" value="Indies" name="breed" readonly>
+            
+            {% elif i.category == 2 %}
+            <input type="text" value="{{pet.category}}" name="breed" readonly>
+
+            {% elif i.category == 3 %}    
+            <input type="text" value="{{pet.category}}" name="breed" readonly>
+
+            {% elif i.category == 4 %}
+            <input type="text" value="{{pet.category}}" name="breed" readonly>
+
+            {% elif i.category == 5 %}
+            <input type="text" value="{{pet.category}}" name="breed" readonly>
+
+            {% elif i.category == 6 %}
+            <input type="text" value="{{pet.category}}" name="breed" readonly>
+
+            {% endif %}
         </div>
+        
+        
         <div class="form-group">
             <label>Pet Age</label>
-            <input type="text" value="{{ pet.pet_age }}" name="age" readonly>
+            <input type="text" value="{{pet.age}}" name="age" readonly>
         </div>
         <div class="form-group">
             <label>Pet Gender</label>
-            <input type="text" value="{{ pet.pet_gender }}" name="gender" readonly>
+            <input type="text" value="{{pet.gender}}" name="gender" readonly>
         </div>
 
-        {% comment %} {% endfor %}  {% endcomment %}
+        
 
 
 
@@ -68,16 +90,16 @@
             <label for="experience">Do you have experience with pets?</label>
             <select id="experience" name="experience" required>
                 <option value="">Select an option</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="true" name="experience">Yes</option>
+                <option value="false" name="experience">No</option>
             </select>
         </div>
         <div class="form-group">
             <label for="other-pets">Do you have other pets?</label>
             <select id="other-pets" name="other_pets" required>
                 <option value="">Select an option</option>
-                <option value="yes">Yes</option>
-                <option value="no">No</option>
+                <option value="true" name="other_pets">Yes</option>
+                <option value="false" name="other_pets">No</option>
             </select>
         </div>
         <div class="form-group">
@@ -105,5 +127,6 @@
         <a href="/thanku"><button type="submit">Submit Request</button></a><br>
         <button class="requestbtn" type="">Status Pending</button>
     </form>
+    
 </div>
 {% endblock %}
