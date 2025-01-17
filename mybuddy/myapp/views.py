@@ -111,31 +111,10 @@ def request_form(request,pid):
     pet = Pet.objects.get(id=pid)  
     context['pet'] = pet 
 
-    print("Current Pet Name: ",pet.pname) 
-    print("Current Pet Category: ",pet.category) 
-    print("Current Pet Age: ",pet.age) 
-    print("Current Pet Gender: ",pet.gender) 
-
-    # context['data'] = {
-    #         'pet_name': pet.pname,
-    #         'pet_breed': pet.category, 
-    #         'pet_age': pet.age,
-    #         'pet_gender': pet.gender,
-    #         }
-            
-
-
     if request.method == 'POST':
 
         # u = User.objects.filter(id=request.user.id)
-        u = User.objects.get(id=request.user.id)
-        
-        # p_name = request.POST.get('pname')
-        # p_breed = request.POST.get('breed')
-        # p_age = request.POST.get('age')
-        # p_gender = request.POST.get('gender')
-        
-                
+        u = User.objects.get(id=request.user.id)        
         f_name = request.POST.get('full_name')
         p_number = request.POST.get('phone')
         s_address = request.POST.get('street')
@@ -154,17 +133,9 @@ def request_form(request,pid):
       
         adoption_request = Adoptionrequest.objects.create(
                 pet_name=pet.pname,
-                # pet_name=p_name,
-
                 pet_breed=pet.category,
-                # pet_breed=p_breed,
-                #                 
                 pet_age=pet.age,
-                # pet_age=p_age,
-
                 pet_gender=pet.gender,
-                # pet_gender=p_gender,
-
                 userid=u,
                 full_name=f_name,
                 phone_number=p_number,
@@ -180,24 +151,29 @@ def request_form(request,pid):
                 acknowledgment=acknowledgments,
             )
         adoption_request.save()
-        return render(request,'thanku.html',context)  
-    
-       
-
+        return redirect('/thanku') 
     else:
         return render(request,'request.html',context)  
-
-    
-
-    
-
-
 
 
 
 
 def thanku(request):
-    return render(request,'thanku.html')
+   
+    context={}
+    user_request = Adoptionrequest.objects.filter(userid=request.user.id).last()
+    print("Adoption_Request:", user_request)
+    return render(request,'thanku.html',{'adoption_request': user_request})
+
+# def adoption_status(request):
+#     user_request = AdoptionRequest.objects.filter(user_name=request.user).last()
+#     return render(request, 'adoption_status.html', {'request': user_request})
+
+
+
+
+
+
 
 
 def about(request):

@@ -44,6 +44,21 @@
 
       <!-- Your Pet Adoption Journey Section -->
 <section class="adoption-journey">
+  {% if adoption_request %}
+
+    {% if adoption_request.status == 'Pending' %}
+        <p>Your adoption request is under review.</p>
+
+    {% elif adoption_request.status == 'Approved' %}
+        <p>Your adoption request has been approved!</p>
+
+    {% elif adoption_request.status == 'Rejected' %}
+        <p>Your adoption request has been rejected.</p>
+        
+    {% endif %}
+{% else %}
+    <p>No adoption request found.</p>
+{% endif %}
     <h2>Your Pet Adoption Journey With My Buddy</h2>
     <i class="fas fa-paw" style="font-size: 32px;"></i>
     <i class="fas fa-paw" style="font-size: 32px;"></i>

@@ -26,17 +26,11 @@ class Pet(models.Model):
 
 class Adoptionrequest(models.Model):
 
-    
-    # user = models.ForeignKey(User, on_delete=models.CASCADE, db_column='user')
-    # pet = models.ForeignKey('Pet', on_delete=models.CASCADE, related_name='adoption_requests')
+    pet_name = models.CharField(max_length=100)  
+    pet_breed = models.IntegerField() 
+    pet_age = models.IntegerField() 
+    pet_gender = models.CharField(max_length=10)  
 
-
-    pet_name = models.CharField(max_length=100)  # Displayed, fetched from the database
-    pet_breed = models.IntegerField()  # Displayed, fetched from the database
-    pet_age = models.IntegerField()  # Displayed, fetched from the database
-    pet_gender = models.CharField(max_length=10)  # Displayed, fetched from the database
-
-    
     userid = models.ForeignKey("auth.User",on_delete=models.CASCADE, db_column="userid") 
     full_name = models.CharField(max_length=100)
     phone_number = models.CharField(max_length=15)
@@ -45,15 +39,14 @@ class Adoptionrequest(models.Model):
     state = models.CharField(max_length=100)
     zip_code = models.CharField(max_length=20)
 
-    
-    experience_with_pets = models.BooleanField()  # Dropdown: Yes/No
-    other_pets = models.BooleanField()  # Dropdown: Yes/No
-    regular_checkups_agreement = models.BooleanField(default=False)  # Checkbox
-    safe_home_agreement = models.BooleanField(default=False)  # Checkbox
+    experience_with_pets = models.BooleanField()  
+    other_pets = models.BooleanField()  
+    regular_checkups_agreement = models.BooleanField(default=False)  
+    safe_home_agreement = models.BooleanField(default=False)  
     adoption_reason = models.TextField()
-    acknowledgment = models.BooleanField(default=False)  # Checkbox
+    acknowledgment = models.BooleanField(default=False)  
 
-    # Request Metadata
+    # Request data
     status = models.CharField(
         max_length=10,
         choices=[('Pending', 'Pending'), ('Approved', 'Approved'), ('Rejected', 'Rejected')],

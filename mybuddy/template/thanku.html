@@ -4,6 +4,31 @@
 {% block main %}
 <h1>Thank You</h1><br>
 <h1>Thank You</h1><br>
+<h1>Request</h1><br>
+<p>Status: {{ request.status }}</p>
+<p>Statu New: {{ adoption_request }}</p>
+
+
+{% if adoption_request %}
+
+    {% if adoption_request.status == 'Pending' %}
+        <p>Your adoption request is under review.</p>
+
+    {% elif adoption_request.status == 'Approved' %}
+        <p>Your adoption request has been approved!</p>
+
+    {% elif adoption_request.status == 'Rejected' %}
+        <p>Your adoption request has been rejected.</p>
+        
+    {% endif %}
+{% else %}
+    <p>No adoption request found.</p>
+{% endif %}
+
+
+
+
+
 <h1>Thank You</h1><br>
 <h1>Thank You</h1><br>
 <h1>Thank You</h1><br>
