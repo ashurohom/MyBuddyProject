@@ -42,10 +42,10 @@ body {
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-     color: #2C3E50; /*Dark color to contrast with light background */
-    background-color: rgba(255, 255, 255, 0.3); /* Set semi-transparent white background */
+    color: #2C3E50; /*Dark color to contrast with light background */
+    background-color: rgba(255, 255, 255, 0.1); /* Set semi-transparent white background */
     backdrop-filter: blur(5px); /* Apply the blur effect */
-    -webkit-backdrop-filter: blur(10px); /* For Safari */
+    -webkit-backdrop-filter: blur(5px); /* For Safari */
     padding: 20px; /* Add padding for spacing */
     border-radius: 5px; /* Optional: Round the corners */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
@@ -55,13 +55,14 @@ body {
   .hero-content h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 36px;
-    color: #443c47; /* Matches your theme */
+    /*color: #443c47;  Matches your theme */
+    color: #240505; /* Matches your theme */
     margin-bottom: 10px;
   }
   
   .hero-content p {
     font-size: 18px;
-    color: #555f69;
+    color: #000000;
     margin-bottom: 20px;
   }
   /* Button Styling */
