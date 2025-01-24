@@ -4,6 +4,12 @@
     margin: 90px auto;
     padding: 20px;
     font-family: Arial, sans-serif;
+    text-align: center; /* Center-align all fields */
+    background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
+    background-size: 400% 400%; /* Make the gradient dynamic */
+    animation: gradientAnimation 10s ease infinite; /* Add animation for gradient */
+    border-radius: 15px; /* Rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
 }
 
 /* Header Section */
@@ -18,17 +24,20 @@
 }
 .response-subtitle {
     font-size: 1.2rem;
-    color: #777;
+    color: #555;
 }
 
 /* Response Message Section */
 .response-box {
-    background-color: #f9f9f9;
+    background-color: #ffffff;
     border: 1px solid #ddd;
     border-radius: 10px;
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
+    display: inline-block; /* Ensure it stays centered within the container */
+    text-align: left; /* Align text to the left inside the box */
+    width: 90%;
 }
 .response-status {
     font-size: 1.5rem;
@@ -47,11 +56,13 @@
 
 /* Additional Links Section */
 .additional-info {
-    background-color: #f0f8ff;
+    background-color: #eaf7ff;
     border: 1px solid #ccd;
     border-radius: 10px;
     padding: 20px;
-    text-align: center;
+    display: inline-block; /* Ensure it stays centered */
+    text-align: center; /* Center-align text inside */
+    width: 90%;
 }
 .additional-title {
     font-size: 1.3rem;
@@ -71,4 +82,11 @@
 }
 .visit-link:hover {
     background-color: #0056b3;
+}
+
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
 }
