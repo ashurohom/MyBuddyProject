@@ -1,17 +1,28 @@
 /* General Styling */
-body {
+/* body {
     font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
-}
+} */
 
 /* Header Section */
+
+.container {
+    max-width: 960px; /* Restrict the width for better readability */
+    padding: 20px; /* Add custom padding if needed */
+    background-color: #fdfdfd; /* Optional background color for differentiation */
+    border-radius: 10px; /* Add a subtle rounded corner */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow for elevation */
+}
+
+
 .response-header {
     background-color: #e3f2fd;
     border: 1px solid #d1e7fd;
     border-radius: 5px;
     margin-bottom: 20px;
+    margin-top: 20px;
     position: relative;
     z-index: -1; /* Makes it appear below the navbar */
 }
