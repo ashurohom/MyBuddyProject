@@ -6,10 +6,10 @@
     font-family: Arial, sans-serif;
     text-align: center; /* Center-align all fields */
     background: linear-gradient(135deg, #ff9a9e, #fad0c4, #fbc2eb, #a1c4fd, #c2e9fb);
-    background-size: 400% 400%; /* Make the gradient dynamic */
-    animation: gradientAnimation 10s ease infinite; /* Add animation for gradient */
-    border-radius: 15px; /* Rounded corners */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Soft shadow */
+    background-size: 400% 400%;
+    animation: gradientAnimation 10s ease infinite;
+    border-radius: 15px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 /* Header Section */
@@ -17,6 +17,105 @@
     text-align: center;
     margin-bottom: 30px;
 }
+
+/* Spinner and Loader Styles */
+.spinnerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.spinner {
+    width: 56px;
+    height: 56px;
+    display: grid;
+    border: 4px solid #0000;
+    border-radius: 50%;
+    border-right-color: #299fff;
+    animation: tri-spinner 1s infinite linear;
+}
+
+.spinner::before,
+.spinner::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: tri-spinner 2s infinite;
+}
+
+.spinner::after {
+    margin: 8px;
+    animation-duration: 3s;
+}
+
+@keyframes tri-spinner {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+.loader {
+    color: #4a4a4a;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    box-sizing: content-box;
+    height: 40px;
+    padding: 10px 10px;
+    display: flex;
+    border-radius: 8px;
+}
+
+.words {
+    overflow: hidden;
+}
+
+.word {
+    display: block;
+    height: 100%;
+    padding-left: 6px;
+    color: #299fff;
+    animation: cycle-words 5s infinite;
+}
+
+@keyframes cycle-words {
+    10% {
+        transform: translateY(-105%);
+    }
+
+    25% {
+        transform: translateY(-100%);
+    }
+
+    35% {
+        transform: translateY(-205%);
+    }
+
+    50% {
+        transform: translateY(-200%);
+    }
+
+    60% {
+        transform: translateY(-305%);
+    }
+
+    75% {
+        transform: translateY(-300%);
+    }
+
+    85% {
+        transform: translateY(-405%);
+    }
+
+    100% {
+        transform: translateY(-400%);
+    }
+}
+
+/* Response Title and Subtitle */
 .response-title {
     font-size: 2rem;
     font-weight: bold;
@@ -27,6 +126,13 @@
     color: #555;
 }
 
+/* Gradient Animation */
+@keyframes gradientAnimation {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
 /* Response Message Section */
 .response-box {
     background-color: #ffffff;
@@ -35,23 +141,9 @@
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
-    display: inline-block; /* Ensure it stays centered within the container */
-    text-align: left; /* Align text to the left inside the box */
+    display: inline-block;
+    text-align: left;
     width: 90%;
-}
-.response-status {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: #333;
-}
-.status-approved {
-    color: #28a745; /* Green for approved */
-    font-weight: bold;
-}
-.response-message {
-    margin-top: 10px;
-    line-height: 1.6;
-    color: #555;
 }
 
 /* Additional Links Section */
@@ -60,33 +152,7 @@
     border: 1px solid #ccd;
     border-radius: 10px;
     padding: 20px;
-    display: inline-block; /* Ensure it stays centered */
-    text-align: center; /* Center-align text inside */
-    width: 90%;
-}
-.additional-title {
-    font-size: 1.3rem;
-    color: #333;
-    margin-bottom: 10px;
-}
-.visit-link {
     display: inline-block;
-    padding: 10px 15px;
-    font-size: 1rem;
-    font-weight: bold;
-    color: #fff;
-    background-color: #007bff;
-    text-decoration: none;
-    border-radius: 5px;
-    transition: background-color 0.3s;
-}
-.visit-link:hover {
-    background-color: #0056b3;
-}
-
-/* Gradient Animation */
-@keyframes gradientAnimation {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+    text-align: center;
+    width: 90%;
 }

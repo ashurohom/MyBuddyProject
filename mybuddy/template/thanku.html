@@ -2,19 +2,53 @@
 {% load static %}
 
 {% block main %}
-
 <div class="container">
     <!-- Header Section -->
     <div class="response-header">
-        <h2 class="response-title">Admin Response</h2>
-        <p class="response-subtitle">Pet Adoption Request</p>
+        <!-- Spinner and Loader -->
+        <div class="spinnerContainer">
+            <div class="spinner"></div>
+            <div class="loader">
+                <p><h2 class="response-title">Admin Response</h2>
+                </p>
+                <div class="words">
+                    <span class="word">Wait..</span>
+                    <span class="word">Requested</span>
+                    <span class="word">Accept</span>
+                    <span class="word">Reject</span>
+                    <span class="word">Processing</span>
+                </div>
+            </div>
+        </div>
+        
+        <p class="response-subtitle">Pet Adoption Request : {{ adoption_request }}</p>
     </div>
 
     <!-- Response Message Section -->
     <div class="response-box">
-        <h4 class="response-status">
-            Adoption Request Status: <span class="status-approved">Approved</span>
-        </h4>
+        <h4 class="response-status">Adoption Request Status: <span class="status-approved">
+
+    {% if adoption_request %}
+
+    {% if adoption_request.status == 'Pending' %}
+        <p>Wait, Your adoption request is under review.</p>
+        <p>With in the 24 HRS you will get updates</p>
+
+    {% elif adoption_request.status == 'Approved' %}
+    <p>Approved</p><br>
+        <p>Your adoption request has been approved! Congratulations..!</p>
+        <p>You can Collect your pet from below address</p>
+
+    {% elif adoption_request.status == 'Rejected' %}
+        <p>Sorry! Your adoption request has been rejected.</p>
+        
+    {% endif %}
+
+    {% else %}
+        <p>No adoption request found.</p>
+    {% endif %}
+
+        </span></h4>
         <p class="response-message">
             Congratulations! Your request to adopt <strong>Max</strong> (Golden Retriever) has been approved.  
             Our team will reach out to you soon for the next steps.
@@ -27,5 +61,4 @@
         <a href="/petgallery" class="visit-link">Visit Pet Gallery</a>
     </div>
 </div>
-
 {% endblock main %}
