@@ -2,38 +2,27 @@
 {% load static %}
 
 {% block main %}
-<h1>Thank You</h1><br>
-<h1>Thank You</h1><br>
-<h1>Request</h1><br>
 
-<p>Status New: {{ adoption_request }}</p>
+<div class="container mt-5">
+    <!-- Page Header -->
+    <div class="page-header text-center mb-4">
+        Admin Response: <span>Pet Adoption Request</span>
+    </div>
 
+    <!-- Response Box -->
+    <div class="response-card p-4">
+        <h4>Adoption Request Status: Approved</h4>
+        <p>
+            Congratulations! Your request to adopt <strong>Max</strong> (Golden Retriever) has been approved.  
+            Our team will reach out to you soon for the next steps.
+        </p>
+    </div>
 
-{% if adoption_request %}
-
-    {% if adoption_request.status == 'Pending' %}
-        <p>Wait, Your adoption request is under review.</p>
-        <p>Wuth in the 24 HRS you will get updates</p>
-
-    {% elif adoption_request.status == 'Approved' %}
-        <p>Your adoption request has been approved! Congratulations..!</p>
-        <p>You can Collect your pet from below address</p>
-
-    {% elif adoption_request.status == 'Rejected' %}
-        <p>Sorry! Your adoption request has been rejected.</p>
-        
-    {% endif %}
-{% else %}
-    pass
-    {% comment %} <p>No adoption request found.</p> {% endcomment %}
-{% endif %}
-
-
-
-
-
-<h1>Thank You</h1><br>
-<h1>Thank You</h1><br>
-<h1>Thank You</h1><br>
+    <!-- Additional Information Section -->
+    <div class="info-section mt-4">
+        <h5>Want to adopt more pets or view your requests?</h5>
+        <a href="/petgallery">Visit Pet Gallery</a>
+    </div>
+</div>
 
 {% endblock main %}
