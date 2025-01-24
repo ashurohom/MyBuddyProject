@@ -38,11 +38,11 @@ body {
 
   .hero-content {
     position: absolute;
-    bottom: 100px; /* Position the content near the bottom */
+    bottom: 120px; /* Position the content near the bottom */
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
-    color: #2C3E50; /* Dark color to contrast with light background */
+     color: #2C3E50; /*Dark color to contrast with light background */
     background-color: rgba(255, 255, 255, 0.3); /* Set semi-transparent white background */
     backdrop-filter: blur(5px); /* Apply the blur effect */
     -webkit-backdrop-filter: blur(10px); /* For Safari */
