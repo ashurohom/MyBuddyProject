@@ -21,8 +21,9 @@
 /* Spinner and Loader Styles */
 .spinnerContainer {
     display: flex;
-    flex-direction: column;
-    align-items: center;
+    flex-direction: row; /* Align items in a row */
+    justify-content: center; /* Center-align the spinner, title, and words */
+    align-items: center; /* Vertically align them in the center */
     margin-bottom: 20px;
 }
 
@@ -34,6 +35,7 @@
     border-radius: 50%;
     border-right-color: #299fff;
     animation: tri-spinner 1s infinite linear;
+    margin-right: 20px; /* Space between spinner and title */
 }
 
 .spinner::before,
@@ -58,27 +60,37 @@
 }
 
 .loader {
+    display: flex;
+    flex-direction: column; /* Arrange title and words vertically */
+    justify-content: center;
+    align-items: center; /* Vertically and horizontally center */
     color: #4a4a4a;
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 25px;
-    box-sizing: content-box;
-    height: 40px;
-    padding: 10px 10px;
-    display: flex;
-    border-radius: 8px;
+    margin-left: 20px; /* Space between the spinner and loader */
+}
+
+.response-title {
+    font-size: 2rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px; /* Space between title and words */
 }
 
 .words {
+    display: flex;
+    justify-content: center;
     overflow: hidden;
+    height: 40px; /* Set a fixed height for words to align them */
 }
 
 .word {
-    display: block;
-    height: 100%;
-    padding-left: 6px;
+    display: inline-block;
     color: #299fff;
     animation: cycle-words 5s infinite;
+    padding-left: 6px;
+    line-height: 40px; /* Center words vertically within the height */
 }
 
 @keyframes cycle-words {
@@ -115,15 +127,19 @@
     }
 }
 
+
 /* Response Title and Subtitle */
 .response-title {
     font-size: 2rem;
     font-weight: bold;
     color: #333;
+    text-align: center; /* Ensure the title is centered */
 }
+
 .response-subtitle {
     font-size: 1.2rem;
     color: #555;
+    text-align: center; /* Ensure the subtitle is centered */
 }
 
 /* Gradient Animation */
@@ -142,8 +158,20 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     margin-bottom: 20px;
     display: inline-block;
-    text-align: left;
-    width: 90%;
+    text-align: center; /* Center the content inside the response box */
+    width: 100%; /* Make sure the response box takes up full width */
+}
+
+/* Response Status */
+.response-status {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+/* Status Text */
+.status-approved {
+    color: #299fff;
 }
 
 /* Additional Links Section */
@@ -154,5 +182,34 @@
     padding: 20px;
     display: inline-block;
     text-align: center;
-    width: 90%;
+    width: 100%; /* Ensure the additional info takes full width */
+    margin-top: 20px;
+    padding-bottom: 20px;
+}
+
+/* Visit Link as Button */
+.visit-link {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #ff0000;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+}
+
+.visit-link:hover {
+    background-color: #c04141; /* Darker shade on hover */
+}
+
+/* Response Box and Additional Info Styling */
+.response-box,
+.additional-info {
+    margin: 20px auto;
+    text-align: center; /* Ensure all content is centered */
+    width: 80%;
+    max-width: 700px;
 }

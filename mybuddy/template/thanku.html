@@ -21,39 +21,51 @@
             </div>
         </div>
         
-        <p class="response-subtitle">Pet Adoption Request : {{ adoption_request }}</p>
+        {% comment %} <p class="response-subtitle">Pet Adoption Request : {{ adoption_request }}</p> {% endcomment %}
     </div>
 
     <!-- Response Message Section -->
-    <div class="response-box">
-        <h4 class="response-status">Adoption Request Status: <span class="status-approved">
 
     {% if adoption_request %}
 
     {% if adoption_request.status == 'Pending' %}
-        <p>Wait, Your adoption request is under review.</p>
-        <p>With in the 24 HRS you will get updates</p>
 
-    {% elif adoption_request.status == 'Approved' %}
-    <p>Approved</p><br>
-        <p>Your adoption request has been approved! Congratulations..!</p>
-        <p>You can Collect your pet from below address</p>
-
-    {% elif adoption_request.status == 'Rejected' %}
-        <p>Sorry! Your adoption request has been rejected.</p>
-        
-    {% endif %}
-
-    {% else %}
-        <p>No adoption request found.</p>
-    {% endif %}
-
-        </span></h4>
+    <div class="response-box">
+        <h4 class="response-status">Adoption Request Status: <span class="status-approved">Pending..</span></h4>
         <p class="response-message">
             Congratulations! Your request to adopt <strong>Max</strong> (Golden Retriever) has been approved.  
             Our team will reach out to you soon for the next steps.
         </p>
     </div>
+
+    {% elif adoption_request.status == 'Approved' %}
+    <div class="response-box">
+        <h4 class="response-status">Adoption Request Status: <span class="status-approved">Accepted</span></h4>
+        <p class="response-message">
+            Congratulations! Your request to adopt <strong>{{adoption_request}}</strong> (Golden Retriever) has been approved.  
+            Our team will reach out to you soon for the next steps.
+        </p>
+    </div>
+
+    {% elif adoption_request.status == 'Rejected' %}
+    <div class="response-box">
+        <h4 class="response-status">Adoption Request Status: <span class="status-approved">Rejected</span></h4>
+        <p class="response-message">
+            Sorry! Your request to adopt <strong>{{adoption_request}}</strong> (Golden Retriever) has been Reject.  
+            Our team will reach out to you soon for the next steps.
+        </p>
+    </div>
+
+    {% endif %}
+    {% else %}
+    <div class="response-box">
+        <h4 class="response-status">Adoption Request Status: <span class="status-approved">No Adoption Request Found</span></h4>
+    </div>
+    {% endif %}
+
+    
+
+
 
     <!-- Additional Links Section -->
     <div class="additional-info">
