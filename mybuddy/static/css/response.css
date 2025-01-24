@@ -1,0 +1,76 @@
+/* Page Styling */
+/* body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+} */
+
+/* Header Styling */
+.page-header {
+    font-size: 2rem;
+    color: #3498DB;
+    font-weight: bold;
+    margin-top: 150px;
+}
+
+.page-header span {
+    color: #2C3E50;
+    font-style: italic;
+}
+
+/* Card Box Styling */
+.response-card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.response-card h4 {
+    font-size: 1.5rem;
+    color: #2C3E50;
+}
+
+.response-card p {
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Additional Section Styling */
+.info-section {
+    background-color: #3498DB;
+    color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.info-section h5 {
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+}
+
+.info-section a {
+    color: #f1c40f;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.info-section a:hover {
+    text-decoration: underline;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .page-header {
+        font-size: 1.8rem;
+    }
+
+    .response-card h4 {
+        font-size: 1.3rem;
+    }
+
+    .info-section h5 {
+        font-size: 1.1rem;
+    }
+}

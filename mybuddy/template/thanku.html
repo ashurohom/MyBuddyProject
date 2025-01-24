@@ -3,25 +3,26 @@
 
 {% block main %}
 
-<div class="container mt-5">
-    <!-- Page Header -->
-    <div class="page-header text-center mb-4">
-        Admin Response: <span>Pet Adoption Request</span>
+<div class="container mt-4">
+    <!-- Header Section -->
+    <div class="response-header py-4 text-center">
+        <h2 class="response-title">Admin Response</h2>
+        <p class="response-subtitle">Pet Adoption Request</p>
     </div>
 
-    <!-- Response Box -->
-    <div class="response-card p-4">
-        <h4>Adoption Request Status: Approved</h4>
-        <p>
+    <!-- Response Message Section -->
+    <div class="response-box shadow-sm p-4 mb-4 rounded">
+        <h4 class="response-status">Adoption Request Status: <span class="status-approved">Approved</span></h4>
+        <p class="response-message">
             Congratulations! Your request to adopt <strong>Max</strong> (Golden Retriever) has been approved.  
             Our team will reach out to you soon for the next steps.
         </p>
     </div>
 
-    <!-- Additional Information Section -->
-    <div class="info-section mt-4">
-        <h5>Want to adopt more pets or view your requests?</h5>
-        <a href="/petgallery">Visit Pet Gallery</a>
+    <!-- Additional Links Section -->
+    <div class="additional-info bg-light py-4 px-3 rounded">
+        <h5 class="additional-title">Want to adopt more pets or view your requests?</h5>
+        <a href="/petgallery" class="btn btn-primary mt-2">Visit Pet Gallery</a>
     </div>
 </div>
 
