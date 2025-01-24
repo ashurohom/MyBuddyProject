@@ -158,12 +158,12 @@ def request_form(request,pid):
 
 
 
-def response(request):
+def thanku(request):
    
     context={}
     user_request = Adoptionrequest.objects.filter(userid=request.user.id).last()
     # print("Adoption_Request:", user_request)
-    return render(request,'response.html',{'adoption_request': user_request})
+    return render(request,'thanku.html',{'adoption_request': user_request})
 
 # def adoption_status(request):
 #     user_request = AdoptionRequest.objects.filter(user_name=request.user).last()
