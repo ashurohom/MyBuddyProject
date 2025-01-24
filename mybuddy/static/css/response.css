@@ -182,9 +182,17 @@
     padding: 20px;
     display: inline-block;
     text-align: center;
-    width: 100%; /* Ensure the additional info takes full width */
+    width: 100%;
     margin-top: 20px;
     padding-bottom: 20px;
+}
+
+/* Additional Title Styling */
+.additional-info h3 {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 15px; /* Add space between title and link */
 }
 
 /* Visit Link as Button */
@@ -199,6 +207,7 @@
     border-radius: 8px;
     text-decoration: none;
     transition: background-color 0.3s ease;
+    margin-top: 10px; /* Add space above the visit link */
 }
 
 .visit-link:hover {
@@ -209,7 +218,15 @@
 .response-box,
 .additional-info {
     margin: 20px auto;
-    text-align: center; /* Ensure all content is centered */
+    text-align: center;
     width: 80%;
     max-width: 700px;
 }
+
+/* Make the additional-info section more attractive */
+.additional-info {
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Add shadow */
+    background-color: #f4f9fd; /* Lighter background color */
+}
+
+

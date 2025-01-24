@@ -33,6 +33,6 @@ urlpatterns = [
     path('contact/',views.contact),
     path('donate/',views.donate),
     path('request_form/<pid>/',views.request_form),
-    path('thanku/',views.thanku),
+    path('response/',views.response),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
