@@ -10,9 +10,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: white;
+  background-color: rgb(0, 0, 0, 0.5);
   padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
   position: fixed;
   width: 100%;
   top: 0;
@@ -30,7 +30,7 @@
 .logo a {
   font-size: 24px;
   font-weight: bold;
-  color: #2C3E50;
+  color: #babcbd;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -38,7 +38,8 @@
 
 .logo a i {
   font-size: 28px;
-  color: #337e7a; /* Keeping the dog icon in the same color scheme */
+  /* color: #337e7a; Keeping the dog icon in the same color scheme */
+  color: #babcbd; 
 }
 
 /* Center Website Name */
@@ -50,7 +51,7 @@
 .website-name h1 {
   font-family: 'Arial Black', sans-serif;
   font-size: 24px;
-  color: #3498DB;
+  color: #a8473b;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
@@ -59,25 +60,27 @@
 /* Navbar buttons */
 .nav-buttons {
   display: flex;
-  gap: 10px; /* Adds space between buttons */
+  gap: 1px; /* Adds space between buttons */
 }
 
 .nav-btn {
   display: inline-block;
-  background-color: #3498DB; /* Main button color */
-  color: white;
-  padding: 10px 15px;
+  color: rgb(255, 255, 255, 0.8); /* Text color */
+  padding: 5px 10px;
   text-align: center;
   text-decoration: none;
-  font-size: 1rem;
+  font-size: 1.1rem;
+  font-weight: bold; /* Make the text bold */
   border-radius: 5px;
   transition: all 0.3s ease;
 }
 
 .nav-btn:hover {
-  background-color: #2980B9;
-  transform: scale(1.1);
+  color: #5c5d47; /* Change text color on hover */
+  text-decoration: underline; /* Add underline on hover */
+  transform: scale(1.1); /* Slightly enlarge the button */
 }
+
 
 
 
