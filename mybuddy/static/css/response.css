@@ -1,97 +1,74 @@
-/* General Styling */
-/* body {
-    font-family: 'Roboto', sans-serif;
-    background-color: #f8f9fa;
-    margin: 0;
-    padding: 0;
-} */
+/* Container Styling */
+.container {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
 
 /* Header Section */
-
-.container {
-    max-width: 960px; /* Restrict the width for better readability */
-    padding: 20px; /* Add custom padding if needed */
-    background-color: #fdfdfd; /* Optional background color for differentiation */
-    border-radius: 10px; /* Add a subtle rounded corner */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Add a slight shadow for elevation */
-}
-
-
 .response-header {
-    background-color: #e3f2fd;
-    border: 1px solid #d1e7fd;
-    border-radius: 5px;
-    margin-bottom: 20px;
-    margin-top: 20px;
-    position: relative;
-    z-index: -1; /* Makes it appear below the navbar */
+    text-align: center;
+    margin-bottom: 30px;
 }
-
 .response-title {
     font-size: 2rem;
     font-weight: bold;
-    color: #0d6efd;
+    color: #333;
 }
-
 .response-subtitle {
     font-size: 1.2rem;
-    color: #6c757d;
+    color: #777;
 }
 
-/* Response Message Box */
+/* Response Message Section */
 .response-box {
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
+    background-color: #f9f9f9;
+    border: 1px solid #ddd;
     border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
 }
-
 .response-status {
     font-size: 1.5rem;
-    color: #212529;
-    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
 }
-
-.response-status .status-approved {
+.status-approved {
     color: #28a745; /* Green for approved */
     font-weight: bold;
 }
-
 .response-message {
-    font-size: 1rem;
-    color: #495057;
+    margin-top: 10px;
+    line-height: 1.6;
+    color: #555;
 }
 
-/* Additional Info Section */
+/* Additional Links Section */
 .additional-info {
-    text-align: center;
-    background-color: #ffffff;
-    border: 1px solid #dee2e6;
+    background-color: #f0f8ff;
+    border: 1px solid #ccd;
     border-radius: 10px;
+    padding: 20px;
+    text-align: center;
 }
-
 .additional-title {
-    font-size: 1.2rem;
-    color: #0d6efd;
-    margin-bottom: 15px;
+    font-size: 1.3rem;
+    color: #333;
+    margin-bottom: 10px;
 }
-
-.additional-info .btn {
+.visit-link {
+    display: inline-block;
+    padding: 10px 15px;
     font-size: 1rem;
-    padding: 10px 20px;
     font-weight: bold;
+    color: #fff;
+    background-color: #007bff;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
 }
-
-/* Responsive Adjustments */
-@media (max-width: 768px) {
-    .response-title {
-        font-size: 1.8rem;
-    }
-
-    .response-status {
-        font-size: 1.3rem;
-    }
-
-    .additional-title {
-        font-size: 1rem;
-    }
+.visit-link:hover {
+    background-color: #0056b3;
 }
