@@ -10,9 +10,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgb(0, 0, 0, 0.5);
+  background-color: rgba(20, 19, 19, 0.9);
   padding: 10px 20px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+  box-shadow: 2px 8px 12px rgba(171, 162, 162, 0.7);
   position: fixed;
   width: 100%;
   top: 0;
@@ -76,7 +76,7 @@
 }
 
 .nav-btn:hover {
-  color: #5c5d47; /* Change text color on hover */
+  color: #9ea33b; /* Change text color on hover */
   text-decoration: underline; /* Add underline on hover */
   transform: scale(1.1); /* Slightly enlarge the button */
 }
