@@ -1,76 +1,86 @@
-/* Page Styling */
-/* body {
-    font-family: 'Arial', sans-serif;
+/* General Styling */
+body {
+    font-family: 'Roboto', sans-serif;
     background-color: #f8f9fa;
     margin: 0;
     padding: 0;
-} */
+}
 
-/* Header Styling */
-.page-header {
+/* Header Section */
+.response-header {
+    background-color: #e3f2fd;
+    border: 1px solid #d1e7fd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: -1; /* Makes it appear below the navbar */
+}
+
+.response-title {
     font-size: 2rem;
-    color: #3498DB;
     font-weight: bold;
-    margin-top: 150px;
+    color: #0d6efd;
 }
 
-.page-header span {
-    color: #2C3E50;
-    font-style: italic;
+.response-subtitle {
+    font-size: 1.2rem;
+    color: #6c757d;
 }
 
-/* Card Box Styling */
-.response-card {
-    background-color: #fff;
+/* Response Message Box */
+.response-box {
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
-.response-card h4 {
+.response-status {
     font-size: 1.5rem;
-    color: #2C3E50;
-}
-
-.response-card p {
-    font-size: 1rem;
-    color: #555;
-}
-
-/* Additional Section Styling */
-.info-section {
-    background-color: #3498DB;
-    color: #fff;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.info-section h5 {
-    font-size: 1.3rem;
+    color: #212529;
     margin-bottom: 10px;
 }
 
-.info-section a {
-    color: #f1c40f;
-    text-decoration: none;
+.response-status .status-approved {
+    color: #28a745; /* Green for approved */
     font-weight: bold;
 }
 
-.info-section a:hover {
-    text-decoration: underline;
+.response-message {
+    font-size: 1rem;
+    color: #495057;
+}
+
+/* Additional Info Section */
+.additional-info {
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+}
+
+.additional-title {
+    font-size: 1.2rem;
+    color: #0d6efd;
+    margin-bottom: 15px;
+}
+
+.additional-info .btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    font-weight: bold;
 }
 
 /* Responsive Adjustments */
 @media (max-width: 768px) {
-    .page-header {
+    .response-title {
         font-size: 1.8rem;
     }
 
-    .response-card h4 {
+    .response-status {
         font-size: 1.3rem;
     }
 
-    .info-section h5 {
-        font-size: 1.1rem;
+    .additional-title {
+        font-size: 1rem;
     }
 }
