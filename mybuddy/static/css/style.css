@@ -10,9 +10,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(20, 19, 19, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
   padding: 10px 20px;
-  box-shadow: 2px 8px 12px rgba(171, 162, 162, 0.7);
+  box-shadow: 2px 8px 12px rgba(51, 35, 35, 0.7);
   position: fixed;
   width: 100%;
   top: 0;
@@ -30,7 +30,7 @@
 .logo a {
   font-size: 24px;
   font-weight: bold;
-  color: #babcbd;
+  color: #000000;
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@
 .logo a i {
   font-size: 28px;
   /* color: #337e7a; Keeping the dog icon in the same color scheme */
-  color: #babcbd; 
+  color: #000000; 
 }
 
 /* Center Website Name */
@@ -65,7 +65,7 @@
 
 .nav-btn {
   display: inline-block;
-  color: rgb(255, 255, 255, 0.8); /* Text color */
+  color: rgba(255, 255, 255, 0.8); /* Text color */
   padding: 5px 10px;
   text-align: center;
   text-decoration: none;

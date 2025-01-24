@@ -40,72 +40,47 @@
 
 
 
-  <!-- SECTION 3 -->
 
-      <!-- Your Pet Adoption Journey Section -->
+<!-- SECTION 3 -->
+
+<!-- Your Pet Adoption Journey Section -->
 <section class="adoption-journey">
-  {% if adoption_request %}
-
-    {% if adoption_request.status == 'Pending' %}
-        <p>Your adoption request is under review.</p>
-
-    {% elif adoption_request.status == 'Approved' %}
-        <p>Your adoption request has been approved!</p>
-
-    {% elif adoption_request.status == 'Rejected' %}
-        <p>Your adoption request has been rejected.</p>
-        
-    {% endif %}
-{% else %}
-    {{pass}}
-{% endif %}
     <h2>Your Pet Adoption Journey With My Buddy</h2>
     <i class="fas fa-paw" style="font-size: 32px;"></i>
     <i class="fas fa-paw" style="font-size: 32px;"></i>
-    <div class="adoption-content">
-      <div class="adoption-image">
-        <img src="{%static 'image/dog-adopt-1.jpg'%}" alt="Adoptable Dog" class="adopt-image">
-      </div>
-      <div class="adoption-text">
-        <p><strong>&ldquo;Adopting a pet is a rewarding experience that offers countless benefits, both for the animal and the adopter. Millions of 
-          animals, including dogs, cats, and other pets, find themselves in shelters each year, waiting for a loving home. By choosing to adopt, 
-          you are not only giving an animal a second chance at life but also gaining a loyal companion.
-  
-          The adoption process typically involves visiting a local animal shelter or rescue organization. Here, you can interact with various 
-          pets and find one that matches your lifestyle and personality. Many shelters conduct interviews and home visits to ensure a good fit 
-          for both the pet and the family.
-          
-          Furthermore, adopting instead of buying pets helps combat overpopulation in shelters and encourages a culture of compassion and 
-          responsibility. With so many animals in need, consider adopting your next furry friend. By doing so, you’ll not only gain a loyal 
-          companion but also contribute to making the world a better place for animals in need.&rdquo;
-        </strong></p>
-      </div>
+    <div class="adoption-content framed">
+        <div class="adoption-image">
+            <img src="{%static 'image/dog-adopt-1.jpg'%}" alt="Adoptable Dog" class="adopt-image">
+        </div>
+        <div class="adoption-text">
+            <p><strong>&ldquo;Adopting a pet is a rewarding experience that offers countless benefits, both for the animal and the adopter. Millions of 
+                animals, including dogs, cats, and other pets, find themselves in shelters each year, waiting for a loving home. By choosing to adopt, 
+                you are not only giving an animal a second chance at life but also gaining a loyal companion.&rdquo;
+            </strong></p>
+        </div>
     </div>
-  </section>
-  
-  <!-- Second Adoption Journey Section -->
-  <section class="adoption-journey">
-    <div class="adoption-content reverse">
-      <div class="adoption-text">
-        <p><strong>&ldquo;Every year, millions of pets find themselves in shelters, longing for a forever home. The need for adoption is urgent, 
-          as countless animals face euthanasia due to overcrowding and lack of resources. Many of these pets come from difficult backgrounds, 
-          having experienced abandonment, neglect, or abuse. Adopting them provides a second chance at life, transforming their fate from
-          uncertain to hopeful.
-  
-          Shelters are often filled with loving animals of all ages, breeds, and sizes, each with a unique personality. By choosing to adopt, 
-          you not only save a life but also gain a loyal companion who will enrich your life with love and joy. Additionally, adopting pets helps 
-          reduce the overall population in shelters, combating the cycle of homelessness and neglect.
-      
-          In essence, adopting a pet is an opportunity to make a meaningful difference in the lives of animals in need, while also enriching your 
-          own life in the process.&rdquo;
-        </strong></p>
-      </div>
-      <div class="adoption-image">
-        <img src="{%static 'image/dog-adopt-2.jpg'%}" alt="Happy Dog" class="adopt-image">
-      </div>
+</section>
+
+<!-- Second Adoption Journey Section -->
+<section class="adoption-journey">
+    <div class="adoption-content reverse framed">
+        <div class="adoption-text">
+            <p><strong>&ldquo;Every year, millions of pets find themselves in shelters, longing for a forever home. The need for adoption is urgent, 
+                as countless animals face euthanasia due to overcrowding and lack of resources. Many of these pets come from difficult backgrounds, 
+                having experienced abandonment, neglect, or abuse. Adopting them provides a second chance at life, transforming their fate from 
+                uncertain to hopeful.&rdquo;
+            </strong></p>
+        </div>
+        <div class="adoption-image">
+            <img src="{%static 'image/dog-adopt-2.jpg'%}" alt="Happy Dog" class="adopt-image">
+        </div>
     </div>
-  </section>
+</section>
+
+
   
+
+
   
   
 <!-- SECTION 4 -->
@@ -142,7 +117,7 @@
 
 
 
-<!-- SECTION 5 -->
+
 <!-- SECTION 5 -->
 
 <section id="pet-adoption-benefits" class="adoption-benefits">

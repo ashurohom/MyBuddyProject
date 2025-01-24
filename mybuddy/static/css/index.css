@@ -112,82 +112,93 @@ body {
   /* SECTION 3 */
 
 
-
-
- /* Adoption Journey Section Styling */
+/* Adoption Journey Section Styling */
 .adoption-journey {
-    padding: 40px 20px; /* Reduced space around the section */
-    text-align: center;
+  padding: 40px 20px;
+  text-align: center;
 }
 
 .adoption-journey h2 {
-    font-size: 50px;
-    color: #337e7a; /* Your theme color */
-    margin-bottom: 20px;
-    font-family: 'Poppins', sans-serif; /* Attractive font */
+  font-size: 50px;
+  color: #337e7a;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Content of the adoption journey */
+/* Content of the adoption journey with a frame */
 .adoption-content {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin: 20px auto; /* Reduced space between sections */
-    padding: 20px;
-    background-color: white; /* White background for the content */
-    border-radius: 10px; /* Rounded corners */
-    max-width: 1200px; /* Set a maximum width (adjust as needed) */
-    width: 80%; /* Make it responsive */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #f9f9f9; /* Light gray background inside the frame */
+  border-radius: 10px;
+  max-width: 1200px;
+  width: 80%;
 }
 
+.adoption-content.framed {
+  border: 5px solid #f39c12; /* Orange border for the frame */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Enhanced shadow for depth */
+  background-color: #fdf3e6; /* Light orange background for the framed section */
+}
+
+/* Adoption image */
 .adoption-image {
-    flex: 1;
-    margin-left: 20px; /* Space between image and text */
+  flex: 1;
+  margin-left: 20px;
 }
 
 .adopt-image {
-    max-width: 250px; /* Adjusted maximum width for the images */
-    width: 100%; /* Allow the image to scale down */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 50%; /* Make the image circular */
-    object-fit: cover; /* Ensure the image fills the space without distortion */
-    border: 4px solid #3498DB; /* Add a border with color and thickness */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Optional: Add shadow for depth */
+  max-width: 250px;
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
+  object-fit: cover;
+  /*border: 4px solid #f39c12;  Matching border color */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow for the image */
 }
 
 /* Text styling */
 .adoption-text {
-    flex: 1;
-    text-align: left; /* Align text to the left */
-    margin-right: 20px; /* Space between text and image */
+  flex: 1;
+  text-align: left;
+  margin-right: 20px;
 }
 
 .adoption-text p {
-    font-size: 18px;
-    color: #2C3E50; /* Dark color for contrast */
+  font-size: 18px;
+  color: #2C3E50;
+  background-color: #ffffff; /* White background for better readability */
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-/* Reverse class for the second section */
+/* Reverse class for second section */
 .reverse {
-    flex-direction: row-reverse; /* Reverse the order for right-side image */
+  flex-direction: row-reverse;
 }
 
 /* Responsive Design */
 @media (max-width: 768px) {
-    .adoption-content {
-        flex-direction: column; /* Stack elements on small screens */
-        align-items: center;
-    }
+  .adoption-content {
+      flex-direction: column;
+      align-items: center;
+  }
 
-    .adoption-image {
-        margin-left: 0; /* Remove margin for stacked layout */
-        margin-bottom: 20px; /* Space below the image */
-    }
+  .adoption-image {
+      margin-left: 0;
+      margin-bottom: 20px;
+  }
 
-    .adoption-text {
-        text-align: center; /* Center align text in smaller view */
-    }
+  .adoption-text {
+      text-align: center;
+  }
 }
+
+
 
 
 
