@@ -56,7 +56,7 @@ def signin(request):
 
         else:
             user = authenticate(username=un, password=up)
-            print(user)
+            # print(user)
             if user != None:
                 login(request,user)
                 return redirect('/') 
@@ -162,7 +162,7 @@ def thanku(request):
    
     context={}
     user_request = Adoptionrequest.objects.filter(userid=request.user.id).last()
-    print("Adoption_Request:", user_request)
+    # print("Adoption_Request:", user_request)
     return render(request,'thanku.html',{'adoption_request': user_request})
 
 # def adoption_status(request):
