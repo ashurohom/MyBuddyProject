@@ -1,10 +1,18 @@
 /* General Donation Page Styling */
 .donation-page {
-    padding: 40px 0;
+    padding: 20px 0; /* Compact padding */
     background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad390);
     color: #333;
 }
 
+/* Container Styling */
+.container {
+    max-width: 1200px; /* Compact container width */
+    margin: 0 auto;
+    padding: 10px 20px;
+}
+
+/* Title and Subtitle Styling */
 .title {
     font-size: 2.5rem;
     font-weight: bold;
@@ -23,9 +31,25 @@
     margin-bottom: 2rem;
 }
 
-.container {
-    max-width: 1200px;
-    margin: 0 auto;
+/* Row and Column Styling */
+.row {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px; /* Even spacing between columns */
+}
+
+.col-md-4 {
+    flex: 0 0 38%; /* Widened to 38% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.col-md-8 {
+    flex: 0 0 60%; /* Widened to 60% */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Card Styling for Left Column */
@@ -71,6 +95,7 @@ h3 {
     font-weight: bold;
     text-transform: uppercase;
     transition: background 0.3s ease, transform 0.2s ease;
+    margin: 5px; /* Adds space between buttons */
 }
 
 .donation-btn:hover {
@@ -79,10 +104,12 @@ h3 {
 
 /* Form Styling */
 #donation-form {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.3); /* Transparent background */
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ccc;
+    width: 100%; /* Full width */
 }
 
 #donation-form .form-group {
@@ -120,18 +147,8 @@ h3 {
     background: #e44d4d;
 }
 
-/* Ensure Proper Alignment for Columns */
-.row {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: space-between;
-}
-
-.col-md-4, .col-md-8 {
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    margin-bottom: 20px;
+/* Ensure Proper Alignment */
+.text-center {
+    text-align: center;
+    margin-bottom: 1.5rem;
 }
