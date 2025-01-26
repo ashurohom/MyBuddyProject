@@ -4,12 +4,12 @@
 {% block main %}
 <div class="donation-page" style="background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad390); padding: 20px;">
     <div class="container">
-        <h1 class="text-center mb-4">Donate to Help Our Pets</h1>
-        <p class="text-center text-muted">Your generosity helps provide food, shelter, and medical care to our furry friends. Together, we can make a difference!</p>
+        <h1 class="text-center mb-4 title">Donate to Help Our Pets</h1>
+        <p class="text-center text-muted subtitle">Your generosity helps provide food, shelter, and medical care to our furry friends. Together, we can make a difference!</p>
 
         <div class="row mt-5">
             <!-- Left Column -->
-            <div class="col-md-4">
+            <div class="col-md-4 d-flex align-items-start">
                 <div class="card h-100 text-center p-3">
                     <img src="{% static 'image/dog_head2.jpg' %}" alt="Donation" class="img-fluid rounded mb-3">
                     <p class="text-dark font-weight-bold" style="font-size: 1.2rem;">Every small contribution creates a big impact. Donate to save lives!</p>
@@ -29,7 +29,6 @@
 
                 <!-- Donation Form -->
                 <form id="donation-form">
-                    {% csrf_token %}
                     <div class="form-group">
                         <label for="name">Name</label>
                         <input type="text" id="name" name="name" class="form-control" placeholder="Enter your name" required>
