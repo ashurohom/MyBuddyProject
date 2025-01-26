@@ -1,11 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Donate to Help Our Pets</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block main %}
 <body>
     <div class="donation-page">
         <div class="container">
@@ -16,7 +13,7 @@
                 <!-- Left Column -->
                 <div class="col-md-4">
                     <div class="card">
-                        <img src="dog_head2.jpg" alt="Donation" class="card-image">
+                        <img src="{% static 'image/dog_head2.jpg' %}" alt="Donation" class="card-image">
                         <p class="card-text">Every small contribution creates a big impact. Donate to save lives!</p>
                     </div>
                 </div>
@@ -30,6 +27,8 @@
                         <button class="donation-btn" data-amount="50">50 Rs</button>
                         <button class="donation-btn" data-amount="100">100 Rs</button>
                         <button class="donation-btn" data-amount="500">500 Rs</button>
+                        <button class="donation-btn" data-amount="500">1000 Rs</button>
+                        <button class="donation-btn" data-amount="500">1000 Rs</button>
                     </div>
 
                     <!-- Donation Form -->
@@ -67,4 +66,4 @@
         });
     </script>
 </body>
-</html>
+{% endblock main %}
