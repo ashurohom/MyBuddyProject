@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from .models import Pet, Adoptionrequest
+import razorpay
 
 
 # Create your views here.
@@ -184,3 +185,6 @@ def contact(request):
 
 def donate(request):
     return render(request,'donate.html')
+
+def payment(request):
+		return render(request,'donate.html')
