@@ -187,4 +187,9 @@ def donate(request):
     return render(request,'donate.html')
 
 def payment(request):
-		return render(request,'donate.html')
+    context={}
+    client = razorpay.client(auth=("rzp_test_2zJjEbeRT0fAQQ","4tEfDY2fzqhAENnHpl7S03L2"))
+    data = {"amount":1000, "curremcy":"INR", "receipt":'1234'}
+    payment = client.order.create(data=data)
+    context['payment']=payment
+    return render(request,'donate.html')
