@@ -16,9 +16,10 @@ body {
   .hero-section {
     position: relative;
     width: 100%;
-    height: calc(12.4 * 60px); /* Assuming navbar height is 60px */
+    height: calc(10.4 * 50px); /* Assuming navbar height is 60px */
     background-color: white;
     overflow: hidden;
+    /* margin-top: 70px; */
   }
   
   .hero-img {
@@ -205,6 +206,8 @@ body {
 
 /* SECTION 4 */
 
+/* SECTION 4 */
+
 .pet-gallery {
   padding: 50px 20px;
   background-color: #f9f9f9; /* Light background color for contrast */
@@ -213,9 +216,16 @@ body {
 .pet-gallery h2 {
   text-align: center;
   margin-bottom: 30px;
+  font-size: 28px;
+  font-weight: bold;
   color: #333; /* Darker text color */
 }
 
+.pet-gallery b {
+  color: #f44336; /* Red color for the "My Buddy" text */
+}
+
+/* Gallery container styling */
 .gallery-container {
   display: flex;
   flex-wrap: wrap;
@@ -223,35 +233,45 @@ body {
   gap: 20px; /* Space between cards */
 }
 
+/* Gallery item (each card) styling */
 .gallery-item {
   background-color: #fff; /* Card background color */
-  border: 2px solid #4CAF50; /* Matching border color */
+  /*border: 2px solid #4CAF50;  Matching border color */
   border-radius: 8px; /* Rounded corners */
   overflow: hidden; /* To hide overflow of image */
   width: calc(20% - 20px); /* 5 items in a row with spacing */
-  transition: transform 0.3s ease; /* Smooth transition for hover effect */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition for hover effect */
   text-align: center; /* Centering text */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
 }
 
 .gallery-item img {
   width: 100%; /* Full width of the card */
-  height: auto; /* Auto height to maintain aspect ratio */
+  height: 300px; /* Fixed height to maintain uniformity */
+  object-fit: cover; /* Ensure images cover the area without distortion */
   transition: transform 0.3s ease; /* Smooth zoom effect */
 }
 
 .gallery-item h3 {
-  padding: 10px;
+  padding: 15px;
   margin: 0;
-  color: #333; /* Dark text for visibility */
+  color: #4CAF50; /* Green color for pet names */
+  font-size: 22px;
+  font-weight: bold;
+  background-color: #fff; /* White background for the name */
+  border-top: 2px solid #4CAF50; /* Green border on top */
+  border-radius: 0 0 8px 8px; /* Rounded bottom corners */
+  box-shadow: 0 -4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow on the bottom */
 }
 
 /* Hover effects */
 .gallery-item:hover {
-  transform: scale(1.1); /* Scale up on hover */
+  transform: scale(1.05); /* Scale up on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15); /* Deepen the shadow for a 3D effect */
 }
 
 .gallery-item img:hover {
-  transform: scale(1.05); /* Zoom in on hover */
+  transform: scale(1.1); /* Zoom in on hover */
 }
 
 /* Responsive Styles */
@@ -284,34 +304,72 @@ body {
 
 
 
+
+/* SECTION 5 */
 /* SECTION 5 */
 .adoption-benefits {
   padding: 50px 20px;
-  background-color: #f9f9f9; /* Light background color */
+  background-color: #ffffff; /* Light background color */
   text-align: center; /* Centering text */
 }
 
 .adoption-benefits h2 {
   margin-bottom: 30px;
+  font-size: 2rem;
+  font-weight: bold;
   color: #333; /* Darker text color */
 }
 
 .benefit-row {
   display: flex; /* Align items in a row */
   justify-content: center; /* Center items horizontally */
+  flex-wrap: wrap; /* Wrap items on smaller screens */
   margin-bottom: 30px; /* Space between rows */
 }
 
 .benefit-item {
   display: flex; /* Align icon and text */
   align-items: center; /* Center vertically */
-  margin: 0 20px; /* Space between items */
+  margin: 5px; /* Space between items */
   color: #333; /* Dark text for visibility */
-  width: 40%; /* Set width to fit two items per line */
+  width: 45%; /* Set width to fit two items per line */
+  transition: transform 0.3s ease; /* Smooth transition for hover effect */
 }
 
 .benefit-item i {
-  font-size: 24px; /* Size of the icon */
-  margin-right: 10px; /* Space between icon and text */
+  font-size: 30px; /* Increase size of icons */
+  margin-right: 15px; /* Space between icon and text */
   color: #4CAF50; /* Icon color */
 }
+
+.benefit-item p {
+  font-size: 1rem;
+  color: #555; /* Slightly lighter text color for readability */
+  line-height: 0.5; /* Space between lines for better readability */
+}
+
+/* Hover effect */
+.benefit-item:hover {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .benefit-item {
+    width: 100%; /* Stack items on smaller screens */
+    margin: 10px 0; /* Reduce spacing */
+  }
+
+  .adoption-benefits h2 {
+    font-size: 1.5rem; /* Adjust heading size on smaller screens */
+  }
+
+  .benefit-item i {
+    font-size: 25px; /* Adjust icon size for smaller screens */
+  }
+
+  .benefit-item p {
+    font-size: 0.9rem; /* Adjust text size for smaller screens */
+  }
+}
+

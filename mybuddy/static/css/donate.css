@@ -1,0 +1,102 @@
+.donation-page {
+    padding: 40px 0;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad390);
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: none;
+    background: white;
+}
+
+.card img {
+    border-radius: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+.donation-btn {
+    flex: 1;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+#donation-form .form-group {
+    margin-bottom: 15px;
+}
+
+#donation-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#donation-form input {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#donation-form button {
+    font-size: 1.2rem;
+    padding: 10px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+.donation-page {
+    padding: 40px 0;
+    background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad390);
+}
+
+.card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    border: none;
+    background: white;
+}
+
+.card img {
+    border-radius: 10px;
+}
+
+.card p {
+    font-size: 1rem;
+    margin: 15px 0;
+    color: #333;
+}
+
+.donation-btn {
+    flex: 1;
+    padding: 10px 0;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+#donation-form .form-group {
+    margin-bottom: 15px;
+}
+
+#donation-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+#donation-form input {
+    border-radius: 5px;
+    padding: 10px;
+}
+
+#donation-form button {
+    font-size: 1.2rem;
+    padding: 10px;
+    background: #ff6b6b;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
