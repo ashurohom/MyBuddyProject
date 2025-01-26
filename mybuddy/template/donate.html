@@ -35,7 +35,8 @@
                     </div>
 
                     <!-- Donation Form -->
-                    <form id="donation-form">
+                    <form id="donation-form" method="POST">
+                        {% csrf_token %}
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter your name" required>

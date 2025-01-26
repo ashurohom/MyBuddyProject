@@ -188,6 +188,13 @@ def donate(request):
 
 def payment(request):
     context={}
+
+    if request.method == "POST":
+        n=request.POST['name']
+        add=request.POST['address']    
+        mob=request.POST['mobile']
+        amt=request.POST['donation-amount']
+
     client = razorpay.client(auth=("rzp_test_2zJjEbeRT0fAQQ","4tEfDY2fzqhAENnHpl7S03L2"))
     data = {"amount":1000, "curremcy":"INR", "receipt":'1234'}
     payment = client.order.create(data=data)
