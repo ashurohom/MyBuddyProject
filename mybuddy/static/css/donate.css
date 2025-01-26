@@ -6,6 +6,7 @@
 } */
 
 .donation-page {
+    margin-top: 70px;
     padding: 20px 0;
     background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad390);
 }
@@ -85,9 +86,9 @@
 /* Donation Buttons */
 .donation-buttons {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     justify-content: center;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
 }
 
 .donation-btn {
