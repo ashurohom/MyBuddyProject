@@ -183,20 +183,32 @@ def about(request):
 def contact(request):
     return render(request,'contact.html')
 
+
+
 def donate(request):
-    return render(request,'donate.html')
+    context = {}
+    if request.method == "POST":
+        name = request.POST.get('name')
+        address = request.POST.get('address')
+        mobile = request.POST.get('mobile')
+        amount = int(request.POST.get('donation-amount'))  
+        
+        print(f"Name: {name}, Address: {address}, Mobile: {mobile}, Amount: {amount}")
+        
+        
+        client = razorpay.Client(auth=("rzp_test_2zJjEbeRT0fAQQ", "4tEfDY2fzqhAENnHpl7S03L2"))
+        payment = client.order.create(data={"amount": amount * 100, "currency": "INR"})
+
+        context = {
+            "amount": amount,
+            "name": name,
+            "mobile": mobile
+        }
+        return render(request, 'donate.html', context)
+
+
+    return render(request, 'donate.html', context)
+
 
 def payment(request):
-    context={}
-
-    if request.method == "POST":
-        n=request.POST['name']
-        add=request.POST['address']    
-        mob=request.POST['mobile']
-        amt=request.POST['donation-amount']
-
-    client = razorpay.client(auth=("rzp_test_2zJjEbeRT0fAQQ","4tEfDY2fzqhAENnHpl7S03L2"))
-    data = {"amount":1000, "curremcy":"INR", "receipt":'1234'}
-    payment = client.order.create(data=data)
-    context['payment']=payment
-    return render(request,'donate.html')
+  return render(request, 'donate.html')

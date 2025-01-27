@@ -35,7 +35,7 @@
                     </div>
 
                     <!-- Donation Form -->
-                    <form id="donation-form" method="POST">
+                    <form id="donation-form" method="POST" action="">
                         {% csrf_token %}
                         <div class="form-group">
                             <label for="name">Name</label>
@@ -53,9 +53,12 @@
                             <label for="donation-amount">Donation Amount</label>
                             <input type="number" id="donation-amount" name="donation-amount" placeholder="Enter donation amount" required>
                         </div>
-                        <button type="submit" id="rzp-button1" class="submit-btn">Donate Now</button>
+                        <button id="rzp-button1" class="">Donate Now</button>
                         {% comment %} <button  class="btn btn-primary">Pay with Razorpay</button> {% endcomment %}
                     </form>
+                    {% comment %} <div class="razorpay-button">
+                        <button id="rzp-button1" class="btn btn-primary">Pay with Razorpay</button>
+                    </div>  {% endcomment %}
                 </div>
             </div>
         </div>
@@ -71,12 +74,13 @@
         });
     </script>
 
-    <!-- Razorpay Integration -->
+
+<!-- Razorpay Integration -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 var options = {
     "key": "rzp_test_2zJjEbeRT0fAQQ", // Replace with your Razorpay Key ID
-    "amount": "{{final_amount}}", // Amount in smallest currency unit (paise)
+    "amount": 500*100, // Amount in smallest currency unit (paise)
     {% comment %} "amount": "{{finalamount}}", // Amount in smallest currency unit (paise) {% endcomment %}
     "currency": "INR",
     "name": "MyBuddy",
@@ -84,14 +88,13 @@ var options = {
     "image": "https://example.com/your_logo",
     "order_id": "{{payment.id}}", // Replace with Razorpay Order ID
     "handler": function (response) {
-        {% comment %} alert("Payment successful!"); {% endcomment %}
-        window.location.href = "/email_send/";
+        alert("Payment successful!");
+        window.location.href = "/";
         {% comment %} window.location.href = "/payment_success/"; {% endcomment %}
     },
     "prefill": {
         "name": "{{name}}",
-        "email": "{{email}}",
-        "contact": "{{contact}}"
+        "contact": "{{mobile}}"
     },
     "notes": {
         "address": "E-commerce Website"
@@ -109,6 +112,8 @@ document.getElementById('rzp-button1').onclick = function(e) {
     e.preventDefault();
 }
 </script>
+
+
 
 
 </body>

@@ -10,9 +10,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: rgba(255, 255, 255, 0.8);
+  background-color: rgb(255, 255, 255);
   padding: 10px 20px;
-  /* box-shadow: 2px 8px 12px rgba(140, 111, 194, 0.7); */
+  box-shadow: 2px 8px 12px rgba(3, 3, 3, 0.3);
   position: fixed;
   width: 100%;
   top: 0;
@@ -51,7 +51,7 @@
 .website-name h1 {
   font-family: 'Arial Black', sans-serif;
   font-size: 24px;
-  color: #a8473b;
+  color: #2f2f2f;
   letter-spacing: 2px;
   text-transform: uppercase;
   margin: 0;
