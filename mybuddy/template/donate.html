@@ -78,9 +78,21 @@
 <!-- Razorpay Integration -->
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
+
+     // Update amount based on input
+     document.getElementById('rzp-button1').onclick = function (e) {
+        e.preventDefault(); // Prevent form submission
+        
+        const donationAmount = document.getElementById('donation-amount').value;
+        if (!donationAmount || donationAmount <= 0) {
+            alert("Please enter a valid donation amount.");
+            return;
+        }
+
+
 var options = {
     "key": "rzp_test_2zJjEbeRT0fAQQ", // Replace with your Razorpay Key ID
-    "amount": 500*100, // Amount in smallest currency unit (paise)
+    "amount": donationAmount * 100, // Amount in smallest currency unit (paise)
     {% comment %} "amount": "{{finalamount}}", // Amount in smallest currency unit (paise) {% endcomment %}
     "currency": "INR",
     "name": "MyBuddy",
@@ -93,11 +105,11 @@ var options = {
         {% comment %} window.location.href = "/payment_success/"; {% endcomment %}
     },
     "prefill": {
-        "name": "{{name}}",
-        "contact": "{{mobile}}"
+        "name": document.getElementById('name').value,
+        "contact": document.getElementById('mobile').value
     },
     "notes": {
-        "address": "E-commerce Website"
+        "address": document.getElementById('address').value
     },
     "theme": {
         "color": "#3399cc"
