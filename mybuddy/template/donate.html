@@ -79,7 +79,7 @@
 <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
 <script>
 
-     // Update amount based on input
+     {% comment %} // Update amount based on input
      document.getElementById('rzp-button1').onclick = function (e) {
         e.preventDefault(); // Prevent form submission
         
@@ -87,12 +87,12 @@
         if (!donationAmount || donationAmount <= 0) {
             alert("Please enter a valid donation amount.");
             return;
-        }
+        } {% endcomment %}
 
 
 var options = {
     "key": "rzp_test_2zJjEbeRT0fAQQ", // Replace with your Razorpay Key ID
-    "amount": donationAmount * 100, // Amount in smallest currency unit (paise)
+    "amount": 100 * 100, // Amount in smallest currency unit (paise)
     {% comment %} "amount": "{{finalamount}}", // Amount in smallest currency unit (paise) {% endcomment %}
     "currency": "INR",
     "name": "MyBuddy",
