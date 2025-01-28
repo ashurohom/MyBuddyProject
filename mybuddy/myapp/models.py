@@ -59,7 +59,8 @@ class Adoptionrequest(models.Model):
 
 
 class Donar(models.Model):
+    userid = models.ForeignKey("auth.User",on_delete=models.CASCADE, db_column="userid")
     name=models.CharField(max_length=50)
     address=models.CharField(max_length=100)
-    mobile=models.IntegerField()
+    mobile=models.CharField(max_length=10)
     amount=models.IntegerField()

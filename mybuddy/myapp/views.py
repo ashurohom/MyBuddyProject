@@ -185,33 +185,72 @@ def contact(request):
 
 
 
+# def donate(request):
+#     context = {}
+#     if request.method == "POST":
+#         n = request.POST.get('name')
+#         add = request.POST.get('address')
+#         mob = request.POST.get('mobile')
+#         amt = int(request.POST.get('donation-amount'))  
+
+#         d=Donar.objects.create(name=n,address=add,mobile=mob,amount=amt)
+#         d.save()
+        
+#         # print(f"Name: {name}, Address: {address}, Mobile: {mobile}, Amount: {amount}")
+#     return render(request, 'donate.html', context)
+
+
+
 def donate(request):
     context = {}
     if request.method == "POST":
-        name = request.POST.get('name')
-        address = request.POST.get('address')
-        mobile = request.POST.get('mobile')
-        amount = int(request.POST.get('donation-amount'))  
+        n = request.POST.get('name')
+        add = request.POST.get('address')
+        mob = request.POST.get('mobile')
+        amt = int(request.POST.get('donation-amount'))  
 
-        do=Donar.   
-        
-        print(f"Name: {name}, Address: {address}, Mobile: {mobile}, Amount: {amount}")
 
-    return render(request, 'payment.html', context)
+        # Save data to the database
+        d = Donar.objects.create(name=n, address=add, mobile=mob, amount=amt, userid=request.user)
+        d.save()
+
+        # Store the donation amount in the session
+        request.session['donation_amount'] = amt
+
+        # Redirect to the payment page
+        return redirect('/payment')  # 'payment' should be the name of your payment view's URL
+
+    return render(request, 'donate.html', context)
+
 
 
 
 
 
 # def payment(request):
+#     context={}
+#     u = User.objects.filter(id=request.user.id)
+#     d = Donar.objects.filter(userid = u[0])
 
-#     client = razorpay.Client(auth=("rzp_test_2zJjEbeRT0fAQQ", "4tEfDY2fzqhAENnHpl7S03L2"))
-#         payment = client.order.create(data={"amount": amount * 100, "currency": "INR"})
+#     context['amount']=d
+    
 
-#         context = {
-#             "amount":amount,
-#             "name": name,
-#             "mobile": mobile
-#         }
-# return render(request, 'donate.html', context)
+#     # client = razorpay.Client(auth=("rzp_test_2zJjEbeRT0fAQQ", "4tEfDY2fzqhAENnHpl7S03L2"))
+#     #     payment = client.order.create(data={"amount": amount * 100, "currency": "INR"})
 
+#     #     context = {
+#     #         "amount":amount,
+#     #         "name": name,
+#     #         "mobile": mobile
+#     #     }
+#     return render(request, 'payment.html', context)
+
+def payment(request):
+    # Retrieve the donation amount from the session
+    donation_amount = request.session.get('donation_amount', 0)  # Default to 0 if not found
+
+    context = {
+        'donation_amount': donation_amount
+    }
+
+    return render(request, 'payment.html', context)
