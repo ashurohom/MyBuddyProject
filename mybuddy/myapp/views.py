@@ -248,14 +248,13 @@ def donate(request):
 
 def payment(request):
     # Retrieve the donation amount from the session
+    context={}
     donation_amount = request.session.get('donation_amount', 0)  # Default to 0 if not found
 
-    context = {
-        'donation_amount': donation_amount
-    }
-
     client = razorpay.Client(auth=("rzp_test_2zJjEbeRT0fAQQ", "4tEfDY2fzqhAENnHpl7S03L2"))
-    payment = client.order.create(data={"amount": donation_amount * 100, "currency": "INR"})
+    payment = client.order.create(data={"amount": donation_amount * 100, "currency": "INR", "receipt":"1234"})
 
+    context['donation_amount']= donation_amount
+    context['payment']=payment
 
     return render(request, 'payment.html', context)
