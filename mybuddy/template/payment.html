@@ -17,4 +17,56 @@
 <p>Donation Amount: ₹{{ donation_amount }}</p>
 
 
+
+<!-- Razorpay Integration -->
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+
+     {% comment %} // Update amount based on input
+     document.getElementById('rzp-button1').onclick = function (e) {
+        e.preventDefault(); // Prevent form submission
+        
+        const donationAmount = document.getElementById('donation-amount').value;
+        if (!donationAmount || donationAmount <= 0) {
+            alert("Please enter a valid donation amount.");
+            return;
+        } {% endcomment %}
+
+
+var options = {
+    "key": "rzp_test_2zJjEbeRT0fAQQ", // Replace with your Razorpay Key ID
+    "amount": {{payment.amount}}* 100, // Amount in smallest currency unit (paise)
+    {% comment %} "amount": "{{finalamount}}", // Amount in smallest currency unit (paise) {% endcomment %}
+    "currency": "INR",
+    "name": "MyBuddy",
+    "description": "Secure Payment",
+    "image": "https://example.com/your_logo",
+    "order_id": "{{payment.id}}", // Replace with Razorpay Order ID
+    "handler": function (response) {
+        alert("Payment successful!");
+        window.location.href = "/";
+        {% comment %} window.location.href = "/payment_success/"; {% endcomment %}
+    },
+    "prefill": {
+        "name": document.getElementById('name').value,
+        "contact": document.getElementById('mobile').value
+    },
+    "notes": {
+        "address": document.getElementById('address').value
+    },
+    "theme": {
+        "color": "#3399cc"
+    }
+};
+var rzp1 = new Razorpay(options);
+rzp1.on('payment.failed', function (response) {
+    alert("Payment failed: " + response.error.reason);
+});
+document.getElementById('rzp-button1').onclick = function(e) {
+    rzp1.open();
+    e.preventDefault();
+}
+</script>
+
+
 {% endblock main %}
