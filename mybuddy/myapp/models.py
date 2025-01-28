@@ -56,3 +56,10 @@ class Adoptionrequest(models.Model):
 
     def __str__(self):
         return f"{self.full_name} - {self.pet_name}"
+
+
+class Donar(models.Model):
+    name=models.CharField(max_length=50)
+    address=models.CharField(max_length=100)
+    mobile=models.IntegerField()
+    amount=models.IntegerField()

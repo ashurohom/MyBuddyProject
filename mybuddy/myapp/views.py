@@ -2,7 +2,7 @@ from django.shortcuts import render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-from .models import Pet, Adoptionrequest
+from .models import Pet, Adoptionrequest, Donar
 import razorpay
 
 
@@ -192,23 +192,26 @@ def donate(request):
         address = request.POST.get('address')
         mobile = request.POST.get('mobile')
         amount = int(request.POST.get('donation-amount'))  
+
+        do=Donar.   
         
         print(f"Name: {name}, Address: {address}, Mobile: {mobile}, Amount: {amount}")
-        
-        
-        client = razorpay.Client(auth=("rzp_test_2zJjEbeRT0fAQQ", "4tEfDY2fzqhAENnHpl7S03L2"))
-        payment = client.order.create(data={"amount": amount * 100, "currency": "INR"})
 
-        context = {
-            "amount":amount,
-            "name": name,
-            "mobile": mobile
-        }
-        return render(request, 'donate.html', context)
+    return render(request, 'payment.html', context)
 
 
-    return render(request, 'donate.html', context)
 
 
-def payment(request):
-  return render(request, 'donate.html')
+
+# def payment(request):
+
+#     client = razorpay.Client(auth=("rzp_test_2zJjEbeRT0fAQQ", "4tEfDY2fzqhAENnHpl7S03L2"))
+#         payment = client.order.create(data={"amount": amount * 100, "currency": "INR"})
+
+#         context = {
+#             "amount":amount,
+#             "name": name,
+#             "mobile": mobile
+#         }
+# return render(request, 'donate.html', context)
+
