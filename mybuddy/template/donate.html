@@ -27,8 +27,8 @@
 
                     <!-- Donation Buttons -->
                     <div class="donation-buttons">
-                        <button class="donation-btn" data-amount="50">50 ₹</button>
                         <button class="donation-btn" data-amount="100">100 ₹</button>
+                        <button class="donation-btn" data-amount="300">300 ₹</button>
                         <button class="donation-btn" data-amount="500">500 ₹</button>
                         <button class="donation-btn" data-amount="1000">1000 ₹</button>
                         <button class="donation-btn" data-amount="1500">1500 ₹</button>
@@ -92,7 +92,7 @@
 
 var options = {
     "key": "rzp_test_2zJjEbeRT0fAQQ", // Replace with your Razorpay Key ID
-    "amount": 100 * 100, // Amount in smallest currency unit (paise)
+    "amount": {{payment.amount}}* 100, // Amount in smallest currency unit (paise)
     {% comment %} "amount": "{{finalamount}}", // Amount in smallest currency unit (paise) {% endcomment %}
     "currency": "INR",
     "name": "MyBuddy",

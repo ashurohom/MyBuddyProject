@@ -200,7 +200,7 @@ def donate(request):
         payment = client.order.create(data={"amount": amount * 100, "currency": "INR"})
 
         context = {
-            "amount": amount,
+            "amount":amount,
             "name": name,
             "mobile": mobile
         }

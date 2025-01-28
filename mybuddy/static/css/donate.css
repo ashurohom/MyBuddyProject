@@ -118,6 +118,16 @@
 .donation-btn:nth-child(3) {
     background: #ffc107;
     color: white;
+}    
+
+.donation-btn:nth-child(4) {
+    background: #4b3c10;
+    color: white;
+}
+
+.donation-btn:nth-child(5) {
+    background: #6b5d7e;
+    color: white;
 }
 
 .donation-btn:hover {
