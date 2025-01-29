@@ -35,5 +35,6 @@ urlpatterns = [
     path('request_form/<pid>/',views.request_form),
     path('thanku/',views.thanku),
     path('payment/',views.payment),
+    path('email_send/',views.email_send),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
