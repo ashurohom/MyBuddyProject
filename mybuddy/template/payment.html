@@ -33,16 +33,19 @@
             font-size: 2.5rem;
             color: #4caf50;
             margin-bottom: 20px;
+            margin-left:50px
         }
 
         .amount {
             font-size: 1.25rem;
             color: #333;
             margin-bottom: 30px;
+            margin-left:50px
         }
 
         .razorpay-button {
             margin-top: 20px;
+            margin-left:50px
         }
 
         .btn1 {
@@ -89,14 +92,14 @@ var options = {
     "order_id": "{{payment.id}}", // Replace with Razorpay Order ID
     "handler": function (response) {
         alert("Payment successful!");
-        {% comment %} window.location.href = "/email_send/"; {% endcomment %}
-        {% comment %} window.location.href = "/payment_success/"; {% endcomment %}
+        //window.location.href = "/email_send/"; 
+        //window.location.href = "/payment_success/"; 
         windows.location.href="http://127.0.0.1:8000/"
     },
     "prefill": {
         "name": "Ashu",
         "email": "ashu@gmail.com",
-        "contact": "9527"
+        "contact": "9527230560"
     },
     "notes": {
         "address": "MyBuddy"

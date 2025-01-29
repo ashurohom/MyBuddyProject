@@ -4,6 +4,7 @@ from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from .models import Pet, Adoptionrequest, Donar
 import razorpay
+from django.core.mail import send_mail
 
 
 # Create your views here.
@@ -258,3 +259,15 @@ def payment(request):
     context['payment']=payment
 
     return render(request, 'payment.html', context)
+
+
+
+def email_send(request):
+    send_mail(
+        "MyBuddy Donation Payment",
+        "Dear Donar Thank You, Your Donation Amount Received\n Thank You \n Visit Again MyBuddy",
+        "ashitosh.rohom@gmail.com",
+        ['ashitoshrohom1829@gmail.com'],
+        )
+    # return redirect('/myorder')
+    return redirect('/update_order_status')
