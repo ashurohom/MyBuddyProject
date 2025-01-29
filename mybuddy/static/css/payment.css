@@ -1,0 +1,54 @@
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+.container {
+    text-align: center;
+    padding: 30px;
+    border: 2px solid #4caf50; /* Green border */
+    border-radius: 10px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 400px;
+    margin-top: 140px;
+    margin-bottom: 50px;
+}
+
+.thanku {
+    font-size: 2.5rem;
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+.amount {
+    font-size: 1.25rem;
+    color: #333;
+    margin-bottom: 30px;
+}
+
+.razorpay-button {
+    margin-top: 20px;
+}
+
+.btn1 {
+    background-color: #4d1adc;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 200px; /* Adjust the width value as needed */
+    text-align: center; /* Ensures text stays centered */
+}
+
+.btn1:hover {
+    background-color: #45a049;
+}
