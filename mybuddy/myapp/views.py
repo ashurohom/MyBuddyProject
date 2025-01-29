@@ -269,5 +269,5 @@ def email_send(request):
         "ashitosh.rohom@gmail.com",
         ['ashitoshrohom1829@gmail.com'],
         )
-    # return redirect('/myorder')
-    return redirect('/update_order_status')
+
+    return redirect('/')
