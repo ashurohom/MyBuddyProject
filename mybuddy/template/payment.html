@@ -91,10 +91,10 @@ var options = {
     "image": "https://example.com/your_logo",
     "order_id": "{{payment.id}}", // Replace with Razorpay Order ID
     "handler": function (response) {
-        alert("Payment successful!");
+        //alert("Payment successful!");
         //window.location.href = "/email_send/"; 
         //window.location.href = "/payment_success/"; 
-        windows.location.href="http://127.0.0.1:8000/email_send/"
+        window.location.href="http://127.0.0.1:8000/email_send/"
     },
     "prefill": {
         "name": "Ashu",
