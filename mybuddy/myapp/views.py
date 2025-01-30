@@ -259,14 +259,12 @@ def user(request):
     return render(request,'user.html',context)
 
 def Delete(request,uid):
-
-    # u = User.objects.filter(id=request.user.id)
-    ur=User.objects.filter(id=uid)
-    ur.delete()
-    # if u.exists():
-    #     u.delete()
-    #     messages.success(request, "User deleted successfully.") 
-    # else:
-    #     messages.error(request, "User not found.")
-    return redirect('/user')
+    u=User.objects.filter(id=uid)
+    u.delete()
+    if u.exists():
+        u.delete()
+        messages.success(request, "User deleted successfully.") 
+    else:
+         messages.error(request, "User not found.")
+    return redirect('/')
     # return render(request,'user.html')

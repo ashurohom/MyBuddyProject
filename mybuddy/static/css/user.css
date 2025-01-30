@@ -1,9 +1,4 @@
-body {
-    background-color: #f8f9fa;
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-}
+
 
 .container {
     margin-top: 90px;
@@ -27,7 +22,8 @@ body {
 h1 {
     font-size: 2.5rem;
     font-weight: bold;
-    color: #343a40;
+    /* color: #343a40; */
+    color: #3a0808;
     margin-bottom: 30px;
 }
 

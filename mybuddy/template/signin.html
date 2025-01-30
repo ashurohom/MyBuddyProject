@@ -47,4 +47,16 @@
 </div>
   {% endblock main %}
 </body>
+
+<script>
+  window.onload = function() {
+      setTimeout(function() {
+          var errorMsg = document.getElementById('error-msg');
+          if (errorMsg) {
+              errorMsg.style.display = 'none';
+          }
+      }, 5000); // Hide the message after 5 seconds
+  }
+</script>
+
 </html>
