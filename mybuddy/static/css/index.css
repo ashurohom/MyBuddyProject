@@ -16,7 +16,7 @@ body {
   .hero-section {
     position: relative;
     width: 100%;
-    height: calc(9.4 * 50px); /* Assuming navbar height is 60px */
+    height: calc(10.6 * 50px); /* Assuming navbar height is 60px */
     background-color: white;
     overflow: hidden;
     /* margin-top: 70px; */
