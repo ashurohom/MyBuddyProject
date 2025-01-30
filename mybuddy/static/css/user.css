@@ -7,6 +7,15 @@ body {
 
 .container {
     margin-top: 90px;
+    margin-bottom: 30px;
+    max-width: 600px; /* Restrict the width of the container */
+    margin-left: auto;
+    margin-right: auto;
+    border: 2px solid #dee2e6; /* Add a border around the container */
+    border-radius: 15px;
+    background-color: #ffffff; /* Light background for the card */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visuals */
+    padding: 30px; /* Add padding inside the container */
 }
 
 .card {
