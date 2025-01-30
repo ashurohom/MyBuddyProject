@@ -1,10 +1,11 @@
-from django.shortcuts import render,redirect
+from django.shortcuts import get_object_or_404,render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from .models import Pet, Adoptionrequest, Donar
 import razorpay
 from django.core.mail import send_mail
+from django.contrib import messages
 
 
 # Create your views here.
@@ -257,6 +258,8 @@ def user(request):
     context['user']=u
     return render(request,'user.html',context)
 
-def Delete(request,sid):
-    u=User.objects.filter(id=sid)
-    u.delete()
+def Delete(request, uid):
+    user = get_object_or_404(User, id=uid)  # Fetch the user or raise 404 if not found
+    user.delete()  # Delete the user
+    messages.success(request, "User deleted successfully.")  # Add success message
+    return redirect('/')
