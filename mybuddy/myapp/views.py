@@ -256,3 +256,7 @@ def user(request):
     u=User.objects.filter(id=request.user.id)
     context['user']=u
     return render(request,'user.html',context)
+
+def Delete(request,sid):
+    u=User.objects.filter(id=sid)
+    u.delete()
