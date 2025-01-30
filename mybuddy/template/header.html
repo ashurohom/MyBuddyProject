@@ -46,7 +46,7 @@
       {% if request.user.is_authenticated %}
 
       <a href="/logout" class="nav-btn">Logout</a>
-      <a href="" class="nav-btn ">Welcome {{request.user.username}}</a>
+      <a href="/user" class="nav-btn ">Welcome {{request.user.username}}</a>
       
       {% else %}
       

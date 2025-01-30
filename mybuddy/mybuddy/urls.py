@@ -36,5 +36,6 @@ urlpatterns = [
     path('thanku/',views.thanku),
     path('payment/',views.payment),
     path('email_send/',views.email_send),
+    path('user/',views.user),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
