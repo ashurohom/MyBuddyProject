@@ -1,31 +1,206 @@
 {% extends 'base.html' %}
 {% load static %}
 
-
 {% block main %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Donate to Help Our Pets</title>
+    <style>
+        /* General Donation Page Styling */
+        .donation-page {
+            margin-top: 70px;
+            padding: 20px 0;
+            background: linear-gradient(to right, #ff9a9e, #fad0c4, #fad390);
+        }
+
+        /* Container Styling */
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 10px 20px;
+        }
+
+        /* Title and Subtitle Styling */
+        .title {
+            margin-top: 2px;
+            margin-left: 30%;
+            font-size: 2.5rem;
+            font-weight: bold;
+            text-align: center;
+            margin-bottom: 1rem;
+            color: #4d4d4d;
+            text-decoration: underline;
+        }
+
+        .subtitle {
+            margin-left: 25%;
+            font-size: 1.2rem;
+            text-align: center;
+            color: #6c757d;
+            margin-bottom: 2rem;
+        }
+
+        /* Row Styling */
+        .row {
+            display: flex;
+            gap: 20px;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+
+        /* Left Column */
+        .col-md-4 {
+            flex: 1;
+            max-width: 38%;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+        }
+
+        .card-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        .card-text {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        /* Right Column */
+        .col-md-8 {
+            flex: 2;
+            max-width: 100%;
+            margin-left: 150px;
+        }
+
+        .form-title {
+            text-align: center;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        /* Donation Buttons */
+        .donation-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+
+        .donation-btn {
+            padding: 10px 20px;
+            font-size: 1rem;
+            font-weight: bold;
+            text-transform: uppercase;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s, transform 0.2s;
+        }
+
+        .donation-btn:nth-child(1) {
+            background: #007bff;
+            color: white;
+        }
+
+        .donation-btn:nth-child(2) {
+            background: #28a745;
+            color: white;
+        }
+
+        .donation-btn:nth-child(3) {
+            background: #ffc107;
+            color: white;
+        }
+
+        .donation-btn:nth-child(4) {
+            background: #4b3c10;
+            color: white;
+        }
+
+        .donation-btn:nth-child(5) {
+            background: #6b5d7e;
+            color: white;
+        }
+
+        .donation-btn:hover {
+            transform: scale(1.05);
+        }
+
+        /* Donation Form */
+        #donation-form {
+            background: rgba(255, 255, 255, 0.3);
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            width: 100%;
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 12px;
+            font-size: 1.2rem;
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+
+        .submit-btn:hover {
+            background: #e44d4d;
+        }
+    </style>
+</head>
 <body>
     <div class="donation-page">
         <div class="container">
             <h1 class="title">Donate to Help Our Pets</h1>
             <p class="subtitle">Every small contribution creates a big impact. Donate to save lives!</p>
-
             <div class="row">
                 <!-- Left Column -->
                 <div class="col-md-4">
                     <div class="card">
                         <img src="{% static '/image/petdonate.png' %}" alt="Donation" class="card-image">
-                        <p class="card-text">Your generosity helps provide food, shelter, and medical care to our furry friends. 
-                            Together, we can make a difference! Your donation will go directly towards supporting the care of animals in need. 
-                            Whether it's providing them with a warm place to sleep, food to nourish them, or necessary medical treatment, 
-                            every contribution counts. Thank you for being a part of their journey!</p>
+                        <p class="card-text">Your generosity helps provide food, shelter, and medical care to our furry friends. Together, we can make a difference!</p>
                     </div>
                 </div>
-
                 <!-- Right Column -->
                 <div class="col-md-8">
                     <h3 class="form-title">Donate Here</h3>
-
-                    <!-- Donation Buttons -->
                     <div class="donation-buttons">
                         <button class="donation-btn" data-amount="100">100 ₹</button>
                         <button class="donation-btn" data-amount="300">300 ₹</button>
@@ -33,8 +208,6 @@
                         <button class="donation-btn" data-amount="1000">1000 ₹</button>
                         <button class="donation-btn" data-amount="1500">1500 ₹</button>
                     </div>
-
-                    <!-- Donation Form -->
                     <form id="donation-form" method="POST" action="">
                         {% csrf_token %}
                         <div class="form-group">
@@ -54,21 +227,12 @@
                             <input type="number" id="donation-amount" name="donation-amount" placeholder="Enter donation amount" required>
                         </div>
                         <button type="submit" class="submit-btn">Continue</button>
-
-                        {% comment %} <button id="rzp-button1" class="">Donate Now</button> {% endcomment %}
-                        {% comment %} <button  class="btn btn-primary">Pay with Razorpay</button> {% endcomment %}
                     </form>
-
-                    {% comment %} <div class="razorpay-button">
-                        
-                    </div>  {% endcomment %}
                 </div>
             </div>
         </div>
     </div>
-
     <script>
-        // Handle donation button clicks
         document.querySelectorAll('.donation-btn').forEach(button => {
             button.addEventListener('click', () => {
                 const amount = button.getAttribute('data-amount');
@@ -76,11 +240,6 @@
             });
         });
     </script>
-
-
-
-
-
-
 </body>
+</html>
 {% endblock main %}

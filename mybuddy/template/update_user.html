@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Buddy - Update User</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+</head>
+<body class="mybody">
+  {% block main %}
+  
+  <div class="parent-container">
+    <div class="login-container">
+      <div class="logo">
+        <a href="#">
+          <i class="fas fa-dog"></i> MyBuddy
+        </a>
+      </div>
+      <h1>Update User</h1>
+      
+      <form method="POST" action="">
+        {% csrf_token %}
+      
+        <label for="name">User Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter User Name" value="{{ user.username }}">
+        
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter User Email" value="{{ user.email }}">
+        
+        <div class="login-buttons">
+          <button type="submit" class="btn-login">Update</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  
+  {% endblock main %}
+</body>
+</html>

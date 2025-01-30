@@ -18,7 +18,7 @@
 /* Header Section */
 .page-header {
     text-align: center;
-    margin: 20px 0 40px; /* Space above and below the header */
+    margin: 20px 0 40px;  /*Space above and below the header */
 
 }
 
@@ -80,7 +80,7 @@
 
 .mybutton-row button:hover {
     text-decoration: underline; /* Underline text on hover */
-    color: #0056b3; /* Darker blue on hover */
+    color: #0056b3; /*Darker blue on hover*/
 }
 
 /* Responsive Adjustments */

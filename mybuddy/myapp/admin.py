@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Pet
+from .models import Pet,Donar
 from .models import Adoptionrequest
 
 
@@ -20,3 +20,8 @@ class AdoptionRequestAdmin(admin.ModelAdmin):
         queryset.update(status='Rejected')
 
 admin.site.register(Adoptionrequest, AdoptionRequestAdmin)
+
+
+class DonarAdmin(admin.ModelAdmin):   
+    list_display=['id','name','address','mobile','amount','userid']
+admin.site.register(Donar,DonarAdmin)    

@@ -64,3 +64,4 @@ class Donar(models.Model):
     address=models.CharField(max_length=100)
     mobile=models.CharField(max_length=10)
     amount=models.IntegerField()
+

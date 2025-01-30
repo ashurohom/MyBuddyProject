@@ -268,3 +268,21 @@ def Delete(request,uid):
          messages.error(request, "User not found.")
     return redirect('/')
     # return render(request,'user.html')
+
+
+def update_user(request, sid):
+    if request.method == "GET":
+        context = {}
+        u = User.objects.filter(id=sid).first()
+        context['user'] = u  # Use 'user' instead of 'users' to represent a single object
+        return render(request, 'update_user.html', context)
+
+    elif request.method == "POST":
+        u = User.objects.filter(id=sid).first()
+        n = request.POST['name']
+        e = request.POST['email']
+        u.username = n
+        u.email = e
+        u.save()
+        return redirect('/user/')
+  
