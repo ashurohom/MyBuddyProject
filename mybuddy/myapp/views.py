@@ -249,3 +249,7 @@ def email_send(request):
         )
 
     return redirect('/')
+
+
+def user(request):
+    return render(request,'user.html')

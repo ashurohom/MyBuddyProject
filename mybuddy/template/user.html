@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block main %}
+<div class="container">
+    <div class="card p-4">
+        <h3 class="text-center mb-4">User Details</h3>
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th>User ID</th>
+                    <th>User Name</th>
+                    <th>Email</th>
+                    <th>Date of Joined</th>
+                    <th>Last Logout</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>John Doe</td>
+                    <td>john.doe@example.com</td>
+                    <td>2025-01-01</td>
+                    <td><button class="logout-btn">Logout</button></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Jane Smith</td>
+                    <td>jane.smith@example.com</td>
+                    <td>2024-12-15</td>
+                    <td><button class="logout-btn">Logout</button></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock main %}
