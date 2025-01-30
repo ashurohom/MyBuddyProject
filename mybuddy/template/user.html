@@ -2,16 +2,83 @@
 {% load static %}
 
 {% block maincss %}
-<link rel="stylesheet" href="{% static 'css/user.css'%}">
+<style>
+    .container {
+        margin-top: 90px;
+        margin-bottom: 30px;
+        max-width: 600px; /* Restrict the width of the container */
+        margin-left: auto;
+        margin-right: auto;
+        border: 2px solid #dee2e6; /* Add a border around the container */
+        border-radius: 15px;
+        background-color: #ffffff; /* Light background for the card */
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for better visuals */
+        padding: 30px; /* Add padding inside the container */
+    }
+
+    .card {
+        border-radius: 15px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 2.5rem;
+        font-weight: bold;
+        color: #3a0808;
+        margin-bottom: 30px;
+    }
+
+    .user-profile {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        font-size: 1.2rem;
+    }
+
+    .profile-item {
+        display: flex;
+        justify-content: space-between;
+        padding: 10px 15px;
+        border: 1px solid #e3e3e3;
+        border-radius: 10px;
+        background-color: #ffffff;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    .profile-item strong {
+        color: #343a40;
+    }
+
+    .logout-btn {
+        background-color: #dc3545;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease-in-out;
+    }
+
+    .logout-btn:hover {
+        background-color: #c82333;
+    }
+</style>
 {% endblock maincss %}
 
 {% block main %}
 <div class="container">
     <div class="card p-4">
         {% for i in user %}
+        <h1 class="text-center mb-4">User Details : {{i.username}}</h1>
         
+        {% if error_msg %}
+            <div id="error-msg" style="color: red; text-align: center; font-size: 1.2rem; margin-bottom: 20px;">
+                {{ error_msg }}
+            </div>
+        {% endif %}
         
-        <h1 class="text-center mb-4">User Details : {{i.username}} </h1>
         <div class="user-profile">
             <div class="profile-item">
                 <strong>User ID:</strong> <span>{{i.id}}</span>
@@ -31,8 +98,19 @@
                 <a href="/delete/{{i.id}}"><button class="logout-btn">Delete</button></a>
                 <a href="/logout"><button class="logout-btn">Logout</button></a>
             </div>
-            {% endfor %}
         </div>
+        {% endfor %}
     </div>
 </div>
+
+<script>
+    window.onload = function() {
+        setTimeout(function() {
+            var errorMsg = document.getElementById('error-msg');
+            if (errorMsg) {
+                errorMsg.style.display = 'none';
+            }
+        }, 5000); // Hide the message after 5 seconds
+    }
+</script>
 {% endblock main %}
