@@ -37,5 +37,6 @@ urlpatterns = [
     path('payment/',views.payment),
     path('email_send/',views.email_send),
     path('user/',views.user),
+    path('delete/<sid>/',views.Delete),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
