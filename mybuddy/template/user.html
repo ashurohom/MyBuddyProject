@@ -8,20 +8,24 @@
 {% block main %}
 <div class="container">
     <div class="card p-4">
-        <h1 class="text-center mb-4">User Details</h1>
+        {% for i in user %}
+        
+        
+        <h1 class="text-center mb-4">{{i.username}} Details</h1>
         <div class="user-profile">
             <div class="profile-item">
-                <strong>User ID:</strong> <span>1</span>
+                <strong>User ID:</strong> <span>{{i.id}}</span>
             </div>
             <div class="profile-item">
-                <strong>User Name:</strong> <span>John Doe</span>
+                <strong>User Name:</strong> <span>{{i.username}}</span>
             </div>
             <div class="profile-item">
-                <strong>Email:</strong> <span>john.doe@example.com</span>
+                <strong>Email:</strong> <span>{{i.email}}</span>
             </div>
             <div class="profile-item">
-                <strong>Date of Joined:</strong> <span>2025-01-01</span>
+                <strong>Date of Joined:</strong> <span>{{i.date_joined}}</span>
             </div>
+            {% endfor %}
             <div class="profile-item">
                 <a href=""><button class="logout-btn">Update</button></a>
                 <a href=""><button class="logout-btn">Delete</button></a>

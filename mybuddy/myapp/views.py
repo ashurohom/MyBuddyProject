@@ -1,6 +1,6 @@
 from django.shortcuts import render,redirect
 from django.http import HttpResponse
-from django.contrib.auth.models import User,auth_user,
+from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from .models import Pet, Adoptionrequest, Donar
 import razorpay
@@ -253,6 +253,6 @@ def email_send(request):
 
 def user(request):
     context={}
-    u=auth_user.objects.all()
+    u=User.objects.filter(id=request.user.id)
     context['user']=u
     return render(request,'user.html',context)
