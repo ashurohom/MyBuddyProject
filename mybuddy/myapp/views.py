@@ -258,8 +258,15 @@ def user(request):
     context['user']=u
     return render(request,'user.html',context)
 
-def Delete(request, uid):
-    user = get_object_or_404(User, id=uid)  # Fetch the user or raise 404 if not found
-    user.delete()  # Delete the user
-    messages.success(request, "User deleted successfully.")  # Add success message
-    return redirect('/')
+def Delete(request,uid):
+
+    # u = User.objects.filter(id=request.user.id)
+    ur=User.objects.filter(id=uid)
+    ur.delete()
+    # if u.exists():
+    #     u.delete()
+    #     messages.success(request, "User deleted successfully.") 
+    # else:
+    #     messages.error(request, "User not found.")
+    return redirect('/user')
+    # return render(request,'user.html')

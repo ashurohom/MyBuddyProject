@@ -25,13 +25,13 @@
             <div class="profile-item">
                 <strong>Date of Joined:</strong> <span>{{i.date_joined}}</span>
             </div>
-            {% endfor %}
+            
             <div class="profile-item">
                 <a href=""><button class="logout-btn">Update</button></a>
-                <a href="{% url 'delete_user' i.id %}"><button class="logout-btn">Delete</button></a>
-                {% comment %} <a href="/delete/{{i.id}}"><button class="logout-btn">Delete</button></a> {% endcomment %}
+                <a href="/delete/{{i.id}}"><button class="logout-btn">Delete</button></a>
                 <a href="/logout"><button class="logout-btn">Logout</button></a>
             </div>
+            {% endfor %}
         </div>
     </div>
 </div>
