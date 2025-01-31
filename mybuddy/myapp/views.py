@@ -134,8 +134,9 @@ def request_form(request,pid):
         reason = request.POST.get('reason')
         acknowledgments = request.POST.get('terms') == 'on'
 
+        if re.match("[6-9]\d{9}",p_number):
       
-        adoption_request = Adoptionrequest.objects.create(
+            adoption_request = Adoptionrequest.objects.create(
                 pet_name=pet.pname,
                 pet_breed=pet.category,
                 pet_age=pet.age,
@@ -154,8 +155,11 @@ def request_form(request,pid):
                 adoption_reason=reason,
                 acknowledgment=acknowledgments,
             )
-        adoption_request.save()
-        return redirect('/thanku') 
+            adoption_request.save()
+            return redirect('/thanku') 
+        else:
+                context["error_msg"] = "Warning : Incorrect Mobile Number"
+                return render(request,'request.html',context)
     else:
         return render(request,'request.html',context)  
 
