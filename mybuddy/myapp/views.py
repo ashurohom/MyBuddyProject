@@ -216,7 +216,7 @@ def donate(request):
             d = Donar.objects.create(name=n, address=add, mobile=mob, amount=amt, userid=request.user)
             d.save()
             request.session['donation_amount'] = amt
-            return redirect('/payment')  # 'payment' should be the name of your payment view's URL
+            return redirect('/payment') 
         else:
                 context["error_msg"] = "Warning : Incorrect Mobile Number"
                 return render(request,'address.html',context)

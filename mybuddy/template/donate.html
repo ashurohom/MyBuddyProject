@@ -201,6 +201,13 @@
                 <!-- Right Column -->
                 <div class="col-md-8">
                     <h3 class="form-title">Donate Here</h3>
+                    
+                    {% if error_msg %}
+                        <div class="alert alert-danger">
+                        {{error_msg}}
+                        </div>
+                    {% endif %}
+
                     <div class="donation-buttons">
                         <button class="donation-btn" data-amount="100">100 ₹</button>
                         <button class="donation-btn" data-amount="300">300 ₹</button>
