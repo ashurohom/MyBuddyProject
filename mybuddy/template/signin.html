@@ -8,6 +8,10 @@
   <title>My Buddy - Sign In</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
   <link rel="stylesheet" href="{% static 'css/signin.css' %}">
+
+
+
+
 </head>
 <body class="mybody">
   {% block main %}
@@ -21,6 +25,16 @@
       </a>
     </div>
     <h1>Login</h1>
+
+{% if messages %}
+        <div id="popup-message" style="position:fixed; top:10px; right:49rem; background:white; padding:10px; border-radius:10px; font-weight: bold;">
+            {% for message in messages %}
+                <p>{{ message }}</p>
+            {% endfor %}
+        </div>
+{%endif%}
+
+
     <form method="POST" action="">
       {% csrf_token %}
 
@@ -57,6 +71,17 @@
           }
       }, 5000); // Hide the message after 5 seconds
   }
+</script>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function () {
+      const messageBox = document.getElementById('popup-message');
+      if (messageBox) {
+          setTimeout(() => {
+              messageBox.style.display = 'none';
+          }, 3000); // Hides the message after 3 seconds
+      }
+  });
 </script>
 
 </html>

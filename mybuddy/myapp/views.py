@@ -9,6 +9,7 @@ from django.core.mail import send_mail
 from django.contrib import messages
 
 
+
 # Create your views here.
 
 def index(request):
@@ -77,7 +78,10 @@ def signin(request):
 
 def ulogout(request):
     logout(request)
-    return redirect('/signin')
+    messages.success(request, "User logged out")
+
+    # return redirect('/signin')
+    return render(request,'signin.html')
 
 
 
