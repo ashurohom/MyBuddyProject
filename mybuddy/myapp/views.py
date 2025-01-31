@@ -219,7 +219,7 @@ def donate(request):
             return redirect('/payment') 
         else:
                 context["error_msg"] = "Warning : Incorrect Mobile Number"
-                return render(request,'address.html',context)
+                return render(request,'donate.html',context)
 
     return render(request, 'donate.html', context)
 
