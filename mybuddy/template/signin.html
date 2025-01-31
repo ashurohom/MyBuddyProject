@@ -26,13 +26,11 @@
     </div>
     <h1>Login</h1>
 
-{% if messages %}
-        <div id="popup-message" style="position:fixed; top:10px; right:49rem; background:white; padding:10px; border-radius:10px; font-weight: bold;">
-            {% for message in messages %}
-                <p>{{ message }}</p>
-            {% endfor %}
-        </div>
-{%endif%}
+    {% if message %}
+    <div style="color: #721c24; background-color: #f8d7da; border: 1px solid rgb(0, 0, 0); padding: 10px; border-radius: 5px; margin-top: 10px;">
+    {{ message }}
+    </div>
+    {% endif %}
 
 
     <form method="POST" action="">

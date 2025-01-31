@@ -38,6 +38,10 @@ def signup(request):
         elif len(p) <6 or len(rp) <6:
                 context['error_msg']="Password Contain Atleast 6 Character"
                 return render(request,'signup.html',context)
+
+        elif User.objects.filter(username=n).exists() or User.objects.filter(email=e).exists():
+            context['error_msg'] = "User with this username or email already exists"
+            return render(request, 'signup.html', context)        
         
         else:
             u = User.objects.create(username=n, email=e)
