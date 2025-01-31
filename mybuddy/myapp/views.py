@@ -3,6 +3,7 @@ from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
 from .models import Pet, Adoptionrequest, Donar
+import re
 import razorpay
 from django.core.mail import send_mail
 from django.contrib import messages
@@ -211,15 +212,11 @@ def donate(request):
         mob = request.POST.get('mobile')
         amt = int(request.POST.get('donation-amount'))  
 
+        if re.match("[6-9]\d{9}",mob):
+            d = Donar.objects.create(name=n, address=add, mobile=mob, amount=amt, userid=request.user)
+            d.save()
+            request.session['donation_amount'] = amt
 
-        # Save data to the database
-        d = Donar.objects.create(name=n, address=add, mobile=mob, amount=amt, userid=request.user)
-        d.save()
-
-        # Store the donation amount in the session
-        request.session['donation_amount'] = amt
-
-        # Redirect to the payment page
         return redirect('/payment')  # 'payment' should be the name of your payment view's URL
 
     return render(request, 'donate.html', context)
@@ -274,7 +271,7 @@ def update_user(request, sid):
     if request.method == "GET":
         context = {}
         u = User.objects.filter(id=sid).first()
-        context['user'] = u  # Use 'user' instead of 'users' to represent a single object
+        context['user'] = u  
         return render(request, 'update_user.html', context)
 
     elif request.method == "POST":
