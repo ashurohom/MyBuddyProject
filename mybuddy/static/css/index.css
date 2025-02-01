@@ -91,8 +91,11 @@ body {
     color: white;
     font-size: 20px;
     border: 1px solid rgb(105, 102, 102);
-    border-left: 5px;
-    border-right: 25px;
+    
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 5px;
+    border-top-right-radius: 25px;
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
