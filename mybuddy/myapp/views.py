@@ -7,6 +7,8 @@ import re
 import razorpay
 from django.core.mail import send_mail
 from django.contrib import messages
+from django.template.loader import render_to_string
+from django.core.mail import EmailMessage
 
 
 
@@ -263,16 +265,33 @@ def payment(request):
 
 
 
+# def email_send(request):
+#     send_mail(
+#         "MyBuddy Donation Payment",
+#         "Dear Donar Thank You, Your Donation Amount Received\n Thank You \n Visit Again MyBuddy",
+#         "ashitosh.rohom@gmail.com",
+#         ['ashitoshrohom1829@gmail.com'],
+#         )
+
+#     return redirect('/')
+
+
 def email_send(request):
-    send_mail(
-        "MyBuddy Donation Payment",
-        "Dear Donar Thank You, Your Donation Amount Received\n Thank You \n Visit Again MyBuddy",
-        "ashitosh.rohom@gmail.com",
-        ['ashitoshrohom1829@gmail.com'],
-        )
+    subject = "MyBuddy Donation Payment"
+    recipient_list = ['ashitoshrohom1829@gmail.com']
+    from_email = "ashitosh.rohom@gmail.com"
+
+    # Render the HTML template
+    message = render_to_string('email.html', {
+        'donor_name': 'Dear Donor',  # You can pass dynamic data here
+        'donation_amount': 'Your Donation Amount Received'
+    })
+
+    email = EmailMessage(subject, message, from_email, recipient_list)
+    email.content_subtype = "html"  # This is important to send the email as HTML
+    email.send()
 
     return redirect('/')
-
 
 def user(request):
     context={}
