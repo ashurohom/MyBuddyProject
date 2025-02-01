@@ -2,5 +2,157 @@
 {% load static %}
 
 {% block main %}
-    
+  <style>
+    /* Container for the About Page */
+    .about-container {
+      margin: 80px auto;
+      max-width: 900px;
+      padding: 30px;
+      background-color: #fdfdfd;
+      border: 1px solid #e0e0e0;
+      border-radius: 8px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+    }
+
+    /* Header Section */
+    .about-header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    .about-header h1 {
+      font-size: 2.8rem;
+      color: #2C3E50;
+      margin-bottom: 10px;
+    }
+
+    .tagline {
+      font-size: 1.4rem;
+      color: #E74C3C;
+      font-style: italic;
+      margin-bottom: 20px;
+    }
+
+    /* Section Headings */
+    .section-heading {
+      font-size: 2rem;
+      color: #27AE60;
+      margin-top: 40px;
+      margin-bottom: 15px;
+      border-bottom: 2px solid #27AE60;
+      padding-bottom: 5px;
+    }
+
+    /* Content Section */
+    .about-content {
+      font-size: 1.1rem;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    .about-content p {
+      margin-bottom: 20px;
+    }
+
+    /* Images Styling */
+    .about-image {
+      display: block;
+      margin: 20px auto;
+      max-width: 100%;
+      border-radius: 8px;
+    }
+
+    /* Quotes Styling */
+    .quote {
+      font-size: 1.2rem;
+      font-style: italic;
+      color: #8E44AD;
+      text-align: center;
+      margin: 30px 0;
+    }
+
+    /* Donation Section Styling */
+    .donation-section {
+      background-color: #F9F9F9;
+      padding: 20px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin-top: 30px;
+    }
+
+    .donation-section h2 {
+      font-size: 1.8rem;
+      color: #2980B9;
+      margin-bottom: 15px;
+    }
+
+    .donation-section p {
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #333;
+    }
+  </style>
+
+  <div class="about-container">
+    <div class="about-header">
+      <h1>About My Buddy</h1>
+      <div class="tagline">Connecting hearts with paws - Every pet deserves a loving home!</div>
+    </div>
+
+    <div class="about-content">
+      <p>
+        Welcome to My Buddy, your one-stop platform dedicated to pet lovers and animal welfare.
+        Our mission is to bring together pet enthusiasts, donors, and adopters in a community
+        where every pet can find a caring family.
+      </p>
+
+      <img src="{% static '/image/dog_head.jpg' %}" alt="Pet Care" class="about-image">
+
+      <p>
+        We believe in making a positive difference in the lives of our furry friends through
+        pet adoption and donation. Our platform is designed to share stories, offer expert advice,
+        and provide resources that help pet owners and animal shelters connect and support one another.
+      </p>
+
+      <div class="section-heading">Inspiring Quotes</div>
+      <div class="quote">
+        "Until one has loved an animal, a part of one's soul remains unawakened." – Anatole France
+      </div>
+      <div class="quote">
+        "The greatness of a nation and its moral progress can be judged by the way its animals are treated." – Mahatma Gandhi
+      </div>
+
+      <div class="section-heading">Pet Adoption</div>
+      <p>
+        Adopting a pet not only brings joy and companionship into your life but also gives a
+        deserving animal a second chance at happiness. At My Buddy, we connect prospective
+        pet parents with shelters and foster care systems that help find the perfect match.
+      </p>
+
+      <div class="section-heading">Pet Donation</div>
+      <p>
+        Donations play a critical role in supporting animal shelters, veterinary care, and rescue
+        operations. Your generous contributions help provide food, shelter, and medical care for
+        pets in need. Every donation, big or small, goes a long way in ensuring that these animals
+        receive the care they deserve.
+      </p>
+
+      <div class="donation-section">
+        <h2>Donation Information</h2>
+        <p>
+          We appreciate every donation that supports our cause. The funds raised are used to:
+        </p>
+        <ul>
+          <li>Support shelter facilities with necessary supplies and medical care.</li>
+          <li>Provide food and nutritional care for rescued animals.</li>
+          <li>Fund spay/neuter programs to control the pet population.</li>
+          <li>Organize rescue operations and community outreach events.</li>
+        </ul>
+        <p>
+          If you'd like to contribute, please visit our <a href="/donate" style="color: #E74C3C; text-decoration: underline;">Donation Page</a> for more details.
+        </p>
+      </div>
+    </div>
+  </div>
 {% endblock main %}
