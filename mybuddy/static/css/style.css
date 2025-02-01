@@ -81,26 +81,46 @@
   transform: scale(1.1);
 }
 
-/* Select Dropdown Styling */
+/* Select Dropdown Styling (Matching nav-btn) */
 .select-dropdown select {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.8);
   padding: 5px 10px;
+  text-align: center;
   font-size: 1.1rem;
   font-weight: bold;
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.8);
-  background: transparent;
-  color: rgba(0, 0, 0, 0.8);
-  cursor: pointer;
   transition: all 0.3s ease;
-}
-
-.select-dropdown select:focus {
-  outline: none;
-  border-color: #9ea33b;
+  background: transparent;
+  border: none; /* Remove default select border */
+  -webkit-appearance: none; /* Remove default arrow in some browsers */
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  /* Optional: add a custom border to mimic the nav-btn look */
+  /* border: 1px solid rgba(0, 0, 0, 0.8); */
 }
 
 .select-dropdown select:hover {
-  transform: scale(1.05);
+  color: #9ea33b;
+  transform: scale(1.1);
+}
+
+/* Optional: Style the dropdown arrow */
+.select-dropdown {
+  position: relative;
+  display: inline-block;
+}
+.select-dropdown::after {
+  /*content: "\f0d7";  FontAwesome caret-down icon */
+  font-family: "Font Awesome 5 Free"; 
+  font-weight: 900;
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: rgba(0, 0, 0, 0.8);
 }
 
 /* Responsive Adjustments */
@@ -141,5 +161,3 @@
   }
 }
 
-/* Footer CSS (if needed) */
-/* Add your footer styles here if you're using a separate footer file */
