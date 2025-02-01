@@ -8,7 +8,7 @@ class Pet(models.Model):
     pname = models.CharField(max_length=50)
     category = models.IntegerField(choices=CAT, verbose_name="Pet Name")
     gender = models.CharField(max_length=50)
-    age = models.IntegerField()
+    age = models.FloatField()
     weight = models.IntegerField()
     vaccination = models.CharField(max_length=100)
     surgery = models.CharField(max_length=100)
