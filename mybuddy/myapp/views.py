@@ -85,9 +85,8 @@ def signin(request):
 def ulogout(request):
     logout(request)
     messages.success(request, "User logged out")
-
-    # return redirect('/signin')
-    return render(request,'signin.html')
+    return redirect('/signin')
+    # return render(request,'signin.html')
 
 
 
@@ -315,7 +314,7 @@ def email_send(request):
 
 
 
-    
+
 def user(request):
     context={}
     u=User.objects.filter(id=request.user.id)
