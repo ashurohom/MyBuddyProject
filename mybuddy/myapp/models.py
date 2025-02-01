@@ -65,3 +65,9 @@ class Donar(models.Model):
     mobile=models.CharField(max_length=10)
     amount=models.IntegerField()
 
+class Contact(models.Model):
+    name=models.CharField(max_length=50)
+    email=models.EmailField()
+    number=models.CharField(max_length=10)
+    message=models.CharField(max_length=300)
+    

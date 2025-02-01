@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Pet,Donar
+from .models import Pet,Donar,Contact
 from .models import Adoptionrequest
 
 
@@ -25,3 +25,8 @@ admin.site.register(Adoptionrequest, AdoptionRequestAdmin)
 class DonarAdmin(admin.ModelAdmin):   
     list_display=['id','name','address','mobile','amount','userid']
 admin.site.register(Donar,DonarAdmin)    
+
+
+class ContactAdmin(admin.ModelAdmin):   
+    list_display=['id','name','email','number','message']
+admin.site.register(Contact,ContactAdmin) 

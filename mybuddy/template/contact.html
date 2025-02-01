@@ -22,7 +22,8 @@
         </div>
         <div class="contact-form">
             <h2>Send Us a Message</h2>
-            <form>
+            <form method="POST">
+                {% csrf_token %}
                 <input type="text" name="name" placeholder="Your Name" required>
                 <input type="email" name="email" placeholder="Your Email" required>
                 <input type="tel" name="phone" placeholder="Your Contact Number" required>

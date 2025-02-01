@@ -2,7 +2,7 @@ from django.shortcuts import get_object_or_404,render,redirect
 from django.http import HttpResponse
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate,login,logout
-from .models import Pet, Adoptionrequest, Donar
+from .models import Pet, Adoptionrequest, Donar, Contact
 import re
 import razorpay
 from django.core.mail import send_mail
@@ -196,7 +196,18 @@ def about(request):
     return render(request,'about.html')
 
 def contact(request):
-    return render(request,'contact.html')
+    if request.method == "POST":
+        n = request.POST.get("name")
+        e = request.POST.get("email")
+        p = request.POST.get("phone")
+        m = request.POST.get("message")
+
+        contact = Contact.objects.create(name=n, email=e, number=p, message=m)
+        contact.save()
+        return render(request, 'contact.html', {"success_msg": "Your message has been sent successfully!"})
+
+    return render(request, 'contact.html')
+
 
 
 
