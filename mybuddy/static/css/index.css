@@ -73,7 +73,7 @@ body {
     background-color: #3498DB; /* Button color matching navbar */
     color: white;
     font-size: 20px;
-    border: none;
+    border: 1px solid rgb(212, 205, 205);
     border-radius: 5px;
     cursor: pointer;
     text-decoration: none;
