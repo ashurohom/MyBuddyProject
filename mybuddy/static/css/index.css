@@ -57,9 +57,25 @@ body {
   .hero-content h2 {
     font-family: 'Poppins', sans-serif;
     font-size: 36px;
-    /*color: #443c47;  Matches your theme */
-    color: #240505; /* Matches your theme */
+    color: #240505;
     margin-bottom: 30px;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    position: relative;
+    padding-bottom: 10px;
+  }
+  
+  .hero-content h2::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background-color: #240505;
+    border-radius: 2px;
   }
   
   .hero-content p {
@@ -70,18 +86,20 @@ body {
   /* Button Styling */
 .btn-adopt {
     padding: 15px 30px;
-    background-color: #3498DB; /* Button color matching navbar */
+    /*background-color: #3498DB;  Button color matching navbar */
+    background-color: #1a7cde; /* Button color matching navbar */
     color: white;
     font-size: 20px;
-    border: 1px solid rgb(212, 205, 205);
-    border-radius: 5px;
+    border: 1px solid rgb(105, 102, 102);
+    border-left: 5px;
+    border-right: 25px;
     cursor: pointer;
     text-decoration: none;
     transition: background-color 0.3s ease, transform 0.3s ease;
 }
 
 .btn-adopt:hover {
-    background-color: #2980B9; /* Slightly darker on hover */
+    background-color: #0f517d; /* Slightly darker on hover */
     transform: scale(1.05);
 }
 
