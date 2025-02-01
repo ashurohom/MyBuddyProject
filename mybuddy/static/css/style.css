@@ -94,10 +94,10 @@
   text-align: center;
   font-size: 1.1rem;
   font-weight: bold;
-  /* border-radius: 5px; */
+  border-radius: 5px;
   transition: all 0.3s ease;
   background: transparent;
-  /* border: 1px solid rgba(0, 0, 0, 0.8); */
+  border: none; /* Removed border */
   cursor: pointer;
   /* Remove default appearance to allow custom styling */
   -webkit-appearance: none;
@@ -112,7 +112,7 @@
 
 /* Optional: Add a custom dropdown arrow using a pseudo-element */
 .select-dropdown::after {
-  /* content: "\f0d7"; FontAwesome caret-down icon */
+  /* content: "\f0d7";  FontAwesome caret-down icon */
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   position: absolute;
@@ -160,6 +160,10 @@
     font-size: 16px;
   }
 }
+
+/* Footer CSS (if needed) */
+/* Add your footer styles here if you're using a separate footer file */
+
 
 
 /* -------------------------------------------------------------------------------------- */
