@@ -104,8 +104,8 @@ body {
     cursor: pointer;
     text-decoration: none;
   
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    animation: blink 1.5s infinite; /* Add the blinking animation */
+    transition: background-color 1.5s ease-in-out, transform 0.3s ease;
+    animation: blink 3s infinite alternate; /* Slow blinking effect */
   }
   
 
