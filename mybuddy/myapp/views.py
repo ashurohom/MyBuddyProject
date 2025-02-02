@@ -296,15 +296,18 @@ def payment(request):
 
 
 def email_send(request):
-    user_email = request.user.email  
+    user_email = request.user.email
+    donor_name = request.session.get('donor_name', 'Valued Donor')
+    donation_amount = request.session.get('donation_amount', 0)
+      
     
     subject = "MyBuddy Donation Payment"
     from_email = "ashitosh.rohom@gmail.com"
 
     # Render the HTML template
     message = render_to_string('email.html', {
-        'donor_name': request.user.username,  # Display user's name in the email
-        'donation_amount': 'Your Donation Amount Received'
+        'donor_name': donor_name,               #request.user.username,  # Display user's name in the email
+        'donation_amount': f'₹{donation_amount}'
     })
 
     email = EmailMessage(subject, message, from_email, [user_email])
