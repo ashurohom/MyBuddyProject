@@ -86,7 +86,7 @@ body {
   /* Button Styling */
   @keyframes blink {
     0% { background-color: #0f517d; }   /* Original color */
-    50% { background-color: #bc4d1a; }  /* Blinking color */
+    50% { background-color: #ec5915; }  /* Blinking color */
     100% { background-color: #0f517d; } /* Back to original */
   }
   
@@ -95,7 +95,7 @@ body {
     background-color: #0f517d; /* Initial button color */
     color: white;
     font-size: 30px;
-    border: 1px solid rgb(105, 102, 102);
+    /* border: 1px solid rgb(105, 102, 102); */
   
     border-top-left-radius: 5px;
     border-bottom-left-radius: 25px;
@@ -105,7 +105,7 @@ body {
     text-decoration: none;
   
     transition: background-color 1.5s ease-in-out, transform 0.3s ease;
-    animation: blink 3s infinite alternate; /* Slow blinking effect */
+    animation: blink 4s infinite alternate; /* Very slow blinking */
   }
   
 
