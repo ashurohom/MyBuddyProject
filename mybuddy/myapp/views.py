@@ -190,6 +190,43 @@ def thanku(request):
 
 
 
+def update_adoption_status(request, request_id):
+    adoption_request = Adoptionrequest.objects.get(id=request_id)
+
+    if request.method == "POST":
+        new_status = request.POST.get("status")
+        adoption_request.status = new_status
+        adoption_request.save()
+
+        # Send an email if the status is approved
+        if new_status == "Approved":
+            send_approval_email(adoption_request)
+
+        return redirect("/admin/adoption-requests/")  # Redirect to admin panel or relevant page
+
+    return render(request, "update_status.html", {"adoption_request": adoption_request})
+
+
+
+
+def send_approval_email(adoption_request):
+    user_email = adoption_request.userid.email  # Fetch user email
+
+    subject = "Adoption Request Approved!"
+    from_email = "ashitosh.rohom@gmail.com"
+
+    # Render email template
+    message = render_to_string("adoption_approval_email.html", {
+        "user_name": adoption_request.full_name,
+        "pet_name": adoption_request.pet_name,
+    })
+
+    email = EmailMessage(subject, message, from_email, [user_email])
+    email.content_subtype = "html"  # Send as HTML
+    email.send()
+
+
+
 
 
 
@@ -253,7 +290,7 @@ def donate(request):
 def payment(request):
     # Retrieve the donation amount from the session
     context={}
-    donation_amount = request.session.get('donation_amount', 0)  # Default to 0 if not found
+    donation_amount = request.session.get('donation_amount', 0)  
 
     client = razorpay.Client(auth=("rzp_test_2zJjEbeRT0fAQQ", "4tEfDY2fzqhAENnHpl7S03L2"))
     payment = client.order.create(data={"amount": donation_amount * 100, "currency": "INR", "receipt":"1234"})
