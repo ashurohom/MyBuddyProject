@@ -16,9 +16,9 @@
     </tr>
     <tr>
       <td style="padding: 20px; text-align: center;">
-        <h1 style="color: #333333;">Thank You for Your Generous Donation!</h1>
+        <h1 style="color: #333333;">Thank You, {{ donor_name }}!</h1>
         <p style="font-size: 16px; color: #666666; line-height: 1.5;">
-          Your contribution helps us provide better care and find loving homes for our furry friends. We deeply appreciate your support and kindness.
+          Your generous donation of <strong style="color: #4CAF50;">{{ donation_amount }}</strong> helps us provide better care and find loving homes for our furry friends.
         </p>
         <p style="font-size: 18px; font-weight: bold; color: #4CAF50;">Together, we make a difference!</p>
       </td>
@@ -26,15 +26,11 @@
     <tr>
       <td style="background-color: #f1f1f1; padding: 20px; text-align: center; border-bottom-left-radius: 10px; border-bottom-right-radius: 10px;">
         <p style="font-size: 14px; color: #333333;">With heartfelt gratitude,</p>
-        <p style="font-size: 16px; font-weight: bold; color: #4CAF50;">The MyBuddy Team</p><hr>
+        <p style="font-size: 16px; font-weight: bold; color: #4CAF50;">The MyBuddy Team</p>
+        <hr>
         <p style="font-size: 12px; color: #333333;">Design By: Ashitosh Rohom</p>
       </td>
     </tr>
-    {% comment %} <tr>
-      <td style="padding: 20px; text-align: center;">
-        
-      </td>
-    </tr> {% endcomment %}
   </table>
 </body>
 </html>
