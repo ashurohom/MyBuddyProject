@@ -239,6 +239,7 @@ def donate(request):
         if re.match("[6-9]\d{9}",mob):
             d = Donar.objects.create(name=n, address=add, mobile=mob, amount=amt, userid=request.user)
             d.save()
+            request.session['donor_name'] = n  
             request.session['donation_amount'] = amt
             return redirect('/payment') 
         else:
@@ -295,7 +296,7 @@ def payment(request):
 
 
 def email_send(request):
-    user_email = request.user.email  # Get the logged-in user's email
+    user_email = request.user.email  
     
     subject = "MyBuddy Donation Payment"
     from_email = "ashitosh.rohom@gmail.com"

@@ -35,16 +35,7 @@
         <a href="/signin" class="nav-btn">Donate</a>
       {% endif %}
       
-      <!-- Services Dropdown using a select tag with a static label -->
-      <div class="select-dropdown">
-        <select id="servicesSelect" onchange="var url = this.value; this.selectedIndex = 0; if(url) window.location.href = url;">
-          <option value="" disabled selected>Services</option>
-          <option value="/contact">Vaccination</option>
-          <option value="/contact">Doctor</option>
-          <option value="/contact">Foods</option>
-          <!-- Add more options as needed -->
-        </select>
-      </div>
+    
 
       <a href="/about" class="nav-btn">About</a>
       <a href="/contact" class="nav-btn">Contact</a>
@@ -56,6 +47,18 @@
         <a href="/signin" class="nav-btn">Login</a>
         <a href="/signup" class="nav-btn">Signup</a>
       {% endif %}
+
+        <!-- Services Dropdown using a select tag with a static label -->
+        <div class="select-dropdown">
+          <select id="servicesSelect" onchange="var url = this.value; this.selectedIndex = 0; if(url) window.location.href = url;">
+            <option value="" disabled selected>Services</option>
+            <option value="/contact">Vaccination</option>
+            <option value="/contact">Doctor</option>
+            <option value="/contact">Foods</option>
+            <!-- Add more options as needed -->
+          </select>
+        </div>
+        
     </div>
   </nav>
 
