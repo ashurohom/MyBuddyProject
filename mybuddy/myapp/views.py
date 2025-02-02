@@ -216,7 +216,7 @@ def send_approval_email(adoption_request):
     from_email = "ashitosh.rohom@gmail.com"
 
     # Render email template
-    message = render_to_string("adoption_approval_email.html", {
+    message = render_to_string("adoption_email.html", {
         "user_name": adoption_request.full_name,
         "pet_name": adoption_request.pet_name,
     })

@@ -19,6 +19,7 @@ from django.urls import path
 from myapp import views
 from django.conf import settings
 from django.conf.urls.static import static
+from myapp.views import update_adoption_status
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -39,5 +40,6 @@ urlpatterns = [
     path('user/',views.user),
     path('delete/<uid>/',views.Delete),
     path('update/<sid>/',views.update_user),
+    path('update-status/<int:request_id>/', update_adoption_status, name='update_status'),
 ]
 urlpatterns+=static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
