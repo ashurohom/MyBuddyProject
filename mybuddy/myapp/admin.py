@@ -36,7 +36,7 @@ class AdoptionRequestAdmin(admin.ModelAdmin):
                 AdoptionHistory.objects.create(
                     user=obj.id,  # Assuming 'userid' is a ForeignKey to User
                     pet_name=obj.pname,
-                    pet_breed=obj.pet_breed
+                    pet_breed=obj.category
                 )
 
                 # Delete the pet from the database
