@@ -18,37 +18,28 @@ admin.site.register(Pet)
 
 # admin.site.register(Adoptionrequest, AdoptionRequestAdmin)
 
-
 class AdoptionRequestAdmin(admin.ModelAdmin):
     list_display = ['pet_name', 'pet_breed', 'full_name', 'phone_number', 'status']
     actions = ['approve_request', 'reject_request']
 
+    def save_model(self, request, obj, form, change):
+        """Send an email if the status is changed to 'Approved'."""
+        if change:  # Ensure this is an update, not a new object creation
+            old_status = Adoptionrequest.objects.get(id=obj.id).status
+            if old_status != "Approved" and obj.status == "Approved":
+                send_approval_email(obj)  # Call the email function
+
+        super().save_model(request, obj, form, change)  # Save the object
+
     def approve_request(self, request, queryset):
-        for obj in queryset:
-            if obj.status != "Approved":
-                obj.status = "Approved"
-                obj.save()
-
-                # Send approval email
-                send_approval_email(obj)
-
-                # Save pet details in history table
-                AdoptionHistory.objects.create(
-                    user=obj.id,  # Assuming 'userid' is a ForeignKey to User
-                    pet_name=obj.pname,
-                    pet_breed=obj.category
-                )
-
-                # Delete the pet from the database
-                Pet.objects.filter(id=obj.pet_id).delete()
-
         queryset.update(status='Approved')
+        for obj in queryset:
+            send_approval_email(obj)  # Send email for each approved request
 
     def reject_request(self, request, queryset):
         queryset.update(status='Rejected')
 
 admin.site.register(Adoptionrequest, AdoptionRequestAdmin)
-
 
 
 
