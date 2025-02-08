@@ -26,9 +26,6 @@ def signup(request):
         p = request.POST['password']
         rp = request.POST['rpassword']
 
-        # print(n,e,p,rp)
-        # return HttpResponse("Data Fetched")
-
         if n=="" or e=="" or p=="" or rp=="":
             context['error_msg']="All Fields Are Required"
             return render(request,'signup.html',context)
@@ -74,20 +71,14 @@ def signin(request):
             else:
                 context['error_msg']="Invalid Username And Password"
                 return render(request,'signin.html',context)
-            
-
     else:    
         return render(request,'signin.html')
-
-
 
 
 def ulogout(request):
     logout(request)
     messages.success(request, "User logged out")
     return redirect('/signin')
-    # return render(request,'signin.html')
-
 
 
 
@@ -117,7 +108,6 @@ def filterbycategory(request,cid):
 
     
 
-
 def request_form(request,pid):
 
     context={}
@@ -126,16 +116,13 @@ def request_form(request,pid):
 
     if request.method == 'POST':
 
-        # u = User.objects.filter(id=request.user.id)
         u = User.objects.get(id=request.user.id)        
         f_name = request.POST.get('full_name')
         p_number = request.POST.get('phone')
         s_address = request.POST.get('street')
         citys = request.POST.get('city')
         states = request.POST.get('state')
-        z_code = request.POST.get('zip')
-
-        
+        z_code = request.POST.get('zip') 
         experience = request.POST.get('experience') == 'on'
         otherpets = request.POST.get('other_pets') == 'on'
         regular_checkups = request.POST.get('checkups') == 'on'
@@ -174,20 +161,11 @@ def request_form(request,pid):
 
 
 
-
-def thanku(request):
-   
+def thanku(request):   
     context={}
     user_request = Adoptionrequest.objects.filter(userid=request.user.id).last()
     # print("Adoption_Request:", user_request)
     return render(request,'thanku.html',{'adoption_request': user_request})
-
-# def adoption_status(request):
-#     user_request = AdoptionRequest.objects.filter(user_name=request.user).last()
-#     return render(request, 'adoption_status.html', {'request': user_request})
-
-
-
 
 
 def update_adoption_status(request, request_id):
@@ -202,7 +180,7 @@ def update_adoption_status(request, request_id):
         if new_status == "Approved":
             send_approval_email(adoption_request)
 
-        return redirect("/admin/adoption-requests/")  # Redirect to admin panel or relevant page
+        return redirect("/admin/adoption-requests/")  # Redirect to admin panel
 
     return render(request, "update_status.html", {"adoption_request": adoption_request})
 
@@ -210,24 +188,19 @@ def update_adoption_status(request, request_id):
 
 
 def send_approval_email(adoption_request):
-    user_email = adoption_request.userid.email  # Fetch user email
+    user_email = adoption_request.userid.email  
 
     subject = "Adoption Request Approved!"
     from_email = "ashitosh.rohom@gmail.com"
 
-    # Render email template
     message = render_to_string("adoption_email.html", {
         "user_name": adoption_request.full_name,
         "pet_name": adoption_request.pet_name,
     })
 
     email = EmailMessage(subject, message, from_email, [user_email])
-    email.content_subtype = "html"  # Send as HTML
+    email.content_subtype = "html" 
     email.send()
-
-
-
-
 
 
 def about(request):
@@ -245,24 +218,6 @@ def contact(request):
         return render(request, 'contact.html', {"success_msg": "Your message has been sent successfully!"})
 
     return render(request, 'contact.html')
-
-
-
-
-# def donate(request):
-#     context = {}
-#     if request.method == "POST":
-#         n = request.POST.get('name')
-#         add = request.POST.get('address')
-#         mob = request.POST.get('mobile')
-#         amt = int(request.POST.get('donation-amount'))  
-
-#         d=Donar.objects.create(name=n,address=add,mobile=mob,amount=amt)
-#         d.save()
-        
-#         # print(f"Name: {name}, Address: {address}, Mobile: {mobile}, Amount: {amount}")
-#     return render(request, 'donate.html', context)
-
 
 
 def donate(request):
@@ -288,7 +243,6 @@ def donate(request):
 
 
 def payment(request):
-    # Retrieve the donation amount from the session
     context={}
     donation_amount = request.session.get('donation_amount', 0)  
 
@@ -301,37 +255,6 @@ def payment(request):
     return render(request, 'payment.html', context)
 
 
-
-# def email_send(request):
-#     send_mail(
-#         "MyBuddy Donation Payment",
-#         "Dear Donar Thank You, Your Donation Amount Received\n Thank You \n Visit Again MyBuddy",
-#         "ashitosh.rohom@gmail.com",
-#         ['ashitoshrohom1829@gmail.com'],
-#         )
-
-#     return redirect('/')
-
-
-# def email_send(request):
-#     subject = "MyBuddy Donation Payment"
-#     recipient_list = ['ashitoshrohom1829@gmail.com']
-#     from_email = "ashitosh.rohom@gmail.com"
-
-#     # Render the HTML template
-#     message = render_to_string('email.html', {
-#         'donor_name': 'Dear Donor',  # You can pass dynamic data here
-#         'donation_amount': 'Your Donation Amount Received'
-#     })
-
-#     email = EmailMessage(subject, message, from_email, recipient_list)
-#     email.content_subtype = "html"  # This is important to send the email as HTML
-#     email.send()
-
-#     return redirect('/')
-
-
-
 def email_send(request):
     user_email = request.user.email
     donor_name = request.session.get('donor_name', 'Valued Donor')
@@ -341,19 +264,16 @@ def email_send(request):
     subject = "MyBuddy Donation Payment"
     from_email = "ashitosh.rohom@gmail.com"
 
-    # Render the HTML template
     message = render_to_string('email.html', {
-        'donor_name': donor_name,               #request.user.username,  # Display user's name in the email
+        'donor_name': donor_name,               #request.user.username
         'donation_amount': f'₹{donation_amount}'
     })
 
     email = EmailMessage(subject, message, from_email, [user_email])
-    email.content_subtype = "html"  # Ensure the email is sent as HTML
+    email.content_subtype = "html"  
     email.send()
 
     return redirect('/')
-
-
 
 
 def user(request):

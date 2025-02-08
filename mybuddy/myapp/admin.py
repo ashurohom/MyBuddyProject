@@ -1,10 +1,9 @@
 from django.contrib import admin
-from .models import Pet,Donar,Contact
+from .models import Pet,Donar,Contact,AdoptionHistory
 from .models import Adoptionrequest
 from myapp.views import update_adoption_status,send_approval_email
 
 
-# Register your models here.
 admin.site.register(Pet)
 
 # class AdoptionRequestAdmin(admin.ModelAdmin):
@@ -20,36 +19,35 @@ admin.site.register(Pet)
 # admin.site.register(Adoptionrequest, AdoptionRequestAdmin)
 
 
-
 class AdoptionRequestAdmin(admin.ModelAdmin):
     list_display = ['pet_name', 'pet_breed', 'full_name', 'phone_number', 'status']
     actions = ['approve_request', 'reject_request']
 
-    def save_model(self, request, obj, form, change):
-        """Send an email if the status is changed to 'Approved'."""
-        if change:  # Ensure this is an update, not a new object creation
-            old_status = Adoptionrequest.objects.get(id=obj.id).status
-            if old_status != "Approved" and obj.status == "Approved":
-                send_approval_email(obj)  # Call the email function
-
-        super().save_model(request, obj, form, change)  # Save the object
-
     def approve_request(self, request, queryset):
-        queryset.update(status='Approved')
         for obj in queryset:
-            send_approval_email(obj)  # Send email for each approved request
+            if obj.status != "Approved":
+                obj.status = "Approved"
+                obj.save()
+
+                # Send approval email
+                send_approval_email(obj)
+
+                # Save pet details in history table
+                AdoptionHistory.objects.create(
+                    user=obj.userid,  # Assuming 'userid' is a ForeignKey to User
+                    pet_name=obj.pet_name,
+                    pet_breed=obj.pet_breed
+                )
+
+                # Delete the pet from the database
+                Pet.objects.filter(id=obj.pet_id).delete()
+
+        queryset.update(status='Approved')
 
     def reject_request(self, request, queryset):
         queryset.update(status='Rejected')
 
 admin.site.register(Adoptionrequest, AdoptionRequestAdmin)
-
-
-
-
-
-
-
 
 
 
