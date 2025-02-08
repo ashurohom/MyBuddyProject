@@ -34,8 +34,8 @@ class AdoptionRequestAdmin(admin.ModelAdmin):
 
                 # Save pet details in history table
                 AdoptionHistory.objects.create(
-                    user=obj.userid,  # Assuming 'userid' is a ForeignKey to User
-                    pet_name=obj.pet_name,
+                    user=obj.id,  # Assuming 'userid' is a ForeignKey to User
+                    pet_name=obj.pname,
                     pet_breed=obj.pet_breed
                 )
 
