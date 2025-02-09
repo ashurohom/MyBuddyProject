@@ -69,7 +69,7 @@ def signin(request):
                 login(request,user)
                 return redirect('/') 
             else:
-                context['error_msg']="Invalid Username And Password"
+                context['error_msg']="Invalid Username Or Password"
                 return render(request,'signin.html',context)
     else:    
         return render(request,'signin.html')
