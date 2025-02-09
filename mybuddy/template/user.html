@@ -22,14 +22,14 @@
         padding: 30px;
     }
 
-    h1 {
+    h2 {
         font-size: 2.5rem;
         font-weight: bold;
         color: #3a0808;
         margin-bottom: 30px;
     }
 
-    .user-profile {
+    .user-profiles {
         display: flex;
         flex-direction: column;
         gap: 20px;
@@ -71,7 +71,7 @@
 <div class="container">
     <div class="card p-4">
         {% for i in user %}
-        <h1 class="text-center mb-4">User Details</h1>
+        <h2 class="text-center mb-4">User Details</h2>
         
         {% if error_msg %}
             <div id="error-msg" style="color: red; text-align: center; font-size: 1.2rem; margin-bottom: 20px;">
@@ -79,7 +79,7 @@
             </div>
         {% endif %}
         
-        <div class="user-profile">
+        <div class="user-profiles">
             <div class="profile-item">
                 <strong>User ID:</strong> <span>{{i.id}}</span>
             </div>
