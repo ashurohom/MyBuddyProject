@@ -83,12 +83,12 @@ body {
     color: #000000;
     margin-bottom: 25px;
   }
-  /* Button Styling */
+  /* Button Styling
   @keyframes blink {
-    0% { background-color: #0f517d; }   /* Original color */
-    50% { background-color: #ec5915; }  /* Blinking color */
-    100% { background-color: #0f517d; } /* Back to original */
-  }
+    /*0% { background-color: #0f517d; }    Original color */
+   /* 50% { background-color: #ec5915; }  /* Blinking color */
+   /* 100% { background-color: #0f517d; } /* Back to original */
+  /*} */
   
   .btn-adopt {
     padding: 15px 30px;
@@ -104,13 +104,13 @@ body {
     cursor: pointer;
     text-decoration: none;
   
-    transition: background-color 1.5s ease-in-out, transform 0.3s ease;
-    animation: blink 4s infinite alternate; /* Very slow blinking */
+    /* transition: background-color 1.5s ease-in-out, transform 0.3s ease; */
+    /* animation: blink 4s infinite alternate; Very slow blinking */
   }
   
 
 .btn-adopt:hover {
-    background-color: #1a7cde; /* Slightly darker on hover */
+    background-color: #186496; /* Slightly darker on hover */
     transform: scale(1.05);
 }
 
