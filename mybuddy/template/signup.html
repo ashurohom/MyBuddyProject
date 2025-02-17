@@ -24,7 +24,7 @@
     <form method="POST" action="">
       {% csrf_token %}
       {% if error_msg %}
-      <div style="color: #721c24; background-color: #f8d7da; border: 1px solid rgb(0, 0, 0); padding: 10px; border-radius: 5px; margin-top: 10px;">
+      <div>
       {{ error_msg }}
       </div>
       {% endif %}

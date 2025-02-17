@@ -20,6 +20,12 @@
         </a>
       </div>
       <h1>Update User</h1>
+
+      {% if e_msg %}
+      <div>
+      {{ e_msg }}
+      </div>
+      {% endif %}
       
       <form method="POST" action="">
         {% csrf_token %}

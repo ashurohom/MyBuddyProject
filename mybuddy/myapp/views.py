@@ -30,17 +30,29 @@ def signup(request):
             context['error_msg']="All Fields Are Required"
             return render(request,'signup.html',context)
         
+        elif not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$', e):
+            context['error_msg'] = "Invalid Email Format"
+            return render(request, 'signup.html', context)
+        
         elif p != rp:
             context['error_msg']="Password Doesnot Match"
             return render(request,'signup.html',context)
+        
+        elif len(n) < 3:
+            context['error_msg'] = "Username must be at least 3 characters long"
+            return render(request, 'signup.html', context)
         
         elif len(p) <6 or len(rp) <6:
                 context['error_msg']="Password Contain Atleast 6 Character"
                 return render(request,'signup.html',context)
 
-        elif User.objects.filter(username=n).exists() or User.objects.filter(email=e).exists():
-            context['error_msg'] = "User with this username or email already exists"
-            return render(request, 'signup.html', context)        
+        elif User.objects.filter(username=n).exists(): 
+            context['error_msg'] = "User with this username already exists"
+            return render(request, 'signup.html', context) 
+
+        elif User.objects.filter(email=e).exists():       
+            context['error_msg'] = "User with this email already exists"
+            return render(request, 'signup.html', context)
         
         else:
             u = User.objects.create(username=n, email=e)
@@ -108,56 +120,66 @@ def filterbycategory(request,cid):
 
     
 
-def request_form(request,pid):
 
-    context={}
-    pet = Pet.objects.get(id=pid)  
-    context['pet'] = pet 
+
+def request_form(request, pid):
+    context = {}
+    pet = Pet.objects.get(id=pid)
+    context['pet'] = pet
 
     if request.method == 'POST':
-
-        u = User.objects.get(id=request.user.id)        
+        u = User.objects.get(id=request.user.id)
         f_name = request.POST.get('full_name')
         p_number = request.POST.get('phone')
         s_address = request.POST.get('street')
         citys = request.POST.get('city')
         states = request.POST.get('state')
-        z_code = request.POST.get('zip') 
-        experience = request.POST.get('experience') == 'on'
-        otherpets = request.POST.get('other_pets') == 'on'
+        z_code = request.POST.get('zip')
+
+        #Convert string to Boolean (for dropdowns)
+        experience = request.POST.get('experience')
+        otherpets = request.POST.get('other_pets')
+
+        # Ensure correct Boolean conversion
+        experience = experience == "True"
+        otherpets = otherpets == "True"
+
+        # Checkbox fields (optional fields)
         regular_checkups = request.POST.get('checkups') == 'on'
         safe_home = request.POST.get('loving_home') == 'on'
         reason = request.POST.get('reason')
         acknowledgments = request.POST.get('terms') == 'on'
 
-        if re.match("[6-9]\d{9}",p_number):
-      
-            adoption_request = Adoptionrequest.objects.create(
-                pet_name=pet.pname,
-                pet_breed=pet.category,
-                pet_age=pet.age,
-                pet_gender=pet.gender,
-                userid=u,
-                full_name=f_name,
-                phone_number=p_number,
-                street_address=s_address,
-                city=citys,
-                state=states,
-                zip_code=z_code,
-                experience_with_pets=experience,
-                other_pets=otherpets,
-                regular_checkups_agreement=regular_checkups,
-                safe_home_agreement=safe_home,
-                adoption_reason=reason,
-                acknowledgment=acknowledgments,
-            )
-            adoption_request.save()
-            return redirect('/thanku') 
-        else:
-                context["error_msg"] = "Warning : Incorrect Mobile Number"
-                return render(request,'request.html',context)
-    else:
-        return render(request,'request.html',context)  
+        # Corrected phone number validation
+        if not re.fullmatch(r"[6-9]\d{9}", p_number):
+            context["error_msg"] = "Warning: Incorrect Mobile Number"
+            return render(request, 'request.html', context)
+
+        # Store data in database
+        adoption_request = Adoptionrequest.objects.create(
+            pet_name=pet.pname,
+            pet_breed=pet.category,
+            pet_age=pet.age,
+            pet_gender=pet.gender,
+            userid=u,
+            full_name=f_name,
+            phone_number=p_number,
+            street_address=s_address,
+            city=citys,
+            state=states,
+            zip_code=z_code,
+            experience_with_pets=experience,
+            other_pets=otherpets,
+            regular_checkups_agreement=regular_checkups,
+            safe_home_agreement=safe_home,
+            adoption_reason=reason,
+            acknowledgment=acknowledgments,
+        )
+        adoption_request.save()
+        return redirect('/thanku')
+
+    return render(request, 'request.html', context)
+ 
 
 
 
@@ -220,23 +242,43 @@ def contact(request):
     return render(request, 'contact.html')
 
 
+import re
+from django.shortcuts import render, redirect
+from myapp.models import Donar
+
 def donate(request):
     context = {}
+    
     if request.method == "POST":
         n = request.POST.get('name')
         add = request.POST.get('address')
         mob = request.POST.get('mobile')
-        amt = int(request.POST.get('donation-amount'))  
+        amt = request.POST.get('donation-amount')
 
-        if re.match("[6-9]\d{9}",mob):
-            d = Donar.objects.create(name=n, address=add, mobile=mob, amount=amt, userid=request.user)
-            d.save()
-            request.session['donor_name'] = n  
-            request.session['donation_amount'] = amt
-            return redirect('/payment') 
-        else:
-                context["error_msg"] = "Warning : Incorrect Mobile Number"
-                return render(request,'donate.html',context)
+        if not n or not add or not mob or not amt:
+            context["error_msg"] = "All fields are required"
+            return render(request, 'donate.html', context)
+        
+        if not re.fullmatch(r"^[6-9]\d{9}$", mob):
+            context["error_msg"] = "Invalid Mobile Number. Must be 10 digits & start with 6-9."
+            return render(request, 'donate.html', context)
+
+        try:
+            amt = int(amt)
+            if amt <= 0:
+                context["error_msg"] = "Donation amount must be a positive number"
+                return render(request, 'donate.html', context)
+        except ValueError:
+            context["error_msg"] = "Invalid donation amount"
+            return render(request, 'donate.html', context)
+
+        d = Donar.objects.create(name=n, address=add, mobile=mob, amount=amt, userid=request.user)
+        d.save()
+
+        request.session['donor_name'] = n  
+        request.session['donation_amount'] = amt
+        
+        return redirect('/payment') 
 
     return render(request, 'donate.html', context)
 
@@ -294,19 +336,63 @@ def Delete(request,uid):
     # return render(request,'user.html')
 
 
+# def update_user(request, sid):
+#     if request.method == "GET":
+#         context = {}
+#         u = User.objects.filter(id=sid).first()
+#         context['user'] = u  
+#         return render(request, 'update_user.html', context)
+
+#     elif request.method == "POST":
+#         u = User.objects.filter(id=sid).first()
+#         n = request.POST['name']
+#         e = request.POST['email']
+#         u.username = n
+#         u.email = e
+#         u.save()
+#         return redirect('/user/')
+    
+
+
 def update_user(request, sid):
+    context = {}
+    u = User.objects.filter(id=sid).first()
+
     if request.method == "GET":
-        context = {}
-        u = User.objects.filter(id=sid).first()
         context['user'] = u  
         return render(request, 'update_user.html', context)
 
     elif request.method == "POST":
-        u = User.objects.filter(id=sid).first()
         n = request.POST['name']
         e = request.POST['email']
-        u.username = n
-        u.email = e
-        u.save()
-        return redirect('/user/')
+
+        if n == "" or e == "":
+            context['e_msg'] = "All Fields Are Required"
+            context['user'] = u
+            return render(request, 'update_user.html', context)
+
+        elif len(n) < 3:
+            context['e_msg'] = "Username must be at least 3 characters long"
+            context['user'] = u
+            return render(request, 'update_user.html', context)
+
+        
+        elif not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$', e):
+            context['e_msg'] = "Invalid Email Format"
+            context['user'] = u
+            return render(request, 'update_user.html', context)
+
+        elif User.objects.filter(email=e).exclude(id=sid).exists():
+            context['e_msg'] = "Email Already Registered"
+            context['user'] = u
+            return render(request, 'update_user.html', context)
+
+        else:
+            u.username = n
+            u.email = e
+            u.save()
+            return redirect('/user/')
+
+    return render(request, 'update_user.html', context)
+
   
