@@ -28,10 +28,11 @@
       
       {% if request.user.is_authenticated %}
         <a href="/donate" class="nav-btn">Donate</a>
-        <a href="/petgallery" class="nav-btn">Pets</a>
+        
         <a href="/thanku" class="nav-btn">Request</a>
       {% else %}
-        <a href="/signin" class="nav-btn">Pets</a>
+        <a href="/petgallery" class="nav-btn">Pets</a>
+        {% comment %} <a href="/signin" class="nav-btn">Pets</a> {% endcomment %}
         <a href="/signin" class="nav-btn">Donate</a>
       {% endif %}
       

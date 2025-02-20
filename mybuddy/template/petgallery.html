@@ -75,7 +75,12 @@
                 <p><strong>Age:</strong> {{i.age}} </p>
 
                 <p><strong>Gender:</strong> {{i.gender}} </p>
-                <a href="/details/{{ i.id }}/" class="btn">{{i.pname}} Details</a>
+            {% if request.user.is_authenticated %}
+            <a href="/details/{{ i.id }}/" class="btn">{{i.pname}} Details</a>
+            {% else %}
+            <a href="/signin" class="btn">{{i.pname}} Details</a>
+            {% endif %}
+                
                
             </div>
         </div>
