@@ -97,8 +97,9 @@ def ulogout(request):
 def petgallery(request):
     context={}
     pet=Pet.objects.all()
-    # print(pet)
     context['pets']=pet
+    if not request.user.is_authenticated:
+        context['message'] = "Please Login First"
     return render(request,'petgallery.html',context)
 
 
@@ -106,7 +107,6 @@ def petgallery(request):
 def petdetails(request,pid):
     context={}
     pets=Pet.objects.filter(id=pid)
-    # print(pets)
     context['pet']=pets
     return render(request,'petdetails.html',context)
 

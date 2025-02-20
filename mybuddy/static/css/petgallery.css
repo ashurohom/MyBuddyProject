@@ -56,6 +56,21 @@
 
 
 
+.login-popup {
+    display: none;
+    background-color: #ffdddd;
+    color: #4000ff;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+    border: 1px solid #d8000c;
+    border-radius: 5px;
+    margin-top: 10px;
+    width: 100%;
+}
+
+
+
 /* ----------------------------------------------------------------------- */
 
 /* MyButton Row */
@@ -195,3 +210,5 @@
     /* background-color: #f9f9f9; Light gray background */
     border-top: 1px solid #ddd; /* Subtle top border */
 }
+
+
