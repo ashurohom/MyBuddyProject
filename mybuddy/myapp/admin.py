@@ -19,7 +19,7 @@ admin.site.register(Pet)
 # admin.site.register(Adoptionrequest, AdoptionRequestAdmin)
 
 class AdoptionRequestAdmin(admin.ModelAdmin):
-    list_display = ['pet_name', 'pet_breed', 'full_name', 'phone_number', 'status']
+    list_display = ['pet_name', 'pet_breed', 'full_name', 'phone_number', 'status','userid']
     actions = ['approve_request', 'reject_request']
 
     def save_model(self, request, obj, form, change):

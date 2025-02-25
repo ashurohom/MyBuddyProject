@@ -30,7 +30,7 @@ def signup(request):
             context['error_msg']="All Fields Are Required"
             return render(request,'signup.html',context)
         
-        elif not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$', e):
+        elif not re.match(r'^(?=.*[a-zA-Z])[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$', e):
             context['error_msg'] = "Invalid Email Format"
             return render(request, 'signup.html', context)
         
@@ -43,7 +43,11 @@ def signup(request):
             return render(request, 'signup.html', context)
         
         elif len(p) <6 or len(rp) <6:
+        # elif len(p) < 6 or not re.search(r'[A-Z]', p) or not re.search(r'[a-z]', p) or not re.search(r'\d', p) or not re.search(r'[!@#$%^&*(),.?":{}|<>]', p):    
+
                 context['error_msg']="Password Contain Atleast 6 Character"
+                #context['error_msg']="Password must be 6 chars, include uppercase, lowercase, number & symbol"
+                
                 return render(request,'signup.html',context)
 
         elif User.objects.filter(username=n).exists(): 
@@ -259,8 +263,12 @@ def donate(request):
             context["error_msg"] = "All fields are required"
             return render(request, 'donate.html', context)
         
-        if not re.fullmatch(r"^[6-9]\d{9}$", mob):
+        elif not re.fullmatch(r"^[6-9]\d{9}$", mob):
             context["error_msg"] = "Invalid Mobile Number. Must be 10 digits & start with 6-9."
+            return render(request, 'donate.html', context)
+        
+        elif not re.fullmatch(r'^[a-zA-Z]+$', n):
+            context["error_msg"] = "Name should contain only letters."
             return render(request, 'donate.html', context)
 
         try:
