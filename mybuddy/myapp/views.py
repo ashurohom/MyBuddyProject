@@ -30,8 +30,12 @@ def signup(request):
             context['error_msg']="All Fields Are Required"
             return render(request,'signup.html',context)
         
-        elif not re.match(r'^(?=.*[a-zA-Z])[a-zA-Z0-9._%+-]+@[a-zA-Z]+\.[a-zA-Z]{2,3}$', e):
-            context['error_msg'] = "Invalid Email Format"
+        # elif not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$', e):
+        #     context['error_msg'] = "Invalid Email Format"
+        #     return render(request, 'signup.html', context)
+        
+        elif not re.fullmatch(r"^[a-zA-Z0-9._%+-]*[a-zA-Z]+[a-zA-Z0-9._%+-]*@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$", e):
+            context["error_msg"] = "Invalid Email Format."
             return render(request, 'signup.html', context)
         
         elif p != rp:
@@ -157,6 +161,10 @@ def request_form(request, pid):
         # Corrected phone number validation
         if not re.fullmatch(r"[6-9]\d{9}", p_number):
             context["error_msg"] = "Warning: Incorrect Mobile Number"
+            return render(request, 'request.html', context)
+        
+        elif not re.fullmatch(r'^[a-zA-Z]+$', f_name):
+            context["error_msg"] = "Name should contain only letters."
             return render(request, 'request.html', context)
 
         # Store data in database
