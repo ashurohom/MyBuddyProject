@@ -163,7 +163,7 @@ def request_form(request, pid):
             context["error_msg"] = "Warning: Incorrect Mobile Number"
             return render(request, 'request.html', context)
         
-        elif not re.fullmatch(r'^[a-zA-Z]+$', f_name):
+        elif not re.fullmatch(r'^[a-zA-Z]+(?: [a-zA-Z]+)*$', f_name):
             context["error_msg"] = "Name should contain only letters."
             return render(request, 'request.html', context)
 
@@ -379,10 +379,11 @@ def update_user(request, sid):
         return render(request, 'update_user.html', context)
 
     elif request.method == "POST":
-        n = request.POST['name']
+        # n = request.POST['name']
         e = request.POST['email']
 
-        if n == "" or e == "":
+        # if n == "" or e == "":
+        if e == "":
             context['e_msg'] = "All Fields Are Required"
             context['user'] = u
             return render(request, 'update_user.html', context)
