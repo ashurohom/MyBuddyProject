@@ -405,7 +405,7 @@ def update_user(request, sid):
             return render(request, 'update_user.html', context)
 
         else:
-            u.username = n
+            # u.username = n
             u.email = e
             u.save()
             return redirect('/user/')
