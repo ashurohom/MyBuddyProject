@@ -384,14 +384,14 @@ def update_user(request, sid):
 
         # if n == "" or e == "":
         if e == "":
-            context['e_msg'] = "All Fields Are Required"
+            context['e_msg'] = "Fields Are Required"
             context['user'] = u
             return render(request, 'update_user.html', context)
 
-        elif len(n) < 3:
-            context['e_msg'] = "Username must be at least 3 characters long"
-            context['user'] = u
-            return render(request, 'update_user.html', context)
+        # elif len(n) < 3:
+        #     context['e_msg'] = "Username must be at least 3 characters long"
+        #     context['user'] = u
+        #     return render(request, 'update_user.html', context)
 
         
         elif not re.match(r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,3}$', e):
