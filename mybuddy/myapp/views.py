@@ -138,6 +138,7 @@ def request_form(request, pid):
     if request.method == 'POST':
         u = User.objects.get(id=request.user.id)
         f_name = request.POST.get('full_name')
+         
         p_number = request.POST.get('phone')
         s_address = request.POST.get('street')
         citys = request.POST.get('city')
@@ -162,6 +163,9 @@ def request_form(request, pid):
         if not re.fullmatch(r"[6-9]\d{9}", p_number):
             context["error_msg"] = "Warning: Incorrect Mobile Number"
             return render(request, 'request.html', context)
+        
+        elif not re.fullmatch(r'(a-z)(A-z)',f_name):
+            context['user'] = "Invalid User Name"
         
         elif not re.fullmatch(r'^[a-zA-Z]+(?: [a-zA-Z]+)*$', f_name):
             context["error_msg"] = "Name should contain only letters."
