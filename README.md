@@ -38,7 +38,7 @@ Additionally, users can contribute through donations, helping to support pet wel
 - **Database**: MySQL
 - **Version Control**: Git
 - **Email Service**: SMTP Email Configuration with Custom Templates
-- **Payment Integration**: RAZORPAY Secure Payment Gateway for Donations
+- **Payment Integration**: RAZORPAY Secure Payment Gateway for Donation
 
 ## Future Improvements
 
